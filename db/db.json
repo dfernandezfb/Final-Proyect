@@ -1,26 +1,69 @@
 {
-    "cursos": [
-      {
-        "id": 1,
-        "name": "" },
-      {
-        "id": 2,
-        "name": "" },
-      {
-        "id": 3,
-        "name": "" },
-      {
-        "id": 4,
-        "name": "" },
-      {
-        "id": 5,
-        "name": "El silencio de los corderos" },
-      {
-        "id": 6,
-        "name": "Forrest Gump" },
-      {
-        "id": 7,
-        "name": "Las Hurdes"
-      }
-    ]
-  }
+  "courses": [
+    {
+      "id": 1,
+      "category": "Desarrollo e ingeniería",
+      "directedBy": "Luis Cazzullo",
+      "description": "Aprende a desarrollar aplicaciones web, móviles y de escritorio con React.js. La librería JavaScript más popular en el mercado",
+      "displayed": false,
+      "price": 1900,
+      "name": "Fronted con React.js",
+      "DirectedBy": "Luis Cazzullo"
+    },
+    {
+      "id": 2,
+      "category": "Dessarrollo e ingenieria ",
+      "directedBy": "",
+      "description": "sdsd",
+      "displayed": false,
+      "price": "1900",
+      "name": "",
+      "DirectedBy": ""
+    },
+    {
+      "id": 3,
+      "category": "",
+      "directedBy": "",
+      "description": "",
+      "displayed": false,
+      "price": 1900,
+      "name": ""
+    },
+    {
+      "id": 4,
+      "category": "",
+      "directedBy": "",
+      "description": "",
+      "displayed": false,
+      "price": 1900,
+      "name": ""
+    },
+    {
+      "id": 5,
+      "category": "",
+      "directedBy": "",
+      "description": "",
+      "displayed": false,
+      "price": 1900,
+      "name": ""
+    },
+    {
+      "id": 6,
+      "category": "",
+      "directedBy": "",
+      "description": "",
+      "displayed": false,
+      "price": 1900,
+      "name": ""
+    },
+    {
+      "id": 7,
+      "category": "",
+      "directedBy": "",
+      "description": "",
+      "price": 1900,
+      "displayed": false,
+      "name": ""
+    }
+  ]
+}
