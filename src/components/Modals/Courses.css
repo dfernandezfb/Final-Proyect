@@ -1,0 +1,41 @@
+.bodyEdit {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    top: 50%;
+    height: 100vh; 
+    width: 100%;
+    outline: none;
+    background: #002147;
+    background-size: cover;
+    font: 1em sans-serif;
+}
+
+.bodyForm {
+    transform: translateY(20%);
+}
+.titlesform {
+    color: #8FE388;
+}
+.btnForm {
+    margin-top:10px ;
+}
+.actionBtn {
+    margin: auto;
+    background: #002147;
+    color: #8FE388;
+    border: none;
+    transform: translateX(50%);
+}
+
+.actionBtn:hover {
+    background: #040F0F;
+    color: #8FE388;
+    transition: 0.5s all ease;
+}
+
+.tableInfo {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+}
