@@ -1,0 +1,57 @@
+.bodyEdit {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; 
+    width: 100%;
+    outline: none;
+    background: #002147;
+    background-size: cover;
+    font: 1em sans-serif;
+}
+
+.bodyForm {
+    transform: translateY(20%);
+}
+.titlesform {
+    color: #8FE388;
+    font-size: 1.5em;
+}
+.btnForm {
+    margin-top:10px ;
+}
+.actionBtn {
+    margin: auto;
+    background: #002147;
+    color: #8FE388;
+    border: none;
+    margin-left: 0.5em;
+    padding: 0.2em;
+    transform: translateX(20%);
+}
+
+.actionBtn:hover {
+    background: #040F0F;
+    color: #8FE388;
+    transition: 0.5s all ease;
+}
+
+.tableInfo {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    color: silver;
+}
+.createBtn {
+    font-size: 0.85em;
+    border: none;
+    border-radius: 0.5em;
+    color: #8FE388;
+    background: transparent;
+}
+
+.createBtn:hover {
+    transition: 1s all ease;
+    color: #8FE388;
+    background: #040F0F;
+}

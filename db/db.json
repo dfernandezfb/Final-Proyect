@@ -1,0 +1,187 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "category": "Desarrollo e ingeniería",
+      "directedBy": "Luis Cazzullo",
+      "description": "Aprende a desarrollar aplicaciones web, móviles y de escritorio con React.js. La librería JavaScript más popular en el mercado",
+      "displayed": true,
+      "price": 1900,
+      "name": "Fronted con React.js",
+      "DirectedBy": "Luis Cazzullo"
+    },
+    {
+      "id": 2,
+      "category": "Dessarrollo e ingeniería ",
+      "directedBy": "",
+      "description": "Ruby on Rails es una tecnología que le permite a los desarrolladores crear aplicaciones web de forma rápida y efectiva.",
+      "displayed": false,
+      "price": "1900",
+      "name": "Desarrollo Web Backend con Ruby on Rails",
+      "DirectedBy": ""
+    },
+    {
+      "id": 3,
+      "category": "Desarrollo e ingeniería",
+      "directedBy": "",
+      "description": "Esta herramienta de software provee un set de funcionalidades preestablecidas que permiten juntar los elementos que requiere un videojuego en su desarrollo.",
+      "displayed": false,
+      "price": 1900,
+      "name": "Desarrollo de Videojuegos con Unity"
+    },
+    {
+      "id": 4,
+      "category": "Desarrollo e ingeniería",
+      "directedBy": "",
+      "description": "",
+      "displayed": false,
+      "price": 1900,
+      "name": "Inteligencia Artificial y Machine Learning"
+    },
+    {
+      "id": 5,
+      "category": "Marketing",
+      "directedBy": "",
+      "description": "",
+      "displayed": false,
+      "price": 1900,
+      "name": "Marketing y Ventas"
+    },
+    {
+      "id": 6,
+      "category": "Marketing",
+      "directedBy": "",
+      "description": "",
+      "displayed": false,
+      "price": 1900,
+      "name": "Escuela de Publicidad Digital"
+    },
+    {
+      "id": 7,
+      "category": "Marketing",
+      "directedBy": "",
+      "description": "",
+      "price": 1900,
+      "displayed": false,
+      "name": "Marketing Basado en Datos"
+    },
+    {
+      "id": 8,
+      "category": "Marketing",
+      "directedBy": "",
+      "description": "",
+      "price": 1900,
+      "displayed": false,
+      "name": "Email Marketing"
+    },
+    {
+      "id": 9,
+      "category": "Negocios y Emprendimientos",
+      "directedBy": "",
+      "description": "",
+      "price": 1900,
+      "displayed": false,
+      "name": "Comercio electrónico o E-commerce"
+    },
+    {
+      "id": 10,
+      "category": "Negocios y Emprendimientos",
+      "directedBy": "",
+      "description": "",
+      "price": 1900,
+      "displayed": false,
+      "name": "Transformación Digital"
+    },
+    {
+      "id": 11,
+      "category": "Negocios y Emprendimientos",
+      "directedBy": "",
+      "description": "",
+      "price": 1900,
+      "displayed": false,
+      "name": "Gestion de Proyectos "
+    },
+    {
+      "id": 12,
+      "category": "Negocios y Emprendimientos",
+      "directedBy": "",
+      "description": "",
+      "price": 1900,
+      "displayed": false,
+      "name": "Blockchain y Criptomonedas"
+    },
+    {
+      "id": 13,
+      "category": "Crecimiento Profesional",
+      "directedBy": "",
+      "description": "",
+      "price": 1900,
+      "displayed": false,
+      "name": "Escuela de Inglés"
+    },
+    {
+      "id": 14,
+      "category": "Crecimiento Profesional",
+      "directedBy": "",
+      "description": "",
+      "price": 1900,
+      "displayed": false,
+      "name": "Escuela de Desarrollo Profesional"
+    },
+    {
+      "id": 15,
+      "category": "Startups",
+      "directedBy": "",
+      "description": "Empieza a crear tu Startup y si ya tienes una acelérala. Aprende a afrontar los desafíos como actual o futuro emprendedor. ¡Crea el próximo unicornio!",
+      "price": 1900,
+      "displayed": false,
+      "name": "Escuela de Startup"
+    }
+  ],
+  "favorites":[
+    {
+      "id": 1,
+      "category": "Html and CSS",
+      "directedBy": "A",
+      "description": "Description A",
+      "price": 1900,
+      "displayed": false,
+      "name": "Escuela de Html and Css"
+    },
+    {
+      "id": 2,
+      "category": "JavaScript",
+      "directedBy": "B",
+      "description": "Description B",
+      "price": 2000,
+      "displayed": false,
+      "name": "Escuela de JavaScript"
+    },
+    {
+      "id": 3,
+      "category": "React",
+      "directedBy": "C",
+      "description": "Description C",
+      "price": 2100,
+      "displayed": false,
+      "name": "Escuela de React"
+    },
+    {
+      "id": 4,
+      "category": "Angular",
+      "directedBy": "D",
+      "description": "Description D",
+      "price": 2200,
+      "displayed": false,
+      "name": "Escuela de Angular"
+    },
+    {
+      "id": 5,
+      "category": "NodeJs",
+      "directedBy": "E",
+      "description": "Description E",
+      "price": 2300,
+      "displayed": false,
+      "name": "Escuela de NodeJs"
+    }
+  ]}
