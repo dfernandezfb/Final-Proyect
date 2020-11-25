@@ -5,6 +5,7 @@
     overflow: auto;
     background: #0d0d0e;
 }
+
 .cover-background-landing{
     background-image: url(../images/heroimage.png);
     position: absolute;
