@@ -1,4 +1,4 @@
-import '../styled/landing.css';
+import '../styles/landing.css';
 import FormLogin from '../components/FormLogin/FormLogin';
 
 
