@@ -33,7 +33,7 @@ const AdminPage = () => {
         Puede modificarlos o borrarlos. Si desea, puede agregar más actividades académicas con el botón <Button className="createBtn"> <AiFillDiff /> Crear </Button>
         </h3>
         </div>
-        <Table striped bordered hover size="sm" >
+        <Table striped bordered hover size="sm">
   <thead>
     <tr>
       <th className="text-center">Nombre del Curso</th>
