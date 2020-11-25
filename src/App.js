@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 //Components
 import EditCourse from './components/Modals/EditCourse.js';
+import Footer from './components/Footer/Footer'
 //Pages
 import AdminPage from "./pages/AdminPage";
 import LandingPage from "./pages/LandingPage";
@@ -15,7 +16,7 @@ function App() {
     {/* <LandingPage /> */}
     <Router>
      <Switch>
-       <Route exact path="/"  component= {AdminPage}/> 
+       <Route exact path="/"  component= {Footer}/> 
        <Route exact path="/courses/editar/:idC" component={EditCourse} />
      </Switch>
     </Router>

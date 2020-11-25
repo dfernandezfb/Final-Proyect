@@ -1,5 +1,5 @@
 import '../Footer/Footer.css'
-import {FaFacebookF, FaTwitter, FaGooglePlusG, FaLinkedinIn, FaInstagram} from 'react-icons/fa'
+import {FaFacebookF, FaTwitter, FaGooglePlusG, FaLinkedinIn, FaInstagram, FaHome, FaMailBulk, FaPhoneAlt} from 'react-icons/fa'
 
 
 const Footer = () => {
@@ -41,10 +41,9 @@ const Footer = () => {
                         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-0">
                             <h6 className="text-uppercase font-weight-bold">akademy</h6>
                             <hr className="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto"></hr>
-                            <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                            consectetur
-                            adipisicing elit.</p>
-                        </div>
+                            <p>Akademy is a learning institution and introduction to the world of programming
+                            where we offer a wide variety of courses, both free and paid, validated by a certification.</p>
+                        </div>  
 
                         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0">
                             <h6 className="text-uppercase font-weight-bold">Courses</h6>
@@ -59,7 +58,7 @@ const Footer = () => {
                                 <a href="#!">React</a>
                             </p>
                             <p>
-                                <a href="#!">Ver mas...</a>
+                                <a href="#!">Read more...</a>
                             </p>
                         </div>
 
@@ -67,13 +66,13 @@ const Footer = () => {
                             <h6 className="text-uppercase font-weight-bold">Contact</h6>
                             <hr className="deep-purple mb-3 mt-0 d-inline-block mx-auto"></hr>
                             <p>
-                                <i className="fas fa-home mr-3"></i> Tucuman    , Argentina
+                                <FaHome className="icoContact"/> Tucuman, Argentina
                             </p>
                             <p>
-                                <i className="fas fa-envelope mr-3"></i> info.akademy@gmail.com
+                                <FaMailBulk className="icoContact"/> info.akademy@gmail.com
                             </p>
                             <p>
-                                <i className="fas fa-phone mr-3"></i> + 54 (381) - 
+                                <FaPhoneAlt className="icoContact"/> + 54 (381) - 
                             </p>
                         </div>
                     </div>
