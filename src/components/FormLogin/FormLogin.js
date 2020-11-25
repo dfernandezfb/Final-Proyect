@@ -1,10 +1,11 @@
 import {Form, Button} from 'react-bootstrap';
 
+
 const FormLogin = () => {
     return(
         <>
             <Form>
-                <h3>Login</h3>
+                <h2>Login</h2>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label><h4>Email address</h4></Form.Label>
                     <Form.Control size="lg" type="email" placeholder="Enter email" />

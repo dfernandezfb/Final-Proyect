@@ -1,0 +1,32 @@
+body{
+    background-color: black;
+}
+.page-footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #002147;
+}
+.background-footer-1{
+    background-color: #187795;
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: #187795;
+}
+a:hover{
+    color: #18a7d3
+}
+.icoSocials {
+    margin-right: 20px;
+    font-size: larger;
+    font-size: 175%;
+    color: white;
+}
+.deep-purple{
+    background-color: #187795;
+    width: 60px;
+}
+p{
+    margin-bottom: 10px;
+}
