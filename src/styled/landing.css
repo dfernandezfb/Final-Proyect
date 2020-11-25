@@ -1,14 +1,11 @@
-*{
-    color:white;
-}
-.cover{
+.cover-landing{
     position: relative;
     z-index: 300;
     height: 100vh;
     overflow: auto;
     background: #0d0d0e;
 }
-.cover-background{
+.cover-background-landing{
     background-image: url(../images/heroimage.png);
     position: absolute;
     z-index: 100;
@@ -20,12 +17,12 @@
     background-position: bottom;
     background-size: cover;
 }
-.cover-content{
+.cover-content-landing{
     position: relative;
     z-index: 300;
     font-size: larger;
 }
-.cover-shadow{
+.cover-shadow-landing{
     position: absolute;
     z-index: 200;
     bottom: 0;
@@ -36,13 +33,6 @@
     background: linear-gradient(to bottom, rgba(41, 72, 174, 0.076) 0%, #000000 88%, #000000 99%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0016181a', endColorstr='#16181a', GradientType=0);
 }
-h2{
-    text-align: center;
-}
-.row{
-    display: flex;
-    justify-content: center;
-}
 .square{
     display: flex;
     justify-content: center;
@@ -51,7 +41,6 @@ h2{
     margin: 15px 15px 15px 15px;
     padding: 25px;
 }
-
-.ico{
-    width: 50px;
+.icoFav{
+    width: 40px;
 }

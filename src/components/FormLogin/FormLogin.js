@@ -5,7 +5,7 @@ const FormLogin = () => {
     return(
         <>
             <Form>
-                <h2>Login</h2>
+                <h2 className="d-flex justify-content-center">Login</h2>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label><h4>Email address</h4></Form.Label>
                     <Form.Control size="lg" type="email" placeholder="Enter email" />

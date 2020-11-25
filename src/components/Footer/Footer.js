@@ -39,39 +39,39 @@ const Footer = () => {
                 <div className="container text-left text-md-left-mt-5">
                     <div className="row mt-3">
                         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-0">
-                            <h6 className="text-uppercase font-weight-bold">akademy</h6>
+                            <h6 className="text-uppercase font-weight-bold text-white">akademy</h6>
                             <hr className="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto"></hr>
-                            <p>Akademy is a learning institution and introduction to the world of programming
+                            <p className="p-footer">Akademy is a learning institution and introduction to the world of programming
                             where we offer a wide variety of courses, both free and paid, validated by a certification.</p>
                         </div>  
 
                         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0">
-                            <h6 className="text-uppercase font-weight-bold">Courses</h6>
+                            <h6 className="text-uppercase font-weight-bold text-white">Courses</h6>
                             <hr className="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto"></hr>
-                            <p>
+                            <p className="p-footer">
                                 <a href="#!">HTML and CSS</a>
                             </p>
-                            <p>
+                            <p className="p-footer">
                                 <a href="#!">Javascript</a>
                             </p>
-                            <p>
+                            <p className="p-footer">
                                 <a href="#!">React</a>
                             </p>
-                            <p>
+                            <p className="p-footer">
                                 <a href="#!">Read more...</a>
                             </p>
                         </div>
 
                         <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-0">
-                            <h6 className="text-uppercase font-weight-bold">Contact</h6>
+                            <h6 className="text-uppercase font-weight-bold text-white">Contact</h6>
                             <hr className="deep-purple mb-3 mt-0 d-inline-block mx-auto"></hr>
-                            <p>
+                            <p className="p-footer">
                                 <FaHome className="icoContact"/> Tucuman, Argentina
                             </p>
-                            <p>
+                            <p className="p-footer">
                                 <FaMailBulk className="icoContact"/> info.akademy@gmail.com
                             </p>
-                            <p>
+                            <p className="p-footer">
                                 <FaPhoneAlt className="icoContact"/> + 54 (381) - 
                             </p>
                         </div>
