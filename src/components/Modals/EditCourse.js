@@ -1,7 +1,10 @@
+//Dependencies
 import {useEffect, useState} from 'react';
 import {Form} from 'react-bootstrap';
 import clientAxios from '../../config/Axios';
 import {useHistory} from 'react-router-dom';
+//css
+import Courses  from '../Modals/Courses.css';
 
 const EditCourse = ({match}) => {
 const [course, setCourse]= useState({
@@ -46,17 +49,17 @@ console.log(error.response)
 
     return (
       <>
-      <div className="row justify-content-center">
+      <div className="row justify-content-center bodyEdit">
       <div className="col-md-8">
-        <div className="card">
-          <div className="card-body">
-            <h2 className="text-center mb-4 font-weight-bold">
-              Editar producto
+        <div className="card-transparent">
+          <div className="card-body bodyForm">
+            <h2 className="text-center mb-4 titlesform">
+              Editar Curso
             </h2>
             <Form
               onSubmit={handleOnSubmit}>
               <div >
-                <label>Nombre del curso:</label>
+                <label className="titlesform">Nombre del curso:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -67,7 +70,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label>Categoria:</label>
+                <label className="titlesform">Categoria:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -78,7 +81,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label>Dirigido por:</label>
+                <label className="titlesform" >Dirigido por:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -89,7 +92,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label>Costo del curso:</label>
+                <label className="titlesform" >Costo del curso:</label>
                 <input
                   type="number"
                   className="form-control"
@@ -101,7 +104,7 @@ console.log(error.response)
               </div> 
               <button
                 type="submit"
-                className="btn btn-primary font-weight-bold text-uppercase d-block w-100">
+                className="btn btn-primary font-weight-bold text-uppercase d-block w-100 btnForm">
               Guardar cambios</button>
             </Form>
           </div>

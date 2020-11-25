@@ -5,7 +5,7 @@ import EditCourse from './components/Modals/EditCourse.js';
 //Pages
 import AdminPage from "./pages/AdminPage";
 import LandingPage from "./pages/LandingPage";
-//Rutas
+//Routes
 import PrivateRoute from "./routes/PrivateRoute"
 
 function App() {
