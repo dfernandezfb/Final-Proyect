@@ -41,6 +41,7 @@ const handleOnSubmit = async e => {
 e.preventDefault();
 try{
   await clientAxios.put(`/courses/${idCourse}`, course);
+  history.push('/');
 } catch (error) {
 console.log(error.response)
 }

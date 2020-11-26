@@ -14,7 +14,7 @@
     transform: translateY(20%);
 }
 .titlesform {
-    color: #8FE388;
+    color: #FBF9FF;
     font-size: 1.5em;
 }
 .btnForm {
@@ -54,4 +54,7 @@
     transition: 1s all ease;
     color: #8FE388;
     background: #040F0F;
+}
+.dataC {
+    color: #FBF9FF;
 }

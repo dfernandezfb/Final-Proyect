@@ -28,11 +28,11 @@ const deleteCourse = async () => {
     return (
         <>
         <tr>
-            <td className="text-center">{name}</td>
-            <td className="text-center">{category}</td>
-            <td className="text-center">{directedBy}</td>
-            <td className="text-center">{displayed}</td>
-            <td className="text-center">{price}</td>
+            <td className="text-center dataC">{name}</td>
+            <td className="text-center dataC">{category}</td>
+            <td className="text-center dataC">{directedBy}</td>
+            <td className="text-center dataC">{displayed}</td>
+            <td className="text-center dataC">{price}</td>
             <td>
             <Button type="button" className="actionBtn mr-2" onClick={()=>redirectToEditCourse()}> <AiTwotoneEdit  /> Editar </Button>
             <Button type="button" className="actionBtn" onClick={()=>deleteCourse()}>  <AiFillDelete /> Borrar  </Button>

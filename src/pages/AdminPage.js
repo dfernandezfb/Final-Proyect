@@ -36,12 +36,12 @@ const AdminPage = () => {
         <Table striped bordered hover size="sm">
   <thead>
     <tr>
-      <th className="text-center">Nombre del Curso</th>
-      <th className="text-center">Categoria</th>
-      <th className="text-center">Dirigido por</th>
-      <th className="text-center">Publicado</th>
-      <th className="text-center">Precio</th>
-      <th className="text-center">Acciones</th>
+      <th className="text-center dataC">Nombre del Curso</th>
+      <th className="text-center dataC">Categoria</th>
+      <th className="text-center dataC">Dirigido por</th>
+      <th className="text-center dataC">Publicado</th>
+      <th className="text-center dataC">Precio</th>
+      <th className="text-center dataC">Acciones</th>
     </tr>
   </thead>
   <tbody className="bodyEdit">

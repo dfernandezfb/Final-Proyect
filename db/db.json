@@ -1,19 +1,19 @@
 {
   "courses": [
-    {
-      "id": 1,
-      "category": "Desarrollo e ingeniería",
-      "directedBy": "Luis Cazzullo",
-      "description": "Aprende a desarrollar aplicaciones web, móviles y de escritorio con React.js. La librería JavaScript más popular en el mercado",
-      "displayed": true,
-      "price": 1900,
-      "name": "Fronted con React.js",
-      "DirectedBy": "Luis Cazzullo"
-    },
+    { 
+    "id": 1,
+    "category": "Dessarrollo e ingeniería s",
+    "directedBy": "Luis Cazzullo",
+    "description": "Ruby on Rails es una tecnología que le permite a los desarrolladores crear aplicaciones web de forma rápida y efectiva.",
+    "displayed": false,
+    "price": "1900",
+    "name": "Desarrollo Web Frontend con React.js",
+    "DirectedBy": ""
+  },
     {
       "id": 2,
-      "category": "Dessarrollo e ingeniería ",
-      "directedBy": "",
+      "category": "Dessarrollo e ingeniería s",
+      "directedBy": "fgfgfg",
       "description": "Ruby on Rails es una tecnología que le permite a los desarrolladores crear aplicaciones web de forma rápida y efectiva.",
       "displayed": false,
       "price": "1900",
