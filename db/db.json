@@ -137,5 +137,51 @@
       "displayed": false,
       "name": "Escuela de Startup"
     }
-  ]
-}
+  ],
+  "favorites":[
+    {
+      "id": 1,
+      "category": "Html and CSS",
+      "directedBy": "A",
+      "description": "Description A",
+      "price": 1900,
+      "displayed": false,
+      "name": "Escuela de Html and Css"
+    },
+    {
+      "id": 2,
+      "category": "JavaScript",
+      "directedBy": "B",
+      "description": "Description B",
+      "price": 2000,
+      "displayed": false,
+      "name": "Escuela de JavaScript"
+    },
+    {
+      "id": 3,
+      "category": "React",
+      "directedBy": "C",
+      "description": "Description C",
+      "price": 2100,
+      "displayed": false,
+      "name": "Escuela de React"
+    },
+    {
+      "id": 4,
+      "category": "Angular",
+      "directedBy": "D",
+      "description": "Description D",
+      "price": 2200,
+      "displayed": false,
+      "name": "Escuela de Angular"
+    },
+    {
+      "id": 5,
+      "category": "NodeJs",
+      "directedBy": "E",
+      "description": "Description E",
+      "price": 2300,
+      "displayed": false,
+      "name": "Escuela de NodeJs"
+    }
+  ]}
