@@ -1,4 +1,4 @@
-import '../styled/landing.css';
+import '../styles/landing.css';
 import FormLogin from '../components/FormLogin/FormLogin';
 
 
@@ -9,7 +9,7 @@ const LandingPage = () => {
                 <div className="background-landing cover-background"></div>
                 <div className="cover-shadow"></div>
                 <div className="container cover-content">
-                    <div className="row">
+                    <div className="row textColorLanding">
                         <div className="square col-sm-12 col-lg-5">
                             <div>
                                 <h3>Cursos a<span className="text-danger">K</span>ademy</h3>

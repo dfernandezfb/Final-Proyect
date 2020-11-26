@@ -1,8 +1,10 @@
 import {useState} from 'react';
+import clientAxios from '../config/Axios'
 import {useHistory} from 'react-router-dom';
 import { Button, Modal} from 'react-bootstrap';
 //CSS
 import Courses from '../components/Modals/Courses.css';
+import {AiTwotoneEdit, AiFillDelete} from 'react-icons/ai';
 
 
 const Course = ({course}) => {
@@ -11,7 +13,17 @@ const Course = ({course}) => {
  const history= useHistory();
  /* console.log(history); */
 const redirectToEditCourse= () => {
-history.push(`/courses/editar/${id}`)}  
+history.push(`/courses/editar/${id}`)} 
+
+
+const deleteCourse = async () => {
+    if (window.confirm('esta seguro que desea eliminar este curso?')) {
+        await clientAxios.delete(`/courses/${id}`);
+        history.push('/');
+    }  else {
+        console.log('no se pudo eliminar el curso')
+    }
+}
 
     return (
         <>
@@ -22,8 +34,8 @@ history.push(`/courses/editar/${id}`)}
             <td className="text-center">{displayed}</td>
             <td className="text-center">{price}</td>
             <td>
-            <Button type="button" className="actionBtn mr-2" onClick={()=>redirectToEditCourse()}> Editar </Button>
-            <Button type="button" className="actionBtn">  Eliminar </Button>
+            <Button type="button" className="actionBtn mr-2" onClick={()=>redirectToEditCourse()}> <AiTwotoneEdit  /> Editar </Button>
+            <Button type="button" className="actionBtn" onClick={()=>deleteCourse()}>  <AiFillDelete /> Borrar  </Button>
             </td>
         </tr>
     </>
