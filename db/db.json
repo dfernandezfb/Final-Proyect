@@ -1,24 +1,23 @@
 {
   "courses": [
-    { 
-    "id": 1,
-    "category": "Dessarrollo e ingeniería s",
-    "directedBy": "Luis Cazzullo",
-    "description": "Ruby on Rails es una tecnología que le permite a los desarrolladores crear aplicaciones web de forma rápida y efectiva.",
-    "displayed": false,
-    "price": "1900",
-    "name": "Desarrollo Web Frontend con React.js",
-    "DirectedBy": ""
-  },
+    {
+      "id": 1,
+      "category": "Dessarrollo e ingeniería",
+      "directedBy": "Luis Cazzullo",
+      "description": "Ruby on Rails es una tecnología que le permite a los desarrolladores crear aplicaciones web de forma rápida y efectiva.",
+      "displayed": false,
+      "image": "https://i1.wp.com/aprendergratis.es/wp-content/uploads/2018/11/udemy-cursos-gratis.png?resize=1200%2C630&ssl=1" ,
+      "price": "1900",
+      "name": "Desarrollo Web Frontend con React.js"
+    },
     {
       "id": 2,
-      "category": "Dessarrollo e ingeniería s",
+      "category": "Dessarrollo e ingeniería",
       "directedBy": "fgfgfg",
       "description": "Ruby on Rails es una tecnología que le permite a los desarrolladores crear aplicaciones web de forma rápida y efectiva.",
       "displayed": false,
       "price": "1900",
-      "name": "Desarrollo Web Backend con Ruby on Rails",
-      "DirectedBy": ""
+      "name": "Desarrollo Web Backend con Ruby on Rails"
     },
     {
       "id": 3,
