@@ -5,15 +5,14 @@ import {FaFacebookF, FaTwitter, FaGooglePlusG, FaLinkedinIn, FaInstagram, FaHome
 const Footer = () => {
     return(
         <>
-            <div className="page-footer">
+            <div className="page-footer bg-color4">
                 <div>
-                    <div className="background-footer-1">
+                    <div className="bg-color3">
                         <div className="container">
                             <div className="row py-3 d-flex align-items-center">
                                 <div className="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
                                     <h5 className="mb-0 text-white">Get connected with us on social networks!</h5>
                                 </div>
-
                                 <div className="col-md-6 col-lg-7 text-center text-md-right">
                                     <a className="fb-ic">
                                         <FaFacebookF color="danger" className="icoSocials"/>

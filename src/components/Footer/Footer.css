@@ -1,11 +1,7 @@
 .page-footer{
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #002147;
-}
-.background-footer-1{
-    background-color: #187795;
 }
 .footer-copyright{
     background-color: #021b37;

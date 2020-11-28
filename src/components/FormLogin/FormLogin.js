@@ -1,4 +1,5 @@
 import {Form, Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 
 const FormLogin = () => {
@@ -23,7 +24,8 @@ const FormLogin = () => {
                 <Button className="col-12" variant="primary" type="submit">
                     Submit
                 </Button>
-                <a className="m-5" href="#">¿Have you forgotten the password?</a>
+                <a className="m-5" href="#"></a>
+                <Link to="/recoverpassword">¿Have you forgotten the password?</Link>
             </Form>
         </>
     );
