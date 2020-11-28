@@ -1,6 +1,6 @@
 import '../styles/landing.css';
 import FormLogin from '../components/FormLogin/FormLogin';
-
+import Footer from '../components/Footer/Footer'
 
 const LandingPage = () => {
     return(
@@ -13,7 +13,8 @@ const LandingPage = () => {
                         <div className="square col-sm-12 col-lg-5 text-white">
                             <div>
                                 <h3>Cursos a<span className="text-danger">K</span>ademy</h3>
-                                <p>Te invitamos a probar algunos de los muchos cursos que ofrece esta plataforma de aprendizaje.</p>                                <p>Los cursos que ofrecemos de programacion son el futuro, incrementa tus ingresos de forma inmediata al terminar uno de nuestros cursos, no te lo pierdas!</p>
+                                <p>Te invitamos a probar algunos de los muchos cursos que ofrece esta plataforma de aprendizaje.</p>
+                                <p>Los cursos que ofrecemos de programacion son el futuro, incrementa tus ingresos de forma inmediata al terminar uno de nuestros cursos, no te lo pierdas!</p>
                             </div>
                         </div>
                         <div className="col-1 p-0"></div>
@@ -22,7 +23,9 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </div>
+                <Footer/>
             </div>
+            
         </>
     );
 }

@@ -1,6 +1,7 @@
 import { Dropdown } from 'react-bootstrap'
 import icon from '../images/iconFavorite.png'
 import '../styled/favorite.css';
+import Footer from "../components/Footer/Footer"
 
 const Favorite = () => {
     return(
@@ -25,6 +26,7 @@ const Favorite = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }

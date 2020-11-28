@@ -6,6 +6,8 @@ import EditCourse from './components/Modals/EditCourse.js';
 import AdminPage from "./pages/AdminPage";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home"
+import FavoritePage from "./pages/FavoritePage"
+import RecoverPasswordPage from "./pages/RecoverPasswordPage"
 //Routes
 import PrivateRoute from "./routes/PrivateRoute";
 //Context
@@ -14,18 +16,16 @@ import FunctionModalsProvider from "./context/FunctionModals";
 
 function App() {
   return (
-
+    <>
     <Router>
-      <Switch>
-        <AdminpageProvider>
-          <FunctionModalsProvider>
-            <Route exact path="/" component={LandingPage} />
-            <Route exact path="/courses/editar/:idC" component={EditCourse} />
-            <Route exact path="/adminpage" component={AdminPage} />
-            <Route exact path="/home" component={Home} />
-          </FunctionModalsProvider>
-        </AdminpageProvider>
-      </Switch>
+     <Switch>
+       <Route exact path="/"  component={LandingPage}/> 
+       <Route exact path="/courses/editar/:idC" component={EditCourse} />
+       <Route exact path="/adminpage" component={AdminPage}/>
+       <Route exact path="/favorites" component={FavoritePage} />
+       <Route exact path="/home" component={Home} />
+       <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
+     </Switch>
     </Router>
 
   );
