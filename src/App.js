@@ -1,5 +1,5 @@
 //Dependencies
-import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 //Components
 import EditCourse from './components/Modals/EditCourse.js';
 //Pages
@@ -9,11 +9,13 @@ import Home from "./pages/Home"
 import FavoritePage from "./pages/FavoritePage"
 import RecoverPasswordPage from "./pages/RecoverPasswordPage"
 //Routes
-import PrivateRoute from "./routes/PrivateRoute"
+import PrivateRoute from "./routes/PrivateRoute";
+//Context
+import AdminpageProvider from "./context/AdminpageContext"
+import FunctionModalsProvider from "./context/FunctionModals";
 
 function App() {
   return (
-  
     <>
     <Router>
      <Switch>
@@ -25,7 +27,7 @@ function App() {
        <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
      </Switch>
     </Router>
-  </>
+
   );
 }
 
