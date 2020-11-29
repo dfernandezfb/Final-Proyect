@@ -23,7 +23,7 @@ function App() {
             <FunctionModalsProvider>
               <Route exact path="/" component={LandingPage} />
               <Route exact path="/adminpage" component={AdminPage} />
-              <Route exact path="/courses/editar/:idC" component={EditCourse} />
+              <Route exact path="/courses/editar/:idCourse" component={EditCourse} />
               <Route exact path="/courses/detail/:id" component={CourseDetail} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/recoverpassword" component={RecoverPasswordPage} />

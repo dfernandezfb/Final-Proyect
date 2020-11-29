@@ -15,7 +15,7 @@ const [course, setCourse]= useState({
     price:''
   })
 const {category, directedBy, name, displayed,price} = course;
-const idCourse= match.params.idC;
+const idCourse= match.params.idCourse;
 const history = useHistory();
 
 useEffect(()=> {

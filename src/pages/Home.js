@@ -1,11 +1,12 @@
-
+//Dependencies
 import { useState, useEffect, useContext } from 'react';
-import { Card, Button } from 'react-bootstrap';
 import { AdminpageContext } from '../context/AdminpageContext';
-import "../components/Modals/ModalLogin.css";
+//Components
 import useModalLogin from "../components/Modals/useModalLogin";
 import ModalLogin from '../components/Modals/modalLogin';
 import CourseCard from '../components/Cards/CourseCard';
+//CSS
+import "../components/Modals/ModalLogin.css";
 
 
 const Home = ({ }) => {
@@ -13,7 +14,7 @@ const Home = ({ }) => {
   const { isShowing, toggle } = useModalLogin();
   return (
     <>
-    <div className="homeBody">
+      <div className="homeBody">
       <div className="modalLoginApp">
         <button className="buttonLogin button-default" onClick={toggle}> Log In </button>
         <ModalLogin
