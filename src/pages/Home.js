@@ -9,28 +9,30 @@ import CourseCard from '../components/Cards/CourseCard';
 
 
 const Home = ({ }) => {
-    const { courses, setCourses } = useContext(AdminpageContext);
-    const { isShowing, toggle } = useModalLogin();
-    return (
-        <>
-            <div className="modalLoginApp">
-                <button className="buttonLogin button-default" onClick={toggle}> Log In </button>
-                <ModalLogin
-                    isShowing={isShowing}
-                    hide={toggle}
-                />
-            </div>
-            <Card>
-            {
-            courses.length === 0 ? 'No hay cursos disponibles' : (
-              courses.map(courseCard => (
-                <CourseCard key={courseCard.id} courseCard={courseCard} />
-              ))
+  const { courses, setCourses } = useContext(AdminpageContext);
+  const { isShowing, toggle } = useModalLogin();
+  return (
+    <>
+    <div className="homeBody">
+      <div className="modalLoginApp">
+        <button className="buttonLogin button-default" onClick={toggle}> Log In </button>
+        <ModalLogin
+          isShowing={isShowing}
+          hide={toggle}
+          />
+      </div>
+      <div className="row">
+        {
+          courses.length === 0 ? 'No hay cursos disponibles' : (
+            courses.map(courseCard => (
+              <CourseCard key={courseCard.id} courseCard={courseCard} />
+            ))
             )
-          } 
-            </Card>
-        </>
+          }
+      </div>
+    </div>
+    </>
 
-    );
+  );
 };
 export default Home;
