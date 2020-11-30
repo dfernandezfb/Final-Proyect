@@ -32,7 +32,7 @@ const ModalLogin = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
     <Form.Control type="password" placeholder="Password" />
   </Form.Group>
   <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
+    <Form.Check type="checkbox" label="Remember account" />
   </Form.Group>
   <Button className="buttonSubmitLogin" type="submit">
     Submit

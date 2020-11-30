@@ -1,21 +1,17 @@
-body{
-    background-color: black;
-}
 .page-footer{
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #002147;
 }
-.background-footer-1{
-    background-color: #187795;
+.footer-copyright{
+    background-color: #021b37;
 }
 a:link, a:visited, a:active {
     text-decoration:none;
     color: #187795;
 }
 a:hover{
-    color: #18a7d3
+    color: #18a7d3;
 }
 .icoSocials {
     margin-right: 20px;
@@ -23,10 +19,18 @@ a:hover{
     font-size: 175%;
     color: white;
 }
+.icoContact{
+    margin-right: 10px;
+    font-size: larger;
+    font-size: 125%;
+}
 .deep-purple{
     background-color: #187795;
     width: 60px;
 }
-p{
+.p-footer{
+    color:white;
+    text-align: left;
     margin-bottom: 10px;
+    margin-left: 0px;
 }
