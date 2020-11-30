@@ -30,17 +30,16 @@
     width: 12.5%;
     padding: 5px 0px;
     text-align: center;
-    transition: background-color 0s ease;
+    transition: all .2s ease;
 }
 
 .navbar-link-claro:hover
 {
     padding:0px;
     text-decoration: none;
-    background-color:#8fe388;
-    color:#002147;
+    background-color:#002147;
+    color:#fbf9ff;
     border-radius: 1rem;
     font-size: x-large;
-    transition: font-size 2s ease;
-    transition: background-color 1s ease;
+    transform: scale3d(1.1);
 }

@@ -4,7 +4,8 @@ import Navbar from 'react-bootstrap/Navbar'
 import './Header.css'
 import '../../styles/colors-palette.css'
 import {Container,Col, Row } from 'react-bootstrap'
-import logo from "./../../images/logorecortadoclaro.png"
+import logoclaro from "./../../images/logorecortadoclaro.png"
+import logooscuro from "./../../images/logorecortado.png"
 import SearchBar from '../SearchBar/SearchBar'
 import UserMenu from '../UserMenu/UserMenu'
 const Header = ({dayHour}) => {
@@ -12,11 +13,13 @@ const Header = ({dayHour}) => {
     if(dayHour>=7 && dayHour<19)
     {
         var dayClassContainer= 'bg-color1 navbar-container';
-        var dayClassLink= 'navbar-link-claro color2';
+        var dayClassLink= 'navbar-link-claro color4';
+        var logo= logooscuro;
     }else
     {
         var dayClassContainer= 'bg-color4 navbar-container';
         var dayClassLink= 'navbar-link-oscuro color2';
+        var logo= logoclaro;
     }
 return(
         <>  
