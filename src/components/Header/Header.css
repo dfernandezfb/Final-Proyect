@@ -1,0 +1,46 @@
+.navbar-container
+{
+    position:sticky;
+    top:0;
+    z-index:500;
+}
+.navbar-link-oscuro
+{
+    font-size: large;
+    width: 12.5%;
+    padding: 5px 0px;
+    text-align: center;
+    transition: all .2s ease;
+}
+
+.navbar-link-oscuro:hover
+{
+    padding:0px;
+    text-decoration: none;
+    background-color:#8fe388;
+    color:#002147;
+    border-radius: 1rem;
+    font-size: x-large;
+    transform: scale3d(1.1);
+}
+
+.navbar-link-claro
+{
+    font-size: large;
+    width: 12.5%;
+    padding: 5px 0px;
+    text-align: center;
+    transition: background-color 0s ease;
+}
+
+.navbar-link-claro:hover
+{
+    padding:0px;
+    text-decoration: none;
+    background-color:#8fe388;
+    color:#002147;
+    border-radius: 1rem;
+    font-size: x-large;
+    transition: font-size 2s ease;
+    transition: background-color 1s ease;
+}
