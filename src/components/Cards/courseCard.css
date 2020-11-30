@@ -1,7 +1,78 @@
 .courseCard {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    margin: auto;
-    
+  margin: 20px; 
+  background: #FBF9FF;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
 }
+.courseCard:hover {
+	box-shadow: 5px 5px 20px  #040F0F;
+  transform: translateY(-4%);
+}
+.courseCard::before{
+  content: '' ;
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #8FE388;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.courseCard:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.courseImage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.courseCard:hover .courseImage {
+  max-width: 80%;
+ text-align: center;
+
+}
+.infoCard {
+  position: relative;
+  letter-spacing: 1px;
+}
+.priceCourse {
+  font-size: auto;
+  color: #040F0F;
+}
+.infoBtn{
+  font-size: 1.1em;
+  border-radius: 5px;
+  margin: 20px;
+  color: #040F0F;
+  background: transparent;
+  border: 1px solid #187795;
+}
+.infoBtn:hover {
+  background: #002147;
+  transition: ease all 0.5s;
+}
+.favBtn {
+  font-size: 1.5em;
+  border-radius: 40px;
+  color: #040F0F;
+  background: transparent;
+  border: 1px solid slategrey;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+.favBtn:hover {
+background: #002147;
+}
+.courseCard:hover .favBtn {
+  opacity: 1;
+}
+

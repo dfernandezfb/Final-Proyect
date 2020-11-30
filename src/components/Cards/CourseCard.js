@@ -1,30 +1,37 @@
-
+import { useHistory } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
-import { AiFillBulb } from 'react-icons/ai';
+import { AiFillBulb, AiOutlineHeart } from 'react-icons/ai';
 //CSS
 import courseCard from '../Cards/courseCard.css'
+
 const CourseCard = ({ courseCard }) => {
+    const { id, category, directedBy, name, description, image, price } = courseCard;
 
-    const { category, directedBy, name, description, image, price } = courseCard;
+    const history = useHistory();
+    const redirectToIndividualSuscriptions = () => {
+        history.push(`/courses/detail/${id}`)
+    }
+
     return (
-        <div className="courseCard">
-            <div className=" ">
-                <Card style={{ width: '18em'}}>
-                    <Card.Img src={image} />
-                    <Card.Body>
-                        <Card.Title>{name}</Card.Title>
-                        <Card.Text>
-                            {description}
-                            <p> <b>Categoria :</b>{category}</p>
-                            <p> <b>Dictado por :</b> {directedBy}</p>
-                            <p> <b>Precio :</b>{price}</p>
-                        </Card.Text>
-                        <Button variant="primary"> <AiFillBulb /> Mas información </Button>
-                    </Card.Body>
-                </Card>
-            </div>
-        </div>
+        <div >
+            <Card className="courseCard" style={{ width: '18rem', height: '36rem' }}>
+                <Card.Img className="courseImage" src={image} />
+                <Card.Body >
+                    <Card.Title className="infoCard" >{name}</Card.Title>
+                    <Card.Text className="infoCard">
+                        {description}
+                        <p> <b>Categoria :</b>{category}</p>
+                        <p> <b>Dictado por :</b> {directedBy}</p>
+                        <p className="priceCourse"> <b>Precio :</b>${price}</p>
+                    </Card.Text>
+                </Card.Body>
+                <div>
 
+                <Button className="infoBtn" onClick={() => redirectToIndividualSuscriptions()}> <AiFillBulb /> Mas información </Button>
+                <Button className="favBtn"> <AiOutlineHeart />  </Button>
+                </div>
+            </Card>
+        </div>
     )
 }
 

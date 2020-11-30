@@ -50,7 +50,7 @@ const Course = ({ course }) => {
                     <Modal.Title>¿Estas Seguro que deseas eliminar de forma permanente este curso? </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <h4> Puede destiladar la opción "Publicado" y el curso no se mostrara en su pagina principal</h4>
+                    <p> Puede destiladar la opción "Publicado" y el curso no se mostrara en su pagina principal</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={handleClose}> Cancelar </Button>
