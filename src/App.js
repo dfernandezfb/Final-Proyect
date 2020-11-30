@@ -1,7 +1,9 @@
 //Dependencies
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //Components
 import EditCourse from './components/Modals/EditCourse.js';
+import Header from './components/Header/Header'
+// import Footer from './components/Footer/Footer'
 //Pages
 import AdminPage from "./pages/AdminPage";
 import LandingPage from "./pages/LandingPage";
@@ -16,9 +18,11 @@ import AdminpageProvider from "./context/AdminpageContext"
 import FunctionModalsProvider from "./context/FunctionModals";
 
 function App() {
+  const dayHour = new Date().getHours();
   return (
       <Router>
         <Switch>
+        <Header dayHour={dayHour}/>
           <AdminpageProvider>
             <FunctionModalsProvider>
               <Route exact path="/" component={LandingPage} />

@@ -1,0 +1,38 @@
+#searchbar-container{
+    margin:auto;
+    padding-top: 15px;
+    text-align:center;
+  }
+  #searchbar-form{
+    display:inline;
+    font-size:1em;
+    border-radius: 8em;
+    padding:0.3em;
+    background:#8fe388;
+  }
+  #searchbar{
+    transition:all 0.2s ease-out;
+    width:1px;
+    border-radius:0;
+    box-shadow:none;
+    outline: none;
+    padding:0;
+    margin:0;
+    border:0;
+    background-color:transparent ;
+    opacity:0;
+}
+#searchbar:focus{
+    width:20em;
+    opacity:1;
+}
+#searchbar-form:hover, label{
+    cursor: pointer;
+}
+label{
+    padding-left: 1px;
+    display:inline-block;
+    margin-top:0.3em;
+    left:0.1em;
+    color:#002147;
+  }
