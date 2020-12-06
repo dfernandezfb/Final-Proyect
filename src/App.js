@@ -20,7 +20,9 @@ import FunctionModalsProvider from "./context/FunctionModals";
 function App() {
   const dayHour = new Date().getHours();
   return (
-      <Router>
+  
+    <>
+    <Router>
         <Switch>
         <Header dayHour={dayHour}/>
           <AdminpageProvider>
@@ -36,6 +38,7 @@ function App() {
           </AdminpageProvider>
         </Switch>
       </Router>
+  </>
   );
 }
 

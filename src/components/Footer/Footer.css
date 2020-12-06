@@ -6,13 +6,6 @@
 .footer-copyright{
     background-color: #021b37;
 }
-a:link, a:visited, a:active {
-    text-decoration:none;
-    color: #187795;
-}
-a:hover{
-    color: #18a7d3;
-}
 .icoSocials {
     margin-right: 20px;
     font-size: larger;
