@@ -1,4 +1,3 @@
-import Footer from '../components/Footer/Footer'
 import { Form } from 'react-bootstrap'
 import "../styles/colors-palette.css"
 import ModalRecoverPassword from '../components/Modals/ModalRecoverPassword'
@@ -17,11 +16,10 @@ const RecoverPasswordPage = () => {
                             <Form.Label><h5 className="text-white">Email address</h5></Form.Label>
                             <Form.Control size="lg" type="email" placeholder="Enter email" />
                             <Form.Text className="text-white">
-                                For example: example@email.com.
+                                For example: akademy@akademy.com
                             </Form.Text>
                             <ModalRecoverPassword/>
                         </Form>
-                        <Footer/>
                     </div>
                 </div>
             </div>
