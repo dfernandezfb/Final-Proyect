@@ -20,21 +20,6 @@ import FunctionModalsProvider from "./context/FunctionModals";
 function App() {
   const dayHour = new Date().getHours();
   return (
-<<<<<<< HEAD
-  
-    <>
-    <Router>
-      <Switch>
-        <Route exact path="/"  component={LandingPage}/> 
-        <Route exact path="/courses/editar/:idC" component={EditCourse} />
-        <Route exact path="/adminpage" component={AdminPage}/>
-        <Route exact path="/favorites" component={FavoritePage} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
-      </Switch>
-    </Router>
-  </>
-=======
       <Router>
         <Switch>
         <Header dayHour={dayHour}/>
@@ -51,7 +36,6 @@ function App() {
           </AdminpageProvider>
         </Switch>
       </Router>
->>>>>>> 01e4f59820b8f6fa1bca4984635b309b6afaa93f
   );
 }
 
