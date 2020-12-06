@@ -16,14 +16,14 @@ function App() {
   
     <>
     <Router>
-     <Switch>
-       <Route exact path="/"  component={LandingPage}/> 
-       <Route exact path="/courses/editar/:idC" component={EditCourse} />
-       <Route exact path="/adminpage" component={AdminPage}/>
-       <Route exact path="/favorites" component={FavoritePage} />
-       <Route exact path="/home" component={Home} />
-       <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
-     </Switch>
+      <Switch>
+        <Route exact path="/"  component={LandingPage}/> 
+        <Route exact path="/courses/editar/:idC" component={EditCourse} />
+        <Route exact path="/adminpage" component={AdminPage}/>
+        <Route exact path="/favorites" component={FavoritePage} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
+      </Switch>
     </Router>
   </>
   );
