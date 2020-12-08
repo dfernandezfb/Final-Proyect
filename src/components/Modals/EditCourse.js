@@ -4,7 +4,7 @@ import {Form} from 'react-bootstrap';
 import clientAxios from '../../config/Axios';
 import {useHistory} from 'react-router-dom';
 //css
-import Courses  from '../Modals/Courses.css';
+import '../Modals/Courses.css';
 
 const EditCourse = ({match}) => {
 const [course, setCourse]= useState({
@@ -30,7 +30,7 @@ useEffect(()=> {
   getCoursesById();
 },[]);
 
-const handleOnChange =e => {
+const handleOnChange = e => {
   setCourse({
     ...course,
     [e.target.name]: e.target.value

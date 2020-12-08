@@ -4,7 +4,7 @@ import clientAxios from '../config/Axios'
 import { useHistory } from 'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
 //CSS
-import Courses from '../components/Modals/Courses.css';
+import  '../components/Modals/Courses.css';
 import { AiTwotoneEdit, AiFillDelete } from 'react-icons/ai';
 
 

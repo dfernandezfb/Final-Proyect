@@ -9,7 +9,7 @@ import {FunctionModalsContext} from '../context/FunctionModals';
 //Components
 import Course from '../components/Course';
 //CSS- Icons 
-import Courses from '../components/Modals/Courses.css'
+import '../components/Modals/Courses.css';
 
 const AdminPage = () => {
   const handleClose = () => setShow(false);
