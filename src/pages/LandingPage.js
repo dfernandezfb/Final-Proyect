@@ -1,6 +1,5 @@
 import '../styles/landing.css';
 import FormLogin from '../components/FormLogin/FormLogin';
-import Footer from '../components/Footer/Footer'
 
 const LandingPage = () => {
     return(
@@ -23,7 +22,6 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </div>
             
         </>
