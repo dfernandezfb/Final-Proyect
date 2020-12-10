@@ -29,7 +29,6 @@ if(dayHour>=7 && dayHour<19)
 // if(window.location.pathname==="/" || window.location.pathname==="") preguntar como obtener path del dom virtual
 if(!userLogged)
 {
-    console.log("estoy en el landing")
     return(
     <>    
         <Container fluid className={dayClassContainer}>
@@ -47,7 +46,7 @@ if(!userLogged)
                     </Navbar>
                 </Col>
                 <Col md={6} className="container-login-button">
-                    <button className="login-button color4 bg-color2"> Login </button>
+                    <button className="login-button color1 bg-color4"> Login </button>
                 </Col>
             </Row>
         </Container>
