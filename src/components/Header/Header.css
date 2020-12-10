@@ -43,3 +43,16 @@
     font-size: x-large;
     transform: scale3d(1.1);
 }
+.container-login-button
+{
+    display:flex;
+    flex-direction: row-reverse;
+}
+.login-button
+{
+    height: 40px;
+    margin: 13px 35px 20px 0;
+    border-radius: .5rem;
+    font-weight: bold;
+    padding: 0px 10px;
+}

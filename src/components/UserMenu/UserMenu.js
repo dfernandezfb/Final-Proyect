@@ -1,37 +1,61 @@
 import {FaBell,FaHeart} from 'react-icons/fa'
 import './UserMenu.css'
 import {Link} from 'react-router-dom'
-import { useEffect } from 'react'
+import Dropdown from './../Dropdown/Dropdown'
+import { useState } from 'react'
 
-const UserMenu = ({userName, admin}) =>
+const UserMenu = ({userNameExample, admin, dayHour}) =>
 {
-    const initials = "diego fernandez"
-    admin=false;
-    const firstInitial= initials.substr(0,1).toUpperCase();
-    // useEffect
-    for(let i=1;i<initials.length;i++)
+    let color="";
+    let tema="";
+    // const [color,setColor]=useState('');
+    // const [tema,setTema]=useState('');
+    if(dayHour>=7 && dayHour<19)
+    {  
+        color='color1';
+        tema='claro';
+        // setColor('color1');
+        // setTema('claro');
+    }else
     {
-        let initial= initials.substr((i-1),i);
-        console.log(initial);
-        if(initial==="")
-        {
-            var secondInitial = initials.substr(i,i+1);
-        }
+        color='color4';
+        tema='oscuro';
+        // setColor('color4');
+        // setTema('oscuro');
     }
+    const userName = "diego fernandez";
+    const arrayName=userName.split(" ");
+    const firstInitial= arrayName[0].substr(0,1).toUpperCase();
+    const secInitialPos=arrayName.length -1
+    const secondInitial = arrayName[secInitialPos].substr(0,1).toUpperCase();
     return(
         <div className="usermenu-container"> {/*ARMAR EL COMPONENTE DROPDOWN CON ESTO*/}
             <div className="initials-container">
-                <div className="usermenu-initials color4">
+                <div className={`usermenu-initials-${tema} ${color}`}>
                 {firstInitial}{secondInitial}
                 </div>
-                <div className="initials-content">
-                    <Link to="" className="initials-link color4">Perfil</Link>
-                    <Link to="" className="initials-link color4">Suscripción</Link>
-                    <Link to="" className="initials-link color4">Cerrar sesión</Link>
+                <div className={`initials-content-${tema}`}>
+                    <Link to="" className={`initials-link-${tema} ${color}`}>Perfil</Link>
+                    <Link to="" className={`initials-link-${tema} ${color}`}>Suscripción</Link>
+                    <Link to="" className={`initials-link-${tema} ${color}`}>Cerrar sesión</Link>
                 </div>
             </div>
-            <FaBell className="color4 usermenu-link" size={25}/>
-            <FaHeart className="color4 usermenu-link" size={25}/>
+            <div className="initials-container">
+                <div>
+                    <FaBell className={`usermenu-link-${tema} ${color}`} size={25}/>
+                </div>
+                <div className={`initials-content-${tema} big-container`}>
+                    No hay notificaciones
+                </div>
+            </div>
+            <div className="initials-container">
+                <div>
+                    <FaHeart className={`usermenu-link-${tema} ${color}`} size={25}/>
+                </div>
+                <div className={`initials-content-${tema} big-container`}>
+                    No hay favoritos
+                </div>
+            </div>
         </div>
     )
 }

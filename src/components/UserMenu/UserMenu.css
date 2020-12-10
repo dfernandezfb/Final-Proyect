@@ -6,7 +6,7 @@
     padding-top: 15px;
     padding-right: 30px;
 }
-.usermenu-link, .usermenu-initials
+.usermenu-link-oscuro, .usermenu-initials-oscuro
 {
     background-color: #8fe388;
     padding:5px;
@@ -14,11 +14,19 @@
     height:30px;
     width: 30px;
 }
-.usermenu-link
+.usermenu-link-claro, .usermenu-initials-claro
+{
+    background-color:#002147;
+    padding:5px;
+    margin: 0px 10px;
+    height:30px;
+    width: 30px;
+}
+.usermenu-link-claro,.usermenu-link-oscuro
 {
     border-radius: .2rem;
 }
-.usermenu-initials
+.usermenu-initials-claro, .usermenu-initials-oscuro
 {
     border-radius: 1rem;
     text-align: center;
@@ -27,13 +35,23 @@
     cursor:pointer;
 }
 
-.initials-content
+.initials-content-claro
+{
+    display: none;
+    position: absolute;
+    background-color:#002147;
+    left:-70px;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: .2rem;
+}
+.initials-content-oscuro
 {
     display: none;
     position: absolute;
     background-color: #8fe388;
-    left:-20px;
-    min-width: 200pxpx;
+    left:-70px;
+    min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: .2rem;
 }
@@ -41,17 +59,28 @@
 {
     position:relative;
 }
-.initials-container:hover .initials-content{
+.initials-container:hover .initials-content-claro,.initials-container:hover .initials-content-oscuro{
     display:block
 }
-.initials-link
+.initials-link-claro,.initials-link-oscuro
 {
     padding: 10px 16px;
     text-decoration: none;
     display: block;
     text-align: center;
 }
-.initials-link:hover{
+.initials-link-claro:hover{
+    background-color: #187795;
+    color: #fbf9ff;
+    text-decoration:none;
+}
+.initials-link-oscuro:hover
+{
     background-color: #7abe73;
     text-decoration:none;
+}
+.big-container
+{
+    min-width:250px;
+    left:-125px;
 }

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //Components
 import EditCourse from './components/Modals/EditCourse.js';
 import Header from './components/Header/Header'
-// import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer'
 //Pages
 import AdminPage from "./pages/AdminPage";
 import LandingPage from "./pages/LandingPage";
@@ -20,11 +20,9 @@ import FunctionModalsProvider from "./context/FunctionModals";
 function App() {
   const dayHour = new Date().getHours();
   return (
-  
-    <>
-    <Router>
-        <Switch>
+      <Router>
         <Header dayHour={dayHour}/>
+        <Switch>
           <AdminpageProvider>
             <FunctionModalsProvider>
               <Route exact path="/" component={LandingPage} />
@@ -37,8 +35,8 @@ function App() {
             </FunctionModalsProvider>
           </AdminpageProvider>
         </Switch>
+        <Footer/>
       </Router>
-  </>
   );
 }
 
