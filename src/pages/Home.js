@@ -5,6 +5,8 @@ import { AdminpageContext } from '../context/AdminpageContext';
 import useModalLogin from "../components/Modals/useModalLogin";
 import ModalLogin from '../components/Modals/modalLogin';
 import CourseCard from '../components/Cards/CourseCard';
+import CardCourse from '../components/Cards/CardCourse';
+
 //CSS
 import "../components/Modals/ModalLogin.css";
 
@@ -15,13 +17,6 @@ const Home = ({ }) => {
   return (
     <>
       <div className="homeBody">
-      <div className="modalLoginApp">
-        <button className="buttonLogin button-default" onClick={toggle}> Log In </button>
-        <ModalLogin
-          isShowing={isShowing}
-          hide={toggle}
-          />
-      </div>
       <div className="row">
         {
           courses.length === 0 ? 'No hay cursos disponibles' : (
@@ -30,6 +25,11 @@ const Home = ({ }) => {
             ))
             )
           }
+      </div>
+      <div className="container">
+        <div className="row d-flex justify-content-center m-5">
+          <CardCourse/>
+        </div>
       </div>
     </div>
     </>

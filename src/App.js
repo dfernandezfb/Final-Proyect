@@ -10,6 +10,7 @@ import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home"
 import FavoritePage from "./pages/FavoritePage"
 import RecoverPasswordPage from "./pages/RecoverPasswordPage"
+import ChangePasswordPage from "./pages/ChangePasswordPage"
 import CourseDetail from './pages/CourseDetail.js';
 //Routes
 import PrivateRoute from "./routes/PrivateRoute";
@@ -31,6 +32,7 @@ function App() {
               <Route exact path="/courses/detail/:id" component={CourseDetail} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
+              <Route exact path="/changepassword" component={ChangePasswordPage} />
               <Route exact path="/favorites" component={FavoritePage} />
             </FunctionModalsProvider>
           </AdminpageProvider>
