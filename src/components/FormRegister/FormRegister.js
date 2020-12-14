@@ -1,17 +1,34 @@
 import { Form, Button , Row , Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-import validationRegister from './validationRegister';
-import useFormRegister from './useFormRegister';
+import { validationRegister } from '../../utils/validations';
+import useForm from '../../hooks/useForm';
+import clientAxios from '../../config/Axios';
 
-const FormRegister = ({ submitForm }) => {
-    const { handleChange, handleSubmit, values, errors } = useFormRegister(
-        submitForm,
-        validationRegister
+const initialValues = {
+    firstName: '',
+    lastName: '',
+    username: '',
+    email: '',
+    password: '',
+    password2: ''
+}
+
+const FormRegister = () => {
+
+    const { handleChange, handleSubmit, values, errors } = useForm(
+        initialValues,
+        validationRegister,
+        register
     );
+
+    async function register() {
+        const response = await clientAxios.post('/api/users', values);
+        console.log(response);
+    }
 
     return(
         <>
-            <Form onSubmit={handleSubmit} noValidate>
+            <Form onSubmit={handleSubmit} noValidate className="mb-3">
                 <h2 className="mb-2">Create an account!</h2>
                 <hr className="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto"></hr>
                 <Row>
@@ -86,7 +103,7 @@ const FormRegister = ({ submitForm }) => {
                     <Form.Check type="checkbox" label="Remember me"/>
                 </Form.Group>
                 <Button className="col-12" variant="primary" type="submit">
-                    Submit
+                    Enviar
                 </Button>
                 <a className="m-5" href="#"></a>
                 <Link to="/recoverpassword">¿Have you forgotten the password?</Link>
