@@ -1,4 +1,4 @@
-export default function validationRegister(values) {
+export function validationRegister(values) {
     let errors = {};
     
     if (!values.firstName.trim()) {

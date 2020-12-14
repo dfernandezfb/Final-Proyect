@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 
-const useFormRegister = (callback, validate) => {
-    const [values, setValues] = useState({
-        firstName: '',
-        lastName: '',
-        username: '',
-        email: '',
-        password: '',
-        password2: ''
-    });
+const useForm = (initialValues, validate, submit) => {
+    const [values, setValues] = useState(initialValues);
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    useEffect(() => {
+        if (Object.keys(errors).length === 0 && isSubmitting) {
+            submit();
+        }
+        setIsSubmitting(false)
+    },
+        [errors]
+    );
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -21,19 +23,12 @@ const useFormRegister = (callback, validate) => {
     };
     const handleSubmit = e => {
         e.preventDefault();
-        setErrors(validate(values));
+        const errorValidate = validate(values);
+        setErrors(errorValidate);
         setIsSubmitting(true);
     };
-
-    useEffect( () => {
-        if (Object.keys(errors).length === 0 && isSubmitting) {
-        callback();
-        }
-    },
-    [errors]
-    );
 
     return { handleChange, handleSubmit, values, errors };
 };
 
-export default useFormRegister;
+export default useForm;

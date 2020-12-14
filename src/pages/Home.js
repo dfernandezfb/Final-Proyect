@@ -5,6 +5,7 @@ import { AdminpageContext } from '../context/AdminpageContext';
 import useModalLogin from "../components/Modals/useModalLogin";
 import ModalLogin from '../components/Modals/modalLogin';
 import CourseCard from '../components/Cards/CourseCard';
+import Slider from '../components/Slider/Slider';
 //CSS
 import "../components/Modals/ModalLogin.css";
 
@@ -14,6 +15,7 @@ const Home = ({ }) => {
   const { isShowing, toggle } = useModalLogin();
   return (
     <>
+      <Slider />
       <div className="homeBody">
       <div className="modalLoginApp">
         <button className="buttonLogin button-default" onClick={toggle}> Log In </button>
