@@ -22,7 +22,7 @@ const FormRegister = () => {
         
     const { register, alert } = useContext(AuthContext);
     
-    async function submitForm() {
+    async function submitForm()  {
         await register(values);
     }
 

@@ -39,13 +39,19 @@ const AdminPage = () => {
   useEffect(()=> {
     getCourses();
   },[]);
+  //Agregar Curso
   
-  const addCourse = async (course)=> {
-    const result = await clientAxios.post('/courses', course);
-    console.log(result);
-    setnewCourse(result.data)
-    getCourses();
+  const addCourse = async ()=> {
+  try {
+    const course = await clientAxios.post('/courses');
+    console.log(course);
+    setnewCourse(course.data)
+  } catch(error) {
+    console.log(error.course)
   }
+  getCourses();
+   }
+  
 
   const handleOnChange = (e) => {
     setnewCourse({
@@ -53,16 +59,16 @@ const AdminPage = () => {
       [e.target.name]: e.target.value
     });
   }
+
   const { name, directedBy, price, displayed } = courses;
 //Crear Curso
   
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     try {
-      await clientAxios.post('/courses', course);
-      getCourses();
+    
     } catch (error) {
-      console.log(error.submit)
+      console.log(error)
     }
   } 
 
@@ -144,7 +150,7 @@ const AdminPage = () => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button type="submit" variant="primary" onClick={handleClose}  >
+          <Button type="submit" variant="primary" onClick={() => addCourse()}  >
             Save Changes
           </Button>
         </Modal.Footer>
