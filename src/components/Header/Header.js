@@ -8,8 +8,10 @@ import logoclaro from "./../../images/logorecortadoclaro.png"
 import logooscuro from "./../../images/logorecortado.png"
 import SearchBar from '../SearchBar/SearchBar'
 import UserMenu from '../UserMenu/UserMenu'
+import ModalLogin from '../Modals/modalLogin'
+import useModalLogin from '../Modals/useModalLogin'
 const Header = ({dayHour, userLogged }) => {
-
+const { isShowing, toggle } = useModalLogin();
 let dayClassContainer='';
 let dayClassLink='';
 let logo='';
@@ -46,7 +48,13 @@ if(!userLogged)
                     </Navbar>
                 </Col>
                 <Col md={6} className="container-login-button">
-                    <button className="login-button color1 bg-color4"> Login </button>
+                <div className="modalLoginApp">
+        <button className="buttonLogin button-default" onClick={toggle}> Log In </button>
+        <ModalLogin
+          isShowing={isShowing}
+          hide={toggle}
+          />
+      </div>
                 </Col>
             </Row>
         </Container>

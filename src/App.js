@@ -21,7 +21,7 @@ function App() {
   const dayHour = new Date().getHours();
   return (
       <Router>
-        <Header dayHour={dayHour}/>
+        <Header dayHour={dayHour} userLogged='true'/>
         <Switch>
           <AdminpageProvider>
             <FunctionModalsProvider>

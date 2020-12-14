@@ -2,6 +2,7 @@ import '../styles/landing.css';
 import { useState } from 'react'
 import FormRegister from '../components/FormRegister/FormRegister';
 import FormRegisterSuccess from '../components/FormRegister/FormRegisterSuccess';
+import Banner from '../components/Banner/Banner'
 
 const LandingPage = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -37,6 +38,7 @@ const LandingPage = () => {
                     </div>
                 </div>
             </div>
+            <Banner/>
         </>
     );
 }
