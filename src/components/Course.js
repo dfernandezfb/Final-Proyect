@@ -20,7 +20,8 @@ const Course = ({ course }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    
+  //Eliminar Curso
     const deleteCourse = async () => {
         if (setShow !== true) {
             await clientAxios.delete(`/courses/${id}`);

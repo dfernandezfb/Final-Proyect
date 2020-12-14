@@ -17,13 +17,13 @@ const Home = ({ }) => {
     <>
       <Slider />
       <div className="homeBody">
-      <div className="modalLoginApp">
+    {/*   <div className="modalLoginApp">
         <button className="buttonLogin button-default" onClick={toggle}> Log In </button>
         <ModalLogin
           isShowing={isShowing}
           hide={toggle}
           />
-      </div>
+      </div> */}
       <div className="row cardsCourse">
         {
           courses.length === 0 ? 'No hay cursos disponibles' : (

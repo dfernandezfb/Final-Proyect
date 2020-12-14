@@ -1,5 +1,5 @@
 //Dependecies
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { AiFillDiff } from 'react-icons/ai';
@@ -17,26 +17,54 @@ const AdminPage = () => {
   const handleShow = () => setShow(true);
   const { show, setShow } = useContext(FunctionModalsContext);
   const { courses, setCourses } = useContext(AdminpageContext);
-
+  const [newCourse, setnewCourse] = useState({
+        name:'',
+        category: '',
+        directedBy: '',
+        image: '',
+        description: '',
+        displayed: false
+  }) 
   
-  const { name, directedBy, price, displayed } = courses;
 
-  const handleOnChange = e => {
-    setCourses({
-      ...courses,
-      [e.target.name]: e.target.value
-    })
+  //funcion  treaer todos
+  const getCourses = async () => {
+    try {
+      const response = await clientAxios.get('/courses');
+      setCourses(response.data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+  useEffect(()=> {
+    getCourses();
+  },[]);
+  
+  const addCourse = async (course)=> {
+    const result = await clientAxios.post('/courses', course);
+    console.log(result);
+    setnewCourse(result.data)
+    getCourses();
   }
 
-  const handleOnSubmit = async e => {
+  const handleOnChange = (e) => {
+    setnewCourse({
+      ...newCourse,
+      [e.target.name]: e.target.value
+    });
+  }
+  const { name, directedBy, price, displayed } = courses;
+//Crear Curso
+  
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
     try {
-      const submit = await clientAxios.post('/courses');
-      console.log(submit);
+      await clientAxios.post('/courses', course);
+      getCourses();
     } catch (error) {
       console.log(error.submit)
     }
-  }
+  } 
 
   
   return (
@@ -78,7 +106,7 @@ const AdminPage = () => {
               <label>Nombre:</label>
               <input type="Text"
                 value={name}
-                /* onChange= {handleOnchange} */
+                 onChange= {handleOnChange} 
                 className="form-control" required ></input>
             </Form.Group>
             <Form.Group>
@@ -95,19 +123,19 @@ const AdminPage = () => {
             <Form.Group>
               <label>Dirigido por:</label>
               <input className="form-control" type="text" value={directedBy}
-               /*  onChange={handleOnchange} */
+                onChange={handleOnChange} 
                 required></input>
             </Form.Group>
             <Form.Group>
               <label>Precio:</label>
               <input className="form-control" type="number" value={price}
-               /*  onChange={handleOnchange} */
+                onChange={handleOnChange} 
                 required></input>
             </Form.Group>
             <Form.Group>
               <label> Destacada: </label>
               <input className="form-control" value={displayed}
-               /*  onChange={handleOnchange} */
+                onChange={handleOnChange} 
                 type="checkbox"></input>
             </Form.Group>
           </Form>
@@ -116,7 +144,7 @@ const AdminPage = () => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose} /* onChange={handleOnChange} */>
+          <Button type="submit" variant="primary" onClick={handleClose}  >
             Save Changes
           </Button>
         </Modal.Footer>
