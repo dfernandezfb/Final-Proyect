@@ -3,12 +3,12 @@
     {
       "id": 1,
       "category": "Dessarrollo e ingeniería",
-      "directedBy": "Luis Cazzullo",
-      "description": "Aprende a desarrollar aplicaciones web, móviles y de escritorio con React.js. La librería JavaScript más popular en el mercado.",
+      "directedBy": "Luis cazullo",
+      "description": "Ruby on Rails es una tecnología que le permite a los desarrolladores crear aplicaciones web de forma rápida y efectiva.",
       "displayed": false,
-      "image": "https://i1.wp.com/aprendergratis.es/wp-content/uploads/2018/11/udemy-cursos-gratis.png?resize=1200%2C630&ssl=1" ,
+      "image": "https://www.udemy.com/staticx/udemy/images/v6/default-meta-image.png",
       "price": "1900",
-      "name": "Frontend con React.js"
+      "name": "Desarrollo Web Backend con Ruby on Rails"
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "directedBy": "",
       "description": "Esta herramienta de software provee un set de funcionalidades preestablecidas que permiten juntar los elementos que requiere un videojuego en su desarrollo.",
       "displayed": false,
-      "image":"",
+      "image": "",
       "price": 1900,
       "name": "Desarrollo de Videojuegos con Unity"
     },
@@ -36,7 +36,7 @@
       "directedBy": "",
       "description": "Aprende la tecnología detrás de los automóviles autónomos, asistentes personales, predicción de enfermedades y más.",
       "displayed": false,
-      "image":" ",
+      "image": " ",
       "price": 1900,
       "name": "Inteligencia Artificial y Machine Learning"
     },
@@ -46,7 +46,7 @@
       "directedBy": "",
       "description": "Crea tu perfil comercial y desarrolla estrategias de ventas con herramientas de marketing para atraer, persuadir y retener a tus clientes.",
       "displayed": false,
-      "image":"",
+      "image": "",
       "price": 1900,
       "name": "Marketing y Ventas"
     },
@@ -56,7 +56,7 @@
       "directedBy": "",
       "description": "Te enseñaremos a crear campañas de publicidad online de alto impacto en redes como Facebook Ads y Google Ads mientras aprendes de optimización y estrategia",
       "displayed": false,
-      "image":"",
+      "image": "",
       "price": 1900,
       "name": "Escuela de Publicidad Digital"
     },
@@ -67,7 +67,7 @@
       "description": "Desde Google Analytics hasta tu base de datos son fuentes de información que te ayudarán a tomar las decisiones correctas en tus campañas de marketing.",
       "price": 1900,
       "displayed": false,
-      "image":"",
+      "image": "",
       "name": "Marketing Basado en Datos"
     },
     {
@@ -77,7 +77,7 @@
       "description": "Aprende a planear y optimizar campañas de Email Marketing, crear contenido personalizado y estructurar emails responsive con Photoshop, HTML y CSS.",
       "price": 1900,
       "displayed": false,
-      "image":"",
+      "image": "",
       "name": "Email Marketing"
     },
     {
@@ -87,7 +87,7 @@
       "description": "Crea tu tienda en línea, aprende técnicas de marketing digital y ofrece tus productos y servicios en el mercado online",
       "price": 1900,
       "displayed": false,
-      "image":"",
+      "image": "",
       "name": "Comercio electrónico o E-commerce"
     },
     {
@@ -97,7 +97,7 @@
       "description": "Las empresas están adaptando nuevos procesos operativos y estratégicos a través de la tecnología para la búsqueda de beneficios y oportunidades globales.",
       "price": 1900,
       "displayed": false,
-      "image":"",
+      "image": "",
       "name": "Transformación Digital"
     },
     {
@@ -107,7 +107,7 @@
       "description": "Gestiona proyectos aprendiendo lo necesario para planearlo y herramientas para ejecutarlo. Ve desde ser un buen líder hasta un experto creando presupuestos.",
       "price": 1900,
       "displayed": false,
-      "image":"",
+      "image": "",
       "name": "Gestion de Proyectos "
     },
     {
@@ -117,7 +117,7 @@
       "description": "La tecnología Blockchain ha llegado para quedarse y las empresas demandan a especialistas en el área. Las criptomonedas son gran ejemplo de su aplicación.",
       "price": 1900,
       "displayed": false,
-      "image":"",
+      "image": "",
       "name": "Blockchain y Criptomonedas"
     },
     {
@@ -127,7 +127,7 @@
       "description": "Aprende inglés desde cero. Consigue oportunidades de trabajo internacionales y duplica tus ingresos al comunicarte efectivamente en inglés.",
       "price": 1900,
       "displayed": false,
-      "image":"",
+      "image": "",
       "name": "Escuela de Inglés"
     },
     {
@@ -137,7 +137,7 @@
       "description": "Aprende a aprender, desarrolla tu creatividad, gestiona tu tiempo y tus emociones. Conviértete en un líder y crea equipos de alto rendimiento",
       "price": 1900,
       "displayed": false,
-      "image":"",
+      "image": "",
       "name": "Escuela de Desarrollo Profesional"
     },
     {
@@ -147,11 +147,11 @@
       "description": "Empieza a crear tu Startup y si ya tienes una acelérala. Aprende a afrontar los desafíos como actual o futuro emprendedor. ¡Crea el próximo unicornio!",
       "price": 1900,
       "displayed": false,
-      "image":"",
+      "image": "",
       "name": "Escuela de Startup"
     }
   ],
-  "favorites":[
+  "favorites": [
     {
       "id": 1,
       "category": "Html and CSS",
@@ -197,4 +197,5 @@
       "displayed": false,
       "name": "Escuela de NodeJs"
     }
-  ]}
+  ]
+}

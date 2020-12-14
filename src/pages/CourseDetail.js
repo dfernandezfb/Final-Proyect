@@ -2,19 +2,22 @@
 import { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import clientAxios from '../config/Axios';
+import axios from 'axios';
 //Icons
 import { AiOutlineYoutube, AiOutlineCloudDownload, AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { FcApproval, FcSmartphoneTablet } from 'react-icons/fc'
 import { CgInfinity } from 'react-icons/cg'
 import {GiStopwatch} from 'react-icons/gi'
 //Css
-import courseDetail from '../styles/courseDetail.css';
-import colorspallete from '../styles/colorspallete.css';
+import  '../styles/courseDetail.css';
+import  '../styles/colorspallete.css';
 
 const CourseDetail = ({ match }) => {
     const [course, setCourse] = useState([]);
+    const [comment, setComment] = useState(null);
     const idCourse = match.params.id;
     const { name, category, description, image, directedBy, price } = course;
+
 
     useEffect(() => {
         const getCoursesById = async () => {
@@ -27,7 +30,18 @@ const CourseDetail = ({ match }) => {
         }
         getCoursesById();
     }, []);
-
+    
+    const URL1 = 'https://jsonplaceholder.typicode.com/comments?postId=1'
+    const getComment = async () => {
+        const comments = await axios.get(URL1);
+        setComment(comments.data[0]);
+    }
+    useEffect( ()=> {
+        getComment();
+    },[])
+   
+  
+    
     return (
         <div className="bg-color1">
             <div className="bodyDetail ">
@@ -40,7 +54,7 @@ const CourseDetail = ({ match }) => {
                 </div>
                 <div className="cardDetail">
                     <Card style={{ width: '18rem', height: 'auto' }}>
-                        <Card.Img className="" src={image} />
+                        <Card.Img className="" src = {image} />
                         <Card.Body>
                             <h1>$ {price} <small> <s> $9500</s></small> </h1>
                             <p>80% de descuento</p>
@@ -83,7 +97,9 @@ const CourseDetail = ({ match }) => {
                 <h1>¿Para quien es este curso?</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quisquam, veniam, fuga perspiciatis quam a blanditiis, ratione ducimus nesciunt adipisci unde delectus quo recusandae. Iusto qui impedit est quisquam optio!</p>
             </div>
+            <Button onClick={getComment}> Ver Opinones sobre este curso</Button>
         </div>
+
 
     )
 }

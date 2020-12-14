@@ -2,10 +2,10 @@
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh; 
+    height: 120vh; 
     width: 100%;
     outline: none;
-    background: #002147;
+    background: linear-gradient(to bottom,#187795,#040F0F);
     background-size: cover;
     font: 1em sans-serif;
 }
@@ -35,9 +35,12 @@
     color: #8FE388;
     transition: 0.5s all ease;
 }
-
+.tableContent{
+    width: 98%;
+    transform: translateX(1%);
+}
 .tableInfo {
-    width: 100%;
+    width: 98%;
     margin: 0 auto;
     height: auto;
     color: silver;

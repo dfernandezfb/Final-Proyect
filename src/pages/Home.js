@@ -24,7 +24,7 @@ const Home = ({ }) => {
           hide={toggle}
           />
       </div>
-      <div className="row">
+      <div className="row cardsCourse">
         {
           courses.length === 0 ? 'No hay cursos disponibles' : (
             courses.map(courseCard => (

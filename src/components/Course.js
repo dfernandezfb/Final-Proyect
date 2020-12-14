@@ -29,7 +29,9 @@ const Course = ({ course }) => {
         } else {
             window.alert('No se pudo eliminar el curso')
         }
+        
     }
+
     return (
         <>
             <tr>

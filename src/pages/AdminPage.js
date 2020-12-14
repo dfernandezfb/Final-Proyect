@@ -4,8 +4,8 @@ import Table from 'react-bootstrap/Table';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { AiFillDiff } from 'react-icons/ai';
 //Context
-import {AdminpageContext} from '../context/AdminpageContext';
-import {FunctionModalsContext} from '../context/FunctionModals';
+import { AdminpageContext } from '../context/AdminpageContext';
+import { FunctionModalsContext } from '../context/FunctionModals';
 //Components
 import Course from '../components/Course';
 //CSS- Icons 
@@ -14,10 +14,10 @@ import '../components/Modals/Courses.css';
 const AdminPage = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const {show, setShow} = useContext (FunctionModalsContext);
-  const {courses, setCourses} = useContext(AdminpageContext);
-  
-  
+  const { show, setShow } = useContext(FunctionModalsContext);
+  const { courses, setCourses } = useContext(AdminpageContext);
+
+
   /* const handleOnSubmit = async e => {
     e.preventDefault();
     try{
@@ -42,7 +42,7 @@ const AdminPage = () => {
         Puede modificarlos o borrarlos. Si desea, puede agregar más actividades académicas con el botón <Button onClick={handleShow} className="createBtn"> <AiFillDiff /> Crear </Button>
         </h3>
       </div>
-      <Table striped bordered hover size="sm">
+      <Table striped bordered hover size="sm" className="tableContent">
         <thead>
           <tr>
             <th className="text-center dataC">Nombre del Curso</th>
@@ -68,39 +68,34 @@ const AdminPage = () => {
           <Modal.Title>Bienvenido. Puede crear un nuevo curso desde este modal</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form  /* onSubmit={handleOnSubmit} */  > 
-          <Form.Group> 
-          <label>Nombre:</label>
-          <input type="Text" /* value= {name} */ className="form-control" required ></input>
-          </Form.Group>
-         <Form.Group>
-            <label>Categoria:</label>
-            <select className="form-control" required>
-            <option value=""> Seleccionar Categoria </option>
-              {
-                courses.map((response, index) => (
-                  <option
-                  key={index}
-                  value={response.category}>
-                  {response.category}
-                  </option>
-                ))
-              }   
-
-            </select>
-          </Form.Group>
-          <Form.Group>
-            <label>Dirigido por:</label>
-            <input className="form-control" type="text" /* value={directedBy} */ required></input>
-          </Form.Group>
-          <Form.Group>
-            <label>Precio:</label>
-            <input className="form-control" type="number" /* value={price}  */required></input>
-          </Form.Group>
-          <Form.Group>
-            <label> Destacada: </label>
-            <input className="form-control" /* value= {displayed} */ type="checkbox"></input>
-          </Form.Group>
+          <Form  /* onSubmit={handleOnSubmit} */  >
+            <Form.Group>
+              <label>Nombre:</label>
+              <input type="Text" /* value= {name} */ className="form-control" required ></input>
+            </Form.Group>
+            <Form.Group>
+              <label>Categoria:</label>
+              <select className="form-control" required>
+                <option value=""> Seleccionar Categoria </option>
+                <option value="1">Desarollo e Ingeniería</option>
+                <option value="2">Marketing</option>
+                <option value="3">Negocios y Emprendiemientos</option>
+                <option value="4">Crecimiento Profesional</option>
+                <option value="5">Startups</option>
+              </select>
+            </Form.Group>
+            <Form.Group>
+              <label>Dirigido por:</label>
+              <input className="form-control" type="text" /* value={directedBy} */ required></input>
+            </Form.Group>
+            <Form.Group>
+              <label>Precio:</label>
+              <input className="form-control" type="number" /* value={price}  */ required></input>
+            </Form.Group>
+            <Form.Group>
+              <label> Destacada: </label>
+              <input className="form-control" /* value= {displayed} */ type="checkbox"></input>
+            </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
