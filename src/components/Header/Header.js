@@ -1,9 +1,9 @@
-import {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import './Header.css'
 import '../../styles/colors-palette.css'
-import {Container,Col, Row } from 'react-bootstrap'
+import { Container, Col, Row } from 'react-bootstrap'
 import logoclaro from "./../../images/logorecortadoclaro.png"
 import logooscuro from "./../../images/logorecortado.png"
 import SearchBar from '../SearchBar/SearchBar'
@@ -16,17 +16,15 @@ let dayClassContainer='';
 let dayClassLink='';
 let logo='';
 
-if(dayHour>=7 && dayHour<19)
-{
-    dayClassContainer= 'bg-color1 navbar-container';
-    dayClassLink= 'navbar-link-claro color4';
-    logo= logooscuro;
-}else
-{
-    dayClassContainer= 'bg-color4 navbar-container';
-    dayClassLink= 'navbar-link-oscuro color2';
-    logo= logoclaro;
-}
+    if (dayHour >= 7 && dayHour < 19) {
+        dayClassContainer = 'bg-color1 navbar-container';
+        dayClassLink = 'navbar-link-claro color4';
+        logo = logooscuro;
+    } else {
+        dayClassContainer = 'bg-color4 navbar-container';
+        dayClassLink = 'navbar-link-oscuro color2';
+        logo = logoclaro;
+    }
 
 // if(window.location.pathname==="/" || window.location.pathname==="") preguntar como obtener path del dom virtual
 if(!userLogged)
