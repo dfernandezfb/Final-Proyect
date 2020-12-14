@@ -1,8 +1,9 @@
 //Dependencies
 import { useState, useEffect } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Form } from 'react-bootstrap';
 import clientAxios from '../config/Axios';
 import axios from 'axios';
+import Comments from '../components/Cards/Comments';
 //Icons
 import { AiOutlineYoutube, AiOutlineCloudDownload, AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { FcApproval, FcSmartphoneTablet } from 'react-icons/fc'
@@ -11,13 +12,16 @@ import {GiStopwatch} from 'react-icons/gi'
 //Css
 import  '../styles/courseDetail.css';
 import  '../styles/colorspallete.css';
+//Logos
+/* import logoclaro from '../images/logorecortadoclaro.png' */
+import logooscuro from '../images/logorecortado.png' 
 
 const CourseDetail = ({ match }) => {
     const [course, setCourse] = useState([]);
-    const [comment, setComment] = useState(null);
+    const [comment, setComment] = useState([]);
     const idCourse = match.params.id;
-    const { name, category, description, image, directedBy, price } = course;
 
+    const { name, category, description, image, directedBy, price } = course;
 
     useEffect(() => {
         const getCoursesById = async () => {
@@ -29,18 +33,22 @@ const CourseDetail = ({ match }) => {
             }
         }
         getCoursesById();
-    }, []);
+    });
+
+    useEffect(()=> {
+       const getComment = async () => { 
+           try {
+               const comments = await axios.get('https://jsonplaceholder.typicode.com/comments?postId=1')
+               setComment(comments.data);
+           } catch(error) {
+               console.log(error)
+           }
+        }
+            getComment(); 
+    },[]);
     
-    const URL1 = 'https://jsonplaceholder.typicode.com/comments?postId=1'
-    const getComment = async () => {
-        const comments = await axios.get(URL1);
-        setComment(comments.data[0]);
-    }
-    useEffect( ()=> {
-        getComment();
-    },[])
-   
-  
+    
+    var logo= logooscuro;
     
     return (
         <div className="bg-color1">
@@ -54,7 +62,7 @@ const CourseDetail = ({ match }) => {
                 </div>
                 <div className="cardDetail">
                     <Card style={{ width: '18rem', height: 'auto' }}>
-                        <Card.Img className="" src = {image} />
+                        <Card.Img className="" src = {logo} />
                         <Card.Body>
                             <h1>$ {price} <small> <s> $9500</s></small> </h1>
                             <p>80% de descuento</p>
@@ -97,7 +105,35 @@ const CourseDetail = ({ match }) => {
                 <h1>¿Para quien es este curso?</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quisquam, veniam, fuga perspiciatis quam a blanditiis, ratione ducimus nesciunt adipisci unde delectus quo recusandae. Iusto qui impedit est quisquam optio!</p>
             </div>
-            <Button onClick={getComment}> Ver Opinones sobre este curso</Button>
+            <div className="opinionCards">
+                <h1>Opiniones sobre este curso</h1>
+                {
+          comment.length === 0 ? 'No hay cursos disponibles' : (
+            comment.map(commentsForm => (
+              <Comments key={commentsForm.id} commentsForm={commentsForm} />
+            ))
+            )
+          }
+            </div>
+          <div className='commentsForm'>
+              <h2 style = {{textAlign: 'center'}}>Añadir un comentario</h2>
+                <Form>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Dirección Email</Form.Label>
+                        <Form.Control type="email" placeholder="Enter email" required />
+                        <Form.Text className="text-muted" required>
+                          Introduzca Su nombre de usuario o email
+    </Form.Text>
+                    </Form.Group>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Comentario</Form.Label>
+                        <Form.Control type="text-area" placeholder="Text" />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Anadir Comentario
+  </Button>
+                </Form>
+            </div>
         </div>
 
 

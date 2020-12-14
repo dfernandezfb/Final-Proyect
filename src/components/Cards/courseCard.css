@@ -76,3 +76,15 @@ background: #002147;
   opacity: 1;
 }
 
+.opinionContainer {
+  width: 78%; 
+  border-radius: 1em;
+  border: 1px solid #040F0F;
+ margin-top: 10px; 
+ color:#040F0F;
+}
+
+
+.infoComments {
+  width: 100%;
+}

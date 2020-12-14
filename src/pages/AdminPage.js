@@ -3,6 +3,7 @@ import { useState, useContext } from 'react';
 import Table from 'react-bootstrap/Table';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { AiFillDiff } from 'react-icons/ai';
+import clientAxios from '../config/Axios';
 //Context
 import { AdminpageContext } from '../context/AdminpageContext';
 import { FunctionModalsContext } from '../context/FunctionModals';
@@ -17,23 +18,27 @@ const AdminPage = () => {
   const { show, setShow } = useContext(FunctionModalsContext);
   const { courses, setCourses } = useContext(AdminpageContext);
 
+  
+  const { name, directedBy, price, displayed } = courses;
 
-  /* const handleOnSubmit = async e => {
+  const handleOnChange = e => {
+    setCourses({
+      ...courses,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleOnSubmit = async e => {
     e.preventDefault();
-    try{
-      const submit = await clientAxios.get('/courses');
+    try {
+      const submit = await clientAxios.post('/courses');
       console.log(submit);
     } catch (error) {
-    console.log(error.submit)
+      console.log(error.submit)
     }
-    }
-    const handleOnChange = e => {
-      setCourses({
-        ...courses,
-        [e.target.name]: e.target.value
-      })
-    }  
- */
+  }
+
+  
   return (
     <div className="bodyEdit">
       <div className="tableInfo">
@@ -68,10 +73,13 @@ const AdminPage = () => {
           <Modal.Title>Bienvenido. Puede crear un nuevo curso desde este modal</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form  /* onSubmit={handleOnSubmit} */  >
+          <Form onSubmit={handleOnSubmit}  >
             <Form.Group>
               <label>Nombre:</label>
-              <input type="Text" /* value= {name} */ className="form-control" required ></input>
+              <input type="Text"
+                value={name}
+                /* onChange= {handleOnchange} */
+                className="form-control" required ></input>
             </Form.Group>
             <Form.Group>
               <label>Categoria:</label>
@@ -86,15 +94,21 @@ const AdminPage = () => {
             </Form.Group>
             <Form.Group>
               <label>Dirigido por:</label>
-              <input className="form-control" type="text" /* value={directedBy} */ required></input>
+              <input className="form-control" type="text" value={directedBy}
+               /*  onChange={handleOnchange} */
+                required></input>
             </Form.Group>
             <Form.Group>
               <label>Precio:</label>
-              <input className="form-control" type="number" /* value={price}  */ required></input>
+              <input className="form-control" type="number" value={price}
+               /*  onChange={handleOnchange} */
+                required></input>
             </Form.Group>
             <Form.Group>
               <label> Destacada: </label>
-              <input className="form-control" /* value= {displayed} */ type="checkbox"></input>
+              <input className="form-control" value={displayed}
+               /*  onChange={handleOnchange} */
+                type="checkbox"></input>
             </Form.Group>
           </Form>
         </Modal.Body>
