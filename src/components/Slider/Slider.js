@@ -57,9 +57,10 @@ const Slider = () => {
 
   useEffect(() => {
     const getFavsImages = async () => {
-      const response = await clientAxios('/api/courses/featured?featured=true');
+      const response = await clientAxios('/courses/featured?featured=true');
       console.log(response);
     }
+    getFavsImages();
   }, [])
 
   return (
