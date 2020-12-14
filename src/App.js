@@ -16,26 +16,36 @@ import PrivateRoute from "./routes/PrivateRoute";
 //Context
 import AdminpageProvider from "./context/AdminpageContext"
 import FunctionModalsProvider from "./context/FunctionModals";
+import AuthState from './context/auth/authState';
+import authToken from './config/token';
+
+const token = localStorage.getItem('token');
+if(token) {
+  authToken(token);
+}
 
 function App() {
   const dayHour = new Date().getHours();
+
   return (
       <Router>
-        <Header dayHour={dayHour}/>
-        <Switch>
-          <AdminpageProvider>
-            <FunctionModalsProvider>
+        <AuthState>
+        <AdminpageProvider>
+          <FunctionModalsProvider>
+            <Header dayHour={dayHour} />
+            <Switch>
               <Route exact path="/" component={LandingPage} />
-              <Route exact path="/adminpage" component={AdminPage} />
-              <Route exact path="/courses/editar/:idCourse" component={EditCourse} />
-              <Route exact path="/courses/detail/:id" component={CourseDetail} />
-              <Route exact path="/home" component={Home} />
+              <PrivateRoute exact path="/adminpage" component={AdminPage} />
+              <PrivateRoute exact path="/courses/editar/:idCourse" component={EditCourse} />
+              <PrivateRoute exact path="/courses/detail/:id" component={CourseDetail} />
+              <PrivateRoute exact path="/home" component={Home} />
               <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
-              <Route exact path="/favorites" component={FavoritePage} />
-            </FunctionModalsProvider>
-          </AdminpageProvider>
-        </Switch>
-        <Footer/>
+              <PrivateRoute exact path="/favorites" component={FavoritePage} />
+            </Switch>
+            <Footer />
+          </FunctionModalsProvider>
+        </AdminpageProvider>
+        </AuthState>
       </Router>
   );
 }
