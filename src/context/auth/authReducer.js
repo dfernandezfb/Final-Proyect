@@ -3,7 +3,10 @@ import {
   ERROR_REGISTER,
   ERROR_TOKEN,
   AUTH_TOKEN,
-  LOGOUT
+  LOGOUT,
+  LOGIN,
+  ERROR_LOGIN,
+  CLEAR_MSG
 } from '../../types'
 
 export default (state, action) => {
@@ -16,6 +19,7 @@ export default (state, action) => {
         isAuth: true,
         loading: false
       }
+    case LOGIN:
     case SUCCESS_REGISTER:
       localStorage.setItem('token', action.payload.token)
       return {
@@ -35,6 +39,18 @@ export default (state, action) => {
         ...state,
         isAuth: false,
         loading: false
+      }
+    case ERROR_LOGIN:
+      return {
+        ...state,
+        isAuth: false,
+        loading: false,
+        alert: action.payload
+      }
+    case CLEAR_MSG:
+      return {
+        ...state,
+        alert: null
       }
     case LOGOUT:
     localStorage.removeItem('token');  

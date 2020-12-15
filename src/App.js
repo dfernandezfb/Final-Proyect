@@ -14,6 +14,7 @@ import CourseDetail from './pages/CourseDetail.js';
 import Error404 from './pages/Error404'
 //Routes
 import PrivateRoute from "./routes/PrivateRoute";
+import AdminRoute from './routes/AdminRoute';
 //Context
 import AdminpageProvider from "./context/AdminpageContext"
 import FunctionModalsProvider from "./context/FunctionModals";

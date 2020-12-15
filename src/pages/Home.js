@@ -1,5 +1,5 @@
 //Dependencies
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { AdminpageContext } from "../context/AdminpageContext";
 //Components
 import CourseCard from '../components/Cards/CourseCard';
@@ -7,37 +7,22 @@ import HeroSlider from '../components/HeroSlider/HeroSlider';
 //CSS
 import "../components/Modals/ModalLogin.css";
 
-const Home = ({ userLogged }) => {
+const Home = () => {
   const { courses, setCourses } = useContext(AdminpageContext);
-  const { isShowing, toggle } = useModalLogin();
-  if (userLogged) {
+
     return (
       <>
         <div className="homeBody">
-          <div className="modalLoginApp">
-            <button className="buttonLogin button-default" onClick={toggle}>
-              {" "}
-              Log In{" "} 
-            </button>
-            <ModalLogin isShowing={isShowing} hide={toggle} />
-          </div>
+          <HeroSlider />
           <div className="row">
             {courses.length === 0
               ? "No hay cursos disponibles"
               : courses.map((courseCard) => (
-                  <CourseCard key={courseCard.id} courseCard={courseCard} />
+                  <CourseCard key={courseCard._id} courseCard={courseCard} />
                 ))}
           </div>
         </div>
       </>
     );
-  } else {
-    return(
-    <>
-      <HeroSlider />
-    </>
-
-  );
-};
 }
 export default Home;

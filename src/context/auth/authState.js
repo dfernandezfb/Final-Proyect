@@ -3,6 +3,7 @@ import AuthContext from './authContext';
 import AuthReducer from './authReducer';
 import clientAxios from '../../config/Axios';
 import authToken from '../../config/token';
+import { useHistory } from 'react-router-dom';
 import {
   SUCCESS_REGISTER,
   ERROR_REGISTER,
@@ -10,10 +11,12 @@ import {
   AUTH_TOKEN,
   LOGOUT,
   LOGIN,
+  ERROR_LOGIN,
+  CLEAR_MSG
 } from '../../types'
 
 const AuthState = ({ children }) => {
-
+  const history = useHistory();
   const initialState = {
     token: localStorage.getItem("token") || null,
     user: null,
@@ -22,6 +25,12 @@ const AuthState = ({ children }) => {
     loading: true
   }
   const [state, dispatch] = useReducer(AuthReducer, initialState);
+
+  const clearAlert = () => {
+    dispatch({
+      type: CLEAR_MSG
+    })
+  }
 
   const register = async user => {
     try {
@@ -35,6 +44,9 @@ const AuthState = ({ children }) => {
         type: ERROR_REGISTER,
         payload: error.response.data.msg
       })
+      setTimeout(() => {
+        clearAlert();
+      }, 2000)
     }
   }
 
@@ -56,6 +68,7 @@ const AuthState = ({ children }) => {
       })
     }
   }
+
   const logout = () =>{
     dispatch({
       type:LOGOUT
@@ -68,6 +81,26 @@ const AuthState = ({ children }) => {
     })
   }
 
+  const login = async data => {
+    try {
+      const response = await clientAxios.post('/auth', data);
+      dispatch({
+        type: LOGIN,
+        payload: response.data
+      })
+      history.push('/home');
+    } catch (error) {
+      dispatch({
+        type: ERROR_LOGIN,
+        payload: error.response.data.msg
+      })
+      setTimeout(() => {
+        clearAlert();
+      }, 2000)
+    }
+  }
+
+
   return (
     <AuthContext.Provider value={{
       token: state.token,
@@ -77,7 +110,8 @@ const AuthState = ({ children }) => {
       loading: state.loading,
       register,
       authUser,
-      logout
+      logout,
+      login
     }}>
       {children}
     </AuthContext.Provider>

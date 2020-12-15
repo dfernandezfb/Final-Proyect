@@ -9,12 +9,12 @@ import logoclaro from "./../../images/logorecortadoclaro.png"
 import logooscuro from "./../../images/logorecortado.png"
 import SearchBar from '../SearchBar/SearchBar'
 import UserMenu from '../UserMenu/UserMenu'
-import useModalLogin from "../Modals/useModalLogin";
-import ModalLogin from '../Modals/modalLogin';
-import "../Modals/ModalLogin.css";
+import LoginForm from '../LoginForm/LoginForm';
+
+
 const Header = ({ dayHour }) => {
-    const {user}=useContext(authContext)
-    const { isShowing, toggle } = useModalLogin();
+    const {user}=useContext(authContext);
+    const [show, setShow] = useState(false);
     let dayClassContainer = '';
     let dayClassLink = '';
     let logo = '';
@@ -35,6 +35,7 @@ const Header = ({ dayHour }) => {
     if (!user) {
         return (
             <>
+                <LoginForm show={show} handleClose={setShow} />
                 <Container fluid className={dayClassContainer}>
                     <Row>
                         <Col md={6}>
@@ -51,12 +52,8 @@ const Header = ({ dayHour }) => {
                         </Col>
                         <Col md={6} className="container-login-button">
                         <div className="modalLoginApp">
-                            <button className={`login-button-${tema}`} onClick={toggle}> Log In </button>
-                            <ModalLogin
-                            isShowing={isShowing}
-                            hide={toggle}
-                            />
-                            </div>
+                            <button className={`login-button-${tema}`} onClick={() => setShow(true)}> Log In </button>
+                        </div>
                         </Col>
                     </Row>
                 </Container>
