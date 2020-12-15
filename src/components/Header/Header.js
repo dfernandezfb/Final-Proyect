@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import authContext from '../../context/auth/authContext'
 import { Link } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import './Header.css'
@@ -8,24 +9,30 @@ import logoclaro from "./../../images/logorecortadoclaro.png"
 import logooscuro from "./../../images/logorecortado.png"
 import SearchBar from '../SearchBar/SearchBar'
 import UserMenu from '../UserMenu/UserMenu'
-const Header = ({ dayHour, userLogged }) => {
-
+import useModalLogin from "../Modals/useModalLogin";
+import ModalLogin from '../Modals/modalLogin';
+import "../Modals/ModalLogin.css";
+const Header = ({ dayHour }) => {
+    const {user}=useContext(authContext)
+    const { isShowing, toggle } = useModalLogin();
     let dayClassContainer = '';
     let dayClassLink = '';
     let logo = '';
+    let tema = '';
 
     if (dayHour >= 7 && dayHour < 19) {
         dayClassContainer = 'bg-color1 navbar-container';
         dayClassLink = 'navbar-link-claro color4';
+        tema='claro'
         logo = logooscuro;
     } else {
         dayClassContainer = 'bg-color4 navbar-container';
         dayClassLink = 'navbar-link-oscuro color2';
+        tema='oscuro'
         logo = logoclaro;
     }
 
-    // if(window.location.pathname==="/" || window.location.pathname==="") preguntar como obtener path del dom virtual
-    if (!userLogged) {
+    if (!user) {
         return (
             <>
                 <Container fluid className={dayClassContainer}>
@@ -43,7 +50,13 @@ const Header = ({ dayHour, userLogged }) => {
                             </Navbar>
                         </Col>
                         <Col md={6} className="container-login-button">
-                            <button className="login-button color1 bg-color4"> Login </button>
+                        <div className="modalLoginApp">
+                            <button className={`login-button-${tema}`} onClick={toggle}> Log In </button>
+                            <ModalLogin
+                            isShowing={isShowing}
+                            hide={toggle}
+                            />
+                            </div>
                         </Col>
                     </Row>
                 </Container>
@@ -71,7 +84,7 @@ const Header = ({ dayHour, userLogged }) => {
                             <SearchBar dayHour={dayHour} />
                         </Col>
                         <Col md={4}>
-                            <UserMenu dayHour={dayHour} />
+                            <UserMenu dayHour={dayHour} user={user} />
                         </Col>
                     </Row>
                     <Row className="justify-content-center"> {/*usar new Date().getHours() para tema oscuro*/}
