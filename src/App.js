@@ -13,6 +13,7 @@ import RecoverPasswordPage from "./pages/RecoverPasswordPage"
 import CourseDetail from './pages/CourseDetail.js';
 //Routes
 import PrivateRoute from "./routes/PrivateRoute";
+import AdminRoute from './routes/AdminRoute';
 //Context
 import AdminpageProvider from "./context/AdminpageContext"
 import FunctionModalsProvider from "./context/FunctionModals";
