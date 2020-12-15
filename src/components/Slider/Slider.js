@@ -57,10 +57,13 @@ const Slider = () => {
 
   useEffect(() => {
     const getFavsImages = async () => {
-      const response = await clientAxios('/api/courses/featured?featured=true');
-      console.log(response);
+      const response = await clientAxios.get('/courses/featured?featured=true');
+      const sliderImages = response.data.map(image => image.image);
+      setImages(sliderImages)
     }
+    getFavsImages()
   }, [])
+  console.log(images)
 
   return (
     <div css={SliderCSS}>

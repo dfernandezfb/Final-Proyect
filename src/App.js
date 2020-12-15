@@ -7,10 +7,11 @@ import Footer from './components/Footer/Footer'
 //Pages
 import AdminPage from "./pages/AdminPage";
 import LandingPage from "./pages/LandingPage";
-import Home from "./pages/Home"
-import FavoritePage from "./pages/FavoritePage"
-import RecoverPasswordPage from "./pages/RecoverPasswordPage"
+import Home from "./pages/Home";
+import FavoritePage from "./pages/FavoritePage";
+import RecoverPasswordPage from "./pages/RecoverPasswordPage";
 import CourseDetail from './pages/CourseDetail.js';
+import Error404 from './pages/Error404'
 //Routes
 import PrivateRoute from "./routes/PrivateRoute";
 //Context
@@ -40,7 +41,9 @@ function App() {
               <PrivateRoute exact path="/courses/detail/:id" component={CourseDetail} />
               <PrivateRoute exact path="/home" component={Home} />
               <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
-              <PrivateRoute exact path="/favorites" component={FavoritePage} />
+              <PrivateRoute exact path="/favorites" component={FavoritePage} 
+              />
+              <Route component={Error404}/>
             </Switch>
             <Footer />
           </FunctionModalsProvider>

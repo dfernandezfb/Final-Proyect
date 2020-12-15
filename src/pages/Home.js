@@ -5,7 +5,7 @@ import { AdminpageContext } from "../context/AdminpageContext";
 import useModalLogin from "../components/Modals/useModalLogin";
 import ModalLogin from '../components/Modals/modalLogin';
 import CourseCard from '../components/Cards/CourseCard';
-import Slider from '../components/Slider/Slider';
+import HeroSlider from '../components/HeroSlider/HeroSlider';
 //CSS
 import "../components/Modals/ModalLogin.css";
 
@@ -19,7 +19,7 @@ const Home = ({ userLogged }) => {
           <div className="modalLoginApp">
             <button className="buttonLogin button-default" onClick={toggle}>
               {" "}
-              Log In{" "}
+              Log In{" "} 
             </button>
             <ModalLogin isShowing={isShowing} hide={toggle} />
           </div>
@@ -36,25 +36,7 @@ const Home = ({ userLogged }) => {
   } else {
     return(
     <>
-      <Slider />
-      <div className="homeBody">
-      <div className="modalLoginApp">
-        <button className="buttonLogin button-default" onClick={toggle}> Log In </button>
-        <ModalLogin
-          isShowing={isShowing}
-          hide={toggle}
-          />
-      </div>
-      <div className="row">
-        {
-          courses.length === 0 ? 'No hay cursos disponibles' : (
-            courses.map(courseCard => (
-              <CourseCard key={courseCard.id} courseCard={courseCard} />
-            ))
-            )
-          }
-      </div>
-    </div>
+      <HeroSlider />
     </>
 
   );

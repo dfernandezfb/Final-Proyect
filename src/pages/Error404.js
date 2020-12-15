@@ -1,17 +1,26 @@
-$(document).ready(function() {
-    $('body').width(window.innerWidth).height(window.innerHeight);
-    $('#abutton').on('click', albert);
-  
-    function albert() {
-      $('h1').html('<span>Oh</span> <span>gosh</span><span>,</span> <span>it</span> <span>crashed!</span><span>"!"+!</span>');
-      $('span, button').attr('style', 'cursor:move !important;')
-      $('body').jGravity({
-        target: 'span',
-        ignoreClass: 'dontMove',
-        weight: 25,
-        depth: 100,
-        drag: true
-      });
-      $('#abutton').off('click', albert);
-    }
-  });
+import Error404 from "../styles/Error404.css";
+
+const Error404Page = () => {
+  return (
+    <>
+    <div>
+      <div className="containerError">
+        <span className="dots">Error 404: Page not found...</span>
+      </div>
+      <div className="containerError">
+        <span className="losingHope">
+          Congrats! You just broke all our hope and dreams.
+        </span>
+      </div>
+      <div className="containerError">
+        <span className="thanksALot">THANKS A LOT!</span>
+      </div>
+      <div className="containerError">
+        <button className="containerError errorButton mb-4">Just go back, Dude.</button>
+      </div>
+      </div>
+    </>
+  );
+};
+
+export default Error404Page;
