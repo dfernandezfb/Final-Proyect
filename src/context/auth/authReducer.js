@@ -2,7 +2,8 @@ import {
   SUCCESS_REGISTER,
   ERROR_REGISTER,
   ERROR_TOKEN,
-  AUTH_TOKEN
+  AUTH_TOKEN,
+  LOGOUT
 } from '../../types'
 
 export default (state, action) => {
@@ -28,13 +29,20 @@ export default (state, action) => {
         ...state,
         alert: action.payload
       }
-    case ERROR_TOKEN: {
+    case ERROR_TOKEN: 
       return {
         ...state,
         isAuth: false,
         loading: false
       }
-    }
+    case LOGOUT:
+    localStorage.removeItem('token');  
+    return{
+        ...state,
+        isAuth:false,
+        loading:false,
+        user:null
+      }
     default:
       return state
   }
