@@ -36,14 +36,19 @@ function App() {
             <Header dayHour={dayHour} />
             <Switch>
               <Route exact path="/" component={LandingPage} />
+              <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
               <PrivateRoute exact path="/adminpage" component={AdminPage} />
               <PrivateRoute exact path="/courses/editar/:idCourse" component={EditCourse} />
               <PrivateRoute exact path="/courses/detail/:id" component={CourseDetail} />
               <PrivateRoute exact path="/home" component={Home} />
+<<<<<<< HEAD
               <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
               <PrivateRoute exact path="/favorites" component={FavoritePage} 
               />
               <Route component={Error404}/>
+=======
+              <PrivateRoute exact path="/favorites" component={FavoritePage} />
+>>>>>>> e8d003f8923c6f1a36e371a51500b60e2ea1b9da
             </Switch>
             <Footer />
           </FunctionModalsProvider>

@@ -57,11 +57,18 @@ const Slider = () => {
 
   useEffect(() => {
     const getFavsImages = async () => {
+<<<<<<< HEAD
       const response = await clientAxios.get('/courses/featured?featured=true');
       const sliderImages = response.data.map(image => image.image);
       setImages(sliderImages)
     }
     getFavsImages()
+=======
+      const response = await clientAxios('/courses/featured?featured=true');
+      console.log(response);
+    }
+    getFavsImages();
+>>>>>>> e8d003f8923c6f1a36e371a51500b60e2ea1b9da
   }, [])
   console.log(images)
 

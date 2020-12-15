@@ -7,7 +7,8 @@ import {
   SUCCESS_REGISTER,
   ERROR_REGISTER,
   ERROR_TOKEN,
-  AUTH_TOKEN
+  AUTH_TOKEN,
+  LOGOUT
 } from '../../types'
 
 const AuthState = ({ children }) => {
@@ -54,6 +55,11 @@ const AuthState = ({ children }) => {
       })
     }
   }
+  const logout = () =>{
+    dispatch({
+      type:LOGOUT
+    })
+  }
 
   return (
     <AuthContext.Provider value={{
@@ -63,7 +69,8 @@ const AuthState = ({ children }) => {
       alert: state.alert,
       loading: state.loading,
       register,
-      authUser
+      authUser,
+      logout
     }}>
       {children}
     </AuthContext.Provider>
