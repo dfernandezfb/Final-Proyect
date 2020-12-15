@@ -86,10 +86,10 @@ const Header = ({ dayHour }) => {
                     </Row>
                     <Row className="justify-content-center"> {/*usar new Date().getHours() para tema oscuro*/}
                         <Link className={dayClassLink} to="/home">Home</Link>
-                        <Link className={dayClassLink} to="/">Destacado</Link>
-                        <Link className={dayClassLink} to="/">Categorías</Link>
-                        <Link className={dayClassLink} to="/">Contacto</Link>
-                        <Link className={dayClassLink} to="/">Ayuda</Link>
+                        <Link className={dayClassLink} to="/">Featured</Link>
+                        <Link className={dayClassLink} to="/">Categories</Link>
+                        <Link className={dayClassLink} to="/">Contact</Link>
+                        <Link className={dayClassLink} to="/">Help</Link>
                     </Row>
                 </Container>
             </>

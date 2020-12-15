@@ -7,10 +7,11 @@ import Footer from './components/Footer/Footer'
 //Pages
 import AdminPage from "./pages/AdminPage";
 import LandingPage from "./pages/LandingPage";
-import Home from "./pages/Home"
-import FavoritePage from "./pages/FavoritePage"
-import RecoverPasswordPage from "./pages/RecoverPasswordPage"
+import Home from "./pages/Home";
+import FavoritePage from "./pages/FavoritePage";
+import RecoverPasswordPage from "./pages/RecoverPasswordPage";
 import CourseDetail from './pages/CourseDetail.js';
+import Error404 from './pages/Error404'
 //Routes
 import PrivateRoute from "./routes/PrivateRoute";
 import AdminRoute from './routes/AdminRoute';

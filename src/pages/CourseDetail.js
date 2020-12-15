@@ -34,27 +34,27 @@ const CourseDetail = ({ match }) => {
                 <div className="infoDetail">
                     <h1>{name}</h1>
                     <h3>{description}</h3>
-                    <p>Dictado por: <b> {directedBy}</b></p>
-                    <p> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> (3.773) calificaciones de 12.800 estudiantes</p>
-                    <Button className="detailBtn">Compartir</Button> <Button className="detailBtn"> Ingresar suscrpicion </Button>
+                    <p>Dictated by: <b> {directedBy}</b></p>
+                    <p> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> (3.773) qualifications from 12.800 students</p>
+                    <Button className="detailBtn">Share</Button> <Button className="detailBtn"> Suscribe </Button>
                 </div>
                 <div className="cardDetail">
                     <Card style={{ width: '18rem', height: 'auto' }}>
                         <Card.Img className="" src={image} />
                         <Card.Body>
                             <h1>$ {price} <small> <s> $9500</s></small> </h1>
-                            <p>80% de descuento</p>
-                            <p> <GiStopwatch /> ¡Esta oferta termina en <b> 12 horas!</b></p>
+                            <p>80% off</p>
+                            <p> <GiStopwatch /> This offer ends in <b> 12 hours!</b></p>
                             <Button className="btnBuy" > Comprar ahora</Button>
                         </Card.Body>
                         <Card.Footer>
-                            <p>Este curso Incluye:</p>
+                            <p>This course includes:</p>
                             <ul style={{ listStyle: 'none' }}>
-                                <li> <AiOutlineYoutube /> 28 horas de vídeo bajo demanda</li>
-                                <li> <AiOutlineCloudDownload /> 24 recursos descargables</li>
-                                <li> <CgInfinity /> Acceso de por vida</li>
-                                <li> <FcSmartphoneTablet /> Acceso en dispositivos móviles y TV</li>
-                                <li> <FcApproval /> Certificado de finalización</li>
+                                <li> <AiOutlineYoutube /> 28 hours off on demand video</li>
+                                <li> <AiOutlineCloudDownload /> 24 downloadable resources</li>
+                                <li> <CgInfinity /> Lifetime access</li>
+                                <li> <FcSmartphoneTablet /> You can access from mobile devices</li>
+                                <li> <FcApproval /> Certificate of completion</li>
                             </ul>
                         </Card.Footer>
                     </Card>
@@ -63,24 +63,24 @@ const CourseDetail = ({ match }) => {
             <div className="card-twoDetail">
                 <Card>
                     <Card.Body>
-                        <h1> Lo que aprenderas </h1>
-                        <li>Crear aplicaciones web profesionales</li>
-                        <li>Muchas herramientas, ténicas y trucos</li>
-                        <li>Conseguir trabajo como desarrollador ReactJS</li>
+                        <h1> You will learn </h1>
+                        <li>To create profesional web application</li>
+                        <li>A lot of tools, techniques and tricks</li>
+                        <li>Get a job as a ReactJS developer</li>
                         <li>Deploy a Firebase</li>
-                        <li>Conocer a fondo ES6, React y Redux</li>
-                        <li>Todos los Hooks: useState a fondo, useRef, useEffect, useDebugValue, useMemo, useCallback, useReducer, useContext</li>
-                        <li>Aplicar patrones de diseño y mejores prácticas: TDD, SOLID, DRY</li>
+                        <li>Get to know ES6, React and Redux thoroughly</li>
+                        <li>All the Hooks: useState, useRef, useEffect, useDebugValue, useMemo, useCallback, useReducer, useContext</li>
+                        <li>Apply design patterns and best practices: TDD, SOLID, DRY</li>
                     </Card.Body>
                 </Card>
             </div>
             <div className="requiredDetail">
-                <h1> Requisitos </h1>
+                <h1> Requirements</h1>
                 <ul>
                     <li> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quisquam, veniam, fuga perspiciatis quam a blanditiis, ratione ducimus nesciunt adipisci unde delectus quo recusandae. Iusto qui impedit est quisquam optio! </li>
                     <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quisquam, veniam, fuga perspiciatis quam a blanditiis, ratione ducimus nesciunt adipisci unde delectus quo recusandae. Iusto qui impedit est quisquam optio!</li>
                 </ul>
-                <h1>¿Para quien es este curso?</h1>
+                <h1>Who is this course for?</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quisquam, veniam, fuga perspiciatis quam a blanditiis, ratione ducimus nesciunt adipisci unde delectus quo recusandae. Iusto qui impedit est quisquam optio!</p>
             </div>
         </div>
