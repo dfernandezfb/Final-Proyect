@@ -8,7 +8,8 @@ import {
   ERROR_REGISTER,
   ERROR_TOKEN,
   AUTH_TOKEN,
-  LOGOUT
+  LOGOUT,
+  LOGIN,
 } from '../../types'
 
 const AuthState = ({ children }) => {
@@ -58,6 +59,12 @@ const AuthState = ({ children }) => {
   const logout = () =>{
     dispatch({
       type:LOGOUT
+    })
+  }
+  const login = async () => {
+    const response = await clientAxios.get('token');
+    dispatch({
+      
     })
   }
 

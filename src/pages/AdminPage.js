@@ -37,25 +37,26 @@ const AdminPage = () => {
   return (
     <div className="bodyEdit">
       <div className="tableInfo">
-        <h1 className="titlesform text-center"> Bienvenido Administrador.</h1>
-        <h3 className="titlesform">En la tabla a continuación, se muestran los cursos presentes en nuestra plataforma.
-        Puede modificarlos o borrarlos. Si desea, puede agregar más actividades académicas con el botón <Button onClick={handleShow} className="createBtn"> <AiFillDiff /> Crear </Button>
+        <h1 className="titlesform text-center"> Welcome Admin!</h1>
+        <h3 className="titlesform"> 
+The table below shows the courses present on our platform.
+        You can modify or delete them. If you want, you can add more academic activities with the button <Button onClick={handleShow} className="createBtn"> <AiFillDiff /> Create </Button>
         </h3>
       </div>
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
-            <th className="text-center dataC">Nombre del Curso</th>
-            <th className="text-center dataC">Categoria</th>
-            <th className="text-center dataC">Dictado por</th>
-            <th className="text-center dataC">Publicado</th>
-            <th className="text-center dataC">Precio</th>
-            <th className="text-center dataC">Acciones</th>
+            <th className="text-center dataC">Course name</th>
+            <th className="text-center dataC">Category</th>
+            <th className="text-center dataC">Dictate by</th>
+            <th className="text-center dataC">Published</th>
+            <th className="text-center dataC">Price</th>
+            <th className="text-center dataC">Actions</th>
           </tr>
         </thead>
         <tbody className="bodyEdit">
           {
-            courses.length === 0 ? 'No hay cursos disponibles' : (
+            courses.length === 0 ? 'No courses available' : (
               courses.map(course => (
                 <Course key={course.id} course={course} />
               ))
@@ -65,18 +66,18 @@ const AdminPage = () => {
       </Table>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Bienvenido. Puede crear un nuevo curso desde este modal</Modal.Title>
+          <Modal.Title>Welcome! You can create a new course from here</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form  /* onSubmit={handleOnSubmit} */  > 
           <Form.Group> 
-          <label>Nombre:</label>
+          <label>Name:</label>
           <input type="Text" /* value= {name} */ className="form-control" required ></input>
           </Form.Group>
          <Form.Group>
-            <label>Categoria:</label>
+            <label>Category:</label>
             <select className="form-control" required>
-            <option value=""> Seleccionar Categoria </option>
+            <option value=""> Select category </option>
               {
                 courses.map((response, index) => (
                   <option
@@ -90,15 +91,15 @@ const AdminPage = () => {
             </select>
           </Form.Group>
           <Form.Group>
-            <label>Dirigido por:</label>
+            <label>Directed by:</label>
             <input className="form-control" type="text" /* value={directedBy} */ required></input>
           </Form.Group>
           <Form.Group>
-            <label>Precio:</label>
+            <label>Price:</label>
             <input className="form-control" type="number" /* value={price}  */required></input>
           </Form.Group>
           <Form.Group>
-            <label> Destacada: </label>
+            <label> Featured: </label>
             <input className="form-control" /* value= {displayed} */ type="checkbox"></input>
           </Form.Group>
           </Form>

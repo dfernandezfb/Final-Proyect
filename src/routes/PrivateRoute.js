@@ -8,14 +8,9 @@ const PrivateRoute = ({component:Component, ...props}) => {
 
   useEffect(() => {
     authUser();
-<<<<<<< HEAD
-  },[])
- console.log(isAuth, loading)
-=======
   }, [])
 
   console.log(isAuth, loading);
->>>>>>> e8d003f8923c6f1a36e371a51500b60e2ea1b9da
   if(loading) return 'Cargando...';
 
   return(
