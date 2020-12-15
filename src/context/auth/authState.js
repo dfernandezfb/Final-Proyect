@@ -74,6 +74,12 @@ const AuthState = ({ children }) => {
       type:LOGOUT
     })
   }
+  const login = async () => {
+    const response = await clientAxios.get('token');
+    dispatch({
+      
+    })
+  }
 
   const login = async data => {
     try {
