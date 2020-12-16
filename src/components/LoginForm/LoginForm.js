@@ -10,7 +10,7 @@ const initialState = {
   password: ''
 }
 
-const LoginForm = ({ show, handleClose }) => {
+const LoginForm = ({ show, setShow }) => {
   const history = useHistory();
   const { login, alert } = useContext(AuthContext);
   const { handleChange, handleSubmit, values, errors } = useForm(
@@ -21,9 +21,10 @@ const LoginForm = ({ show, handleClose }) => {
 
   async function submitLogin() {
     await login(values);
+    setShow(false);
   }
   return (
-    <Modal show={show} onHide={() => handleClose(false)}>
+    <Modal show={show} onHide={() => setShow(false)}>
       <Modal.Header closeButton>
         <Modal.Title>Login</Modal.Title>
       </Modal.Header>
