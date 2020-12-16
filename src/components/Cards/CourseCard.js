@@ -11,15 +11,16 @@ import  '../Cards/courseCard.css';
 
 
 const CourseCard = ({ courseCard, dayHour}) => {
-    const { id, category, directedBy, name, description, image, subscription } = courseCard;
+    const { _id, category, directedBy, name, description, image, subscription } = courseCard;
     const {user} = useContext(AuthContext)
     const history = useHistory();
     const redirectToIndividualSuscriptions = () => {
-        history.push(`/courses/detail/${id}`)
+        history.push(`/courses/detail/${_id}`)
     }
+
    const CourseFav = async () => {
        try {
-           const response = await clientAxios.put(`/users/${user._id}/favs`, {favs:  id})
+           const response = await clientAxios.put(`/users/${user._id}/favs`, {favs:  _id})
            console.log(response);
         } catch(error) {
             console.log (error.response)

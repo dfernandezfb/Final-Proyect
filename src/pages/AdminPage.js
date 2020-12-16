@@ -18,7 +18,7 @@ const AdminPage = () => {
   const { show, setShow } = useContext(FunctionModalsContext);
   const { courses, setCourses } = useContext(AdminpageContext);
 
-//NewCourse
+  //NewCourse
   const [newCourse, setnewCourse] = useState({
     name: '',
     category: '',
@@ -28,10 +28,10 @@ const AdminPage = () => {
     displayed: false,
     subscription: '',
     featured: false,
-    comments : [],
+    comments: [],
   })
-  const { name, directedBy, displayed, category, description, image,comments, subscription } = newCourse;
-  
+  const { name, directedBy, displayed, category, description, image, comments, subscription, featured } = newCourse;
+
   //Get All Courses
   const getCourses = async () => {
     try {
@@ -48,14 +48,13 @@ const AdminPage = () => {
     setnewCourse({
       ...newCourse,
       [e.target.name]: e.target.value
-      
+
     });
   }
-  
+
   //Create Course
   const addCourse = async (course) => {
     const result = await clientAxios.post('/courses', course);
-    console.log(result);
     getCourses();
   }
   const handleOnSubmit = (e) => {
@@ -64,100 +63,107 @@ const AdminPage = () => {
     handleClose();
   }
 
-  
+
   return (
-    <div className="bodyEdit">
+    <div className="bodyEdit main-content">
       <div className="tableInfo">
         <h1 className="titlesform text-center"> Welcome Admin!</h1>
-        <h3 className="titlesform"> 
-The table below shows the courses present on our platform.
+        <h3 className="titlesform">
+          The table below shows the courses present on our platform.
         You can modify or delete them. If you want, you can add more academic activities with the button <Button onClick={handleShow} className="createBtn"> <AiFillDiff /> Create </Button>
         </h3>
       </div>
-      <Table striped bordered hover size="sm" className="tableContent" responsive>
-        <thead>
-          <tr>
-            <th className="text-center dataC">Course name</th>
-            <th className="text-center dataC">Category</th>
-            <th className="text-center dataC">Dictate by</th>
-            <th className="text-center dataC">Published</th>
-            <th className="text-center dataC">Subscription</th>
-            <th className="text-center dataC">Actions</th>
-          </tr>
-        </thead>
-        <tbody className="bodyEdit">
-          {
-            courses.length === 0 ? 'No courses available' : (
-              courses.map((course, index) => (
-                <Course key={index} course={course} />
-              ))
-            )
-          }
-        </tbody>
-      </Table >
+      <div className="contentTable" >
+        <Table striped bordered hover size="sm" className="tableContent  " responsive>
+          <thead>
+            <tr>
+              <th className="text-center dataC">Course name</th>
+              <th className="text-center dataC">Category</th>
+              <th className="text-center dataC">Dictate by</th>
+              <th className="text-center dataC">Highligthed</th>
+              <th className="text-center dataC">Subscription</th>
+              <th className="text-center dataC">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="bodyEdit">
+            {
+              courses.length === 0 ? 'No courses available' : (
+                courses.map((course, index) => (
+                  <Course key={index} course={course} />
+                ))
+              )
+            }
+          </tbody>
+        </Table >
+      </div>
       <Modal show={show} onHide={handleClose}>
-          <Form className=" createForm" onSubmit={handleOnSubmit}  >
-        <Modal.Header closeButton>
-          <Modal.Title>Bienvenido. Puede crear un nuevo curso desde este modal. Complete los campos a continuación:</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        <Form className=" createForm" onSubmit={handleOnSubmit}  >
+          <Modal.Header closeButton>
+            <Modal.Title>Bienvenido. Puede crear un nuevo curso desde este modal. Complete los campos a continuación:</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
             <Form.Group>
-              <label>Nombre:</label>
+              <label>Name:</label>
               <input type="Text"
-                name = "name"
+                name="name"
                 value={name}
                 onChange={handleOnChange}
                 className="form-control" required ></input>
             </Form.Group>
             <Form.Group>
-            <label>Categoria</label>
+              <label>Category: </label>
               <input className="form-control" type="text"
-               name="category" 
-               value={category}
+                name="category"
+                value={category}
                 onChange={handleOnChange}
                 required></input>
             </Form.Group>
             <Form.Group>
-              <label>Dirigido por:</label>
+              <label> DirectedBy :</label>
               <input className="form-control"
-               type="text" 
-               name="directedBy" 
-               value={directedBy}
+                type="text"
+                name="directedBy"
+                value={directedBy}
                 onChange={handleOnChange}
                 required></input>
             </Form.Group>
             <Form.Group>
-              <label> Imagen del curso: </label>
-              <input className="form-control" 
-              name="image" value={image}
+              <label> URL image: </label>
+              <input className="form-control"
+                name="image" value={image}
                 onChange={handleOnChange}
                 type="text"></input>
             </Form.Group>
             <Form.Group>
-              <label> Descprición del curso </label>
+              <label> Description: </label>
               <input className="form-control" name="description" value={description}
                 onChange={handleOnChange}
                 type="textarea"></input>
             </Form.Group>
             <Form.Group>
-            <label>Tipo de Suscripción</label>
-              <input className="form-control" type="text" placeholder="Free, Gold o Diamond"name="subscription" value={subscription}
+              <label>Type of Subscription </label>
+              <input className="form-control" type="text" placeholder="Free, Gold o Diamond" name="subscription" value={subscription}
                 onChange={handleOnChange}
                 required></input>
             </Form.Group>
             <Form.Group>
-              <label> Opiniones recientes sobre el curso: </label>
+              <label> Recent opinions about the course: </label>
               <input className="form-control" name="comments" value={comments}
                 onChange={handleOnChange}
                 type="textarea"></input>
             </Form.Group>
-            <Form.Group>
-              <label> Destacada: </label>
-              <input className="form-control" name="displayed" value={displayed}
-                onChange={handleOnChange}
+            <Form.Check>
+              <label> Highligthed: </label>
+              <input className="form-control"
+                label="featured"
+                name="featured"
+                checked={featured}
+                onChange={(e) =>
+                  setnewCourse({ ...newCourse, featured: e.target.checked })
+                }
                 type="checkbox"></input>
-            </Form.Group>
-        </Modal.Body>
+            </Form.Check>
+          </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
@@ -166,7 +172,7 @@ The table below shows the courses present on our platform.
               Save Changes
           </Button>
           </Modal.Footer>
-          </Form>
+        </Form>
       </Modal>
     </div>
   );

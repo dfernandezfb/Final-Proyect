@@ -7,6 +7,9 @@
     padding: 0;
     background: #040F0F;
 }
+.main-content {
+    min-height: calc(100vh - 92px);
+  }
 .infoDetail {
     margin: 0 auto;
     color: #FBF9FF;
@@ -17,10 +20,12 @@
 }
 
 .cardDetail {
-    position: fixed;
+    position: fixed; 
+    display: block;
     background: transparent;
     width: 40%;
-    transform: translateX(192%) translateY(-42%); 
+    height: auto;
+    transform: translateX(195%) translateY(-30%); 
 }
 
 .card-twoDetail{
@@ -67,25 +72,31 @@
     margin-left: 30px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
+    .bodyDetail {
+    width: 100%;
+    text-align: center;
+    }
     .containerDetail {
         width: 100%;
         overflow: hidden;
         font-size: 0.8em;
     }
-    .infoDetail, .card-twoDetail, .requiredDetail, .opinionCards, .commentsForm{
-        width: 80%;
+     .card-twoDetail, .requiredDetail{
+        width: 90%;
     }
-
-    .cardDetail {
-        position: relative;
-        background: transparent;
-        width: 100%; 
-        transform: translateX(15%) translateY(-15%);
-        
+     .opinionCards, .commentsForm {
+         width: 100%;
+         padding: 0;
+     }
+    .infoDetail {
+        width: 100%;
+        height: auto;
     }
+    .cardDetail {   
+        display: none;
+     }
 }
-.EnterEmailComments{
-    margin-left: 2vw;
 
-}
+
+

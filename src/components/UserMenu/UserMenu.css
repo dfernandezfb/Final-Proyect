@@ -44,6 +44,7 @@
     min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: .2rem;
+    z-index: 9999;
 }
 .initials-content-oscuro
 {
@@ -54,6 +55,7 @@
     min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: .2rem;
+    z-index: 9999;
 }
 .initials-container
 {
@@ -85,4 +87,11 @@
 {
     min-width:250px;
     left:-125px;
+}
+.cardsFavs {
+    width: 30px;
+    margin: 15px;
+}
+.favsName {
+    text-align: center;
 }
