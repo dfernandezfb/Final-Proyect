@@ -5,7 +5,7 @@ import AuthContext from '../context/auth/authContext';
 const AdminRoute = ({ component: Component, ...props }) => {
   const { loading, isAuth, authUser, user } = useContext(AuthContext);
   useEffect(() => {
-    authUser
+    authUser()
   }, []) 
   if(loading) return 'Cargando...';
   return(
