@@ -75,7 +75,7 @@ const SearchBar = ({dayHour}) =>
               <FaSearch/>
             </div>
             <div className='result-name'>
-              <Link to='/'> {resul.name}</Link>
+              <Link to={`/courses/detail/${resul._id}`}> {resul.name}</Link>
             </div>
           </li>
         )
