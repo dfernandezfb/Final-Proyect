@@ -18,7 +18,7 @@ const [course, setCourse]= useState({
   featured: true,
   comments : [],
   })
-  const {  name, directedBy, displayed, category, description, image,comments, subscription } = course;
+  const {  name, directedBy, displayed, category, description, image,comments, subscription, featured } = course;
 
 const history = useHistory();
 const idCourse = match.params.idCourse;
@@ -90,7 +90,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label className="titlesform">image:</label>
+                <label className="titlesform">Image:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -123,7 +123,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label className="titlesform" >Cost:</label>
+                <label className="titlesform" >Subscription:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -133,17 +133,17 @@ console.log(error.response)
                   onChange={handleOnChange}
                 />
               </div> 
-              <div >
-                <label className="titlesform">displayed:</label>
-                <input
-                  type="checkbox"
-                  className="form-control"
-                  placeholder=" True or False"
-                  name="displayed"
-                  value={displayed}
-                  onChange={handleOnChange}
-                />
-              </div>
+              <Form.Check>
+              <label> Highligthed: </label>
+              <input className="form-control"
+              label="featured" 
+              name="featured" 
+              checked = {featured}
+              onChange={ (e) => 
+                setCourse({...course, featured : e.target.checked})
+            }
+              type="checkbox"></input>
+            </Form.Check>
               <button
                 type="submit"
                 className="btn btn-primary font-weight-bold text-uppercase d-block w-100 btnForm">

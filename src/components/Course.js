@@ -12,7 +12,7 @@ import Subscriptions from '../pages/Subscriptions';
 
 
 const Course = ({ course }) => {
-    const { _id, category, directedBy, name, description, displayed, subscription } = course;
+    const { _id, category, directedBy, name, description, subscription, featured } = course;
     
     const { courses, setCourses } = useContext(AdminpageContext);
     
@@ -53,16 +53,15 @@ const Course = ({ course }) => {
 
     return (
         <> 
-
             <tr>
                 <td className="text-center dataC">{name}</td>
                 <td className="text-center dataC">{category}</td>
                 <td className="text-center dataC">{directedBy}</td>
-                <td className="text-center dataC">{displayed === true ? 'True': 'False'}</td>
+                <td className="text-center dataC">{featured === true ? 'True': 'False'}</td>
                  <td className="text-center dataC">{subscription}</td>
                 <td>
 
-                    <Button type="button" className="actionBtn mr-2" onClick= {()=>redirectToEditCourse()} > <AiTwotoneEdit /> Edit </Button>
+                    <Button type="button" className="actionBtn " onClick= {()=>redirectToEditCourse()} > <AiTwotoneEdit /> Edit </Button>
                     <Button type="button" className="actionBtn" onClick={handleShow}>  <AiFillDelete /> Delete  </Button>
                 </td>
             </tr>
@@ -74,8 +73,8 @@ const Course = ({ course }) => {
                     <p> You can unmark de option "published" and the course wont be showed in the main page</p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={handleClose}> Cancelar </Button>
-                    <Button className="btn-danger" onClick={() => deleteCourse(_id)}> Borrar curso</Button>
+                    <Button onClick={handleClose}> Cancel </Button>
+                    <Button className="btn-danger" onClick={() => deleteCourse(_id)}> Delete Course</Button>
                 </Modal.Footer>
             </Modal>
         </>

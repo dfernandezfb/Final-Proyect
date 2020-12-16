@@ -11,13 +11,20 @@ import "../components/Banner/Banner.css"
 
 const Home = () => {
   const { courses, setCourses } = useContext(AdminpageContext);
-    return (
-      <>
-        <div className="homeBody">
-          <HeroSlider />
+  return (
+    <>
+      <div className="homeBody">
+        <HeroSlider />
+        <div className="row cardCourse">
+          {courses.length === 0
+            ? "No hay cursos disponibles"
+            : courses.map((courseCard, index) => (
+              <CourseCard key={index} courseCard={courseCard} />
+            ))}
         </div>
         <Banner />
-      </>
-    );
+      </div>
+    </>
+  );
 }
 export default Home;

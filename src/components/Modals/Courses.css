@@ -2,7 +2,6 @@
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
-    height: 120vh; 
     width: 100%;
     outline: none;
     background: linear-gradient(to bottom,#187795,#040F0F);
@@ -10,9 +9,6 @@
     font: 1em sans-serif;
 }
 
-.bodyForm {
-    transform: translateY(20%);
-}
 .titlesform {
     color: #FBF9FF;
     font-size: 1.5em;
@@ -27,7 +23,7 @@
     border: none;
     margin-left: 0.5em;
     padding: 0.2em;
-    transform: translateX(20%);
+    
 }
 
 .actionBtn:hover {
@@ -65,3 +61,13 @@
 .createForm {
     width: 100%;
 }
+.main-content {
+    min-height: calc(100vh - 92px);
+  }
+
+.contentTable {
+    position: relative;
+}
+
+
+

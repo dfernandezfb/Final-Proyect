@@ -46,7 +46,7 @@ function App() {
               <Route exact path="/Aboutus" component ={AboutUs}/>
               <PrivateRoute exact path="/adminpage" component={AdminPage} />
               <PrivateRoute exact path="/courses/editar/:idCourse" component={EditCourse} />
-              <PrivateRoute exact path="/courses/detail/:id" component={CourseDetail} />
+              <PrivateRoute exact path="/courses/detail/:idCourse" component={CourseDetail} />
               <PrivateRoute exact path="/home" component={Home} />
               <PrivateRoute exact path="/favorites" component={FavoritePage} />
               <Route component={Error404} />

@@ -6,11 +6,11 @@ import  '../Cards/courseCard.css';
 
 
 const CourseCard = ({ courseCard, dayHour}) => {
-    const { id, category, directedBy, name, description, image, subscription } = courseCard;
+    const { _id, category, directedBy, name, description, image, subscription } = courseCard;
 
     const history = useHistory();
     const redirectToIndividualSuscriptions = () => {
-        history.push(`/courses/detail/${id}`)
+        history.push(`/courses/detail/${_id}`)
     }
    
     return (

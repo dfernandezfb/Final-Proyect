@@ -1,6 +1,7 @@
 //Dependencies
 import { useState, useEffect } from 'react';
 import { Card, Button, Form } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import clientAxios from '../config/Axios';
 import Comments from '../components/Cards/Comments';
@@ -8,63 +9,67 @@ import Comments from '../components/Cards/Comments';
 import { AiOutlineYoutube, AiOutlineCloudDownload, AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { FcApproval, FcSmartphoneTablet } from 'react-icons/fc'
 import { CgInfinity } from 'react-icons/cg'
-import {GiStopwatch} from 'react-icons/gi'
+import { GiStopwatch } from 'react-icons/gi'
 //Css
-import  '../styles/courseDetail.css';
-import  '../styles/colorspallete.css';
+import '../styles/courseDetail.css';
+import '../styles/colorspallete.css';
 
 
 const CourseDetail = ({ match }) => {
     const [course, setCourse] = useState([]);
     const [comment, setComment] = useState([]);
-    const idCourse = match.params.id;
-
     const { name, category, description, image, directedBy, subscription } = course;
+    const idCourse = match.params.idCourse;
 
     useEffect(() => {
-        const getCoursesById = async (id) => {
+        const getCoursesById = async () => {
             try {
-                const course = await clientAxios.get(`/courses/id/${id}`);
+                const course = await clientAxios.get(`/courses/id/${idCourse}`);
                 setCourse(course.data);
             } catch (error) {
-                console.log(error.course)
+                console.log(error);
             }
         }
-        getCoursesById(idCourse);
+        getCoursesById();
     });
 
-    useEffect(()=> {
-       const getComment = async () => { 
-           try {
-               const comments = await axios.get('https://jsonplaceholder.typicode.com/comments?postId=1')
-               setComment(comments.data);
-           } catch(error) {
-               console.log(error)
-           }
+    useEffect(() => {
+        const getComment = async () => {
+            try {
+                const comments = await axios.get('https://jsonplaceholder.typicode.com/comments?postId=1')
+                setComment(comments.data);
+            } catch (error) {
+                console.log(error)
+            }
         }
-            getComment(); 
-    },[]);
-    
-    
+        getComment();
+    }, []);
+
+
     return (
-        <div className="bg-color1 containerDetail">
-            <div className="bodyDetail ">
+        <div className="bg-color1 containerDetail  main-content">
+            <div className="bodyDetail">
                 <div className="infoDetail">
                     <h1>{name}</h1>
                     <h3>{description}</h3>
                     <p>Dictated by: <b> {directedBy}</b></p>
                     <p> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> (3.773) qualifications from 12.800 students</p>
-                    <Button className="detailBtn">Share</Button> <Button className="detailBtn"> Suscribe </Button>
+                    <Button className="detailBtn">Share</Button>
+                    <Link to = "/subscriptions">
+                    <Button className="detailBtn"> Suscribe </Button>
+                    </Link>
                 </div>
                 <div className="cardDetail row">
-                    <Card style={{ width: '18rem', height: 'auto' }}>
-                        <Card.Img className="" src = {image} />
-                        <Card.Body>
+                    <Card style={{ width: '18rem', heigth: '28rem' }}>
+                        <div className="">
+                        <Card.Img className="cardImage" src={image} />
+                        <Card.Body >
                             <h1> {subscription} <small> <s> $9500</s></small> </h1>
                             <p>80% de descuento</p>
                             <p> <GiStopwatch /> ¡Esta oferta termina en <b> 12 horas!</b></p>
                             <Button className="btnBuy" > Comprar ahora</Button>
                         </Card.Body>
+                        </div>
                         <Card.Footer className="benefitsCourse ">
                             <p>Este curso Incluye:</p>
                             <ul style={{ listStyle: 'none' }}>
@@ -104,21 +109,21 @@ const CourseDetail = ({ match }) => {
             <div className="opinionCards">
                 <h1>Opiniones sobre este curso</h1>
                 {
-          comment.length === 0 ? 'No hay cursos disponibles' : (
-            comment.map((commentsForm, index) => (
-              <Comments key={index} commentsForm={commentsForm} />
-            ))
-            )
-          }
+                    comment.length === 0 ? 'No hay cursos disponibles' : (
+                        comment.map((commentsForm, index) => (
+                            <Comments key={index} commentsForm={commentsForm} />
+                        ))
+                    )
+                }
             </div>
-          <div className='commentsForm'>
-              <h2 style = {{textAlign: 'center'}}>Añadir un comentario</h2>
+            <div className='commentsForm'>
+                <h2 style={{ textAlign: 'center' }}>Añadir un comentario</h2>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Dirección Email</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" required />
                         <Form.Text className="text-muted" required>
-                          Introduzca Su nombre de usuario o email
+                            Introduzca Su nombre de usuario o email
     </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
