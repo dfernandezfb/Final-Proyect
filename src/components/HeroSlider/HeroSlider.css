@@ -1,3 +1,7 @@
 .carouselColor{
     color: black!important;
 }
+
+.carouselMinSize {
+    min-height: 400px;
+}
