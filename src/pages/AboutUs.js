@@ -1,12 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "../styles/colors-palette.css";
 import "../styles/AboutUs.css";
-import logo from "../images/logo.jpeg";
+import "../styles/main.css";
 
 const AboutUs = () => {
   return (
     <>
-      <Container className="bgAboutUs">
+      <Container className="bgAboutUs main-content">
         <Row className="justify-content-md-center">
           <Col>
             <div className="bg-color4 containerAboutUs bgItemsAboutUs colSize">
@@ -16,7 +16,7 @@ const AboutUs = () => {
                 clicking{" "}
                 <a
                   className="linkAboutUs"
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=rrhhakademy@gmail.com&su=Send us your CV&body=Tell us why you are insterested in working in this institution. We are waiting for you!"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=knowledgeacademyrc@gmail.com&su=Send us your CV&body=Tell us why you are insterested in working in this institution. We are waiting for you!"
                   target="_blank"
                 >
                   here
@@ -27,7 +27,7 @@ const AboutUs = () => {
                 courses tell us by clicking{" "}
                 <a
                   className="linkAboutUs"
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=supportakademy@gmail.com&su=Is something wrong?&body=We hope everything is ok, but tell us if we can help you in something"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=knowledgeacademyrc@gmail.com&su=Is something wrong?&body=We hope everything is ok, but tell us if we can help you in something"
                   target="_blank"
                 >
                   here
@@ -36,7 +36,7 @@ const AboutUs = () => {
                 >For investment or being part of our society send your propose by clicking {" "}
                 <a
                   className="linkAboutUs"
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=akademyowners@gmail.com&su=Be a partner&"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=knowledgeacademyrc@gmail.com&su=Be a partner&"
                   target="_blank"
                 >
                   here

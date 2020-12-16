@@ -48,13 +48,13 @@ const Footer = () => {
                             <h6 className="text-uppercase font-weight-bold text-white">Courses</h6>
                             <hr className="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto"></hr>
                             <p className="p-footer">
-                                <a href="#!">HTML and CSS</a>
+                                <a href="https://www.w3schools.com/html/html_css.asp">HTML and CSS</a>
                             </p>
                             <p className="p-footer">
-                                <a href="#!">Javascript</a>
+                                <a href="https://www.javascript.com/">Javascript</a>
                             </p>
                             <p className="p-footer">
-                                <a href="#!">React</a>
+                                <a href="https://reactjs.org/">React</a>
                             </p>
                             <p className="p-footer">
                                 <a href="/aboutus">Read more...</a>
@@ -68,10 +68,10 @@ const Footer = () => {
                                 <FaHome className="icoContact"/> Tucumán, Argentina
                             </p>
                             <p className="p-footer">
-                                <FaMailBulk className="icoContact"/> info.akademy@gmail.com
+                                <FaMailBulk className="icoContact"/> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=knowledgeacademyrc@gmail.com&su=" target="blank"> knowledgeacademyr...</a>
                             </p>
                             <p className="p-footer">
-                                <FaPhoneAlt className="icoContact"/> + 54 (381) - 
+                                <FaPhoneAlt className="icoContact"/> + 54 (381) - 333 1003
                             </p>
                         </div>
                     </div>
