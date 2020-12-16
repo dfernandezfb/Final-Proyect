@@ -14,21 +14,12 @@ const Home = () => {
     <>
       <div className="homeBody">
         <HeroSlider />
-        <div className="row cardCourse">
+        <div className="row cardCourse m-0 justify-content-center">
           {courses.length === 0
             ? "No hay cursos disponibles"
             : courses.map((courseCard, index) => (
               <CourseCard key={index} courseCard={courseCard} />
             ))}
-        </div>
-        <div className="row cardCourse m-0 justify-content-center">
-          {
-            courses.length === 0
-            ? "No hay cursos disponibles"
-              : courses.map((courseCard, index) => (
-                <CourseCard key={index} courseCard={courseCard} />
-              ))
-          }
         </div>
         <Banner />
       </div>
