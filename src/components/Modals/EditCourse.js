@@ -65,12 +65,12 @@ console.log(error.response)
         <div className="card-transparent">
           <div className="card-body bodyForm">
             <h2 className="text-center mb-4 titlesform">
-              Editar Curso
+              Edit course
             </h2>
             <Form
               onSubmit={handleOnSubmit}>
               <div >
-                <label className="titlesform">Nombre del curso:</label>
+                <label className="titlesform">Course name:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -81,7 +81,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label className="titlesform">Categoria:</label>
+                <label className="titlesform">Category:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -92,7 +92,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label className="titlesform" >Dirigido por:</label>
+                <label className="titlesform" >Dictate by:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -103,7 +103,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label className="titlesform" >Costo del curso:</label>
+                <label className="titlesform" >Cost:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -116,7 +116,7 @@ console.log(error.response)
               <button
                 type="submit"
                 className="btn btn-primary font-weight-bold text-uppercase d-block w-100 btnForm">
-              Guardar cambios</button>
+              Save changes</button>
             </Form>
           </div>
         </div>

@@ -21,14 +21,14 @@ const CourseCard = ({ courseCard, dayHour}) => {
                     <Card.Title className="infoCard" >{name}</Card.Title>
                     <Card.Text className="infoCard">
                         {description}
-                        <p> <b>Categoria :</b>{category}</p>
-                        <p> <b>Dictado por :</b> {directedBy}</p>
-                        <p className="priceCourse"> <b>Precio :</b>${price}</p>
+                        <p> <b>Category:</b>{category}</p>
+                        <p> <b>Dictate by:</b> {directedBy}</p>
+                        <p className="priceCourse"> <b>Price:</b>${price}</p>
                     </Card.Text>
                 </Card.Body>
                 <div>
 
-                <Button className="infoBtn" onClick={() => redirectToIndividualSuscriptions()}> <AiFillBulb /> Mas información </Button>
+                <Button className="infoBtn" onClick={() => redirectToIndividualSuscriptions()}> <AiFillBulb /> Read more </Button>
                 <Button className="favBtn"> <AiOutlineHeart />  </Button>
                 </div>
             </Card>

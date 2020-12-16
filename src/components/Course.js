@@ -57,16 +57,16 @@ const Course = ({ course }) => {
                 <td className="text-center dataC">{displayed}</td>
                 <td className="text-center dataC"></td>
                 <td>
-                    <Button type="button" className="actionBtn mr-2" onClick={() => redirectToEditCourse()}> <AiTwotoneEdit /> Editar </Button>
-                    <Button type="button" className="actionBtn" onClick={handleShow}>  <AiFillDelete /> Borrar  </Button>
+                    <Button type="button" className="actionBtn mr-2" onClick={() => redirectToEditCourse()}> <AiTwotoneEdit /> Edit </Button>
+                    <Button type="button" className="actionBtn" onClick={handleShow}>  <AiFillDelete /> Delete  </Button>
                 </td>
             </tr>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>¿Estas Seguro que deseas eliminar de forma permanente este curso? </Modal.Title>
+                    <Modal.Title>Are you sure you want to delete this course? </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p> Puede destiladar la opción "Publicado" y el curso no se mostrara en su pagina principal</p>
+                    <p> You can unmark de option "published" and the course wont be showed in the main page</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={handleClose}> Cancelar </Button>

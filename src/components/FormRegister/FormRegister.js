@@ -79,7 +79,7 @@ const FormRegister = () => {
                     Enviar
                 </Button>
                 <a className="m-5" href="#"></a>
-                <Link to="/recoverpassword">¿Have you forgotten the password?</Link>
+                <Link to="/recoverpassword">Have you forgotten the password?</Link>
                 {
                     alert &&
                     <Alert variant="danger">{alert}</Alert>

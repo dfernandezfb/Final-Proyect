@@ -7,17 +7,20 @@ import Footer from './components/Footer/Footer'
 //Pages
 import AdminPage from "./pages/AdminPage";
 import LandingPage from "./pages/LandingPage";
-import Home from "./pages/Home"
-import FavoritePage from "./pages/FavoritePage"
-import RecoverPasswordPage from "./pages/RecoverPasswordPage"
+import Home from "./pages/Home";
+import FavoritePage from "./pages/FavoritePage";
+import RecoverPasswordPage from "./pages/RecoverPasswordPage";
 import CourseDetail from './pages/CourseDetail.js';
+import Error404 from './pages/Error404'
 //Routes
 import PrivateRoute from "./routes/PrivateRoute";
+import AdminRoute from './routes/AdminRoute';
 //Context
 import AdminpageProvider from "./context/AdminpageContext"
 import FunctionModalsProvider from "./context/FunctionModals";
 import AuthState from './context/auth/authState';
 import authToken from './config/token';
+import Subscriptions from './pages/Subscriptions.js';
 
 const token = localStorage.getItem('token');
 if(token) {
@@ -34,6 +37,7 @@ function App() {
           <FunctionModalsProvider>
             <Header dayHour={dayHour} />
             <Switch>
+              <PrivateRoute exact path="/subscriptions" component={Subscriptions} />
               <Route exact path="/" component={LandingPage} />
               <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
               <PrivateRoute exact path="/adminpage" component={AdminPage} />

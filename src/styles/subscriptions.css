@@ -1,0 +1,129 @@
+.card-sub {
+    position: relative;
+    border-radius: 10px;
+    border-color: transparent;
+  }
+
+  .icon-sub {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.7s;
+    z-index: 1;
+  }
+  .card-sub:nth-child(2) .icon-sub {
+    background: #e07768;
+  }
+
+  .card-sub:nth-child(3) .icon-sub {
+    background: #6eadd4;
+  }
+
+  .card-sub:nth-child(1) .icon-sub {
+    background: #4aada9;
+  }
+
+  .icon2-sub {
+    position: absolute;
+    top: 30%;
+    left: 38%;
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .face-sub {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+  }
+
+  .face-sub.face1-sub {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+  }
+
+  .card-sub:hover .face-sub.face1-sub {
+    background: #ff0057;
+    transform: translateY(0px);
+  }
+
+  .content-sub {
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  .card-sub:hover .face-sub.face1-sub .content-sub {
+    opacity: 1;
+  }
+
+  .card-sub .face-sub.face1-sub .content-sub .icon2-sub {
+    max-width: 100px;
+  }
+
+  .face-sub.face2-sub {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+  }
+
+  .card-sub:hover .face-sub.face2-sub {
+    transform: translateY(0);
+  }
+
+  .content-sub p {
+    margin: 10px 0 0 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+  }
+
+  .content-sub h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
+  }
+  .diamond {
+    animation: rotation3d 2s infinite linear;
+  }
+  @keyframes rotation3d {
+    0% {
+      -webkit-transform: rotate3d(0, 1, 0, 0deg);
+      color: purple;
+    }
+    50% {
+      color: plum;
+    }
+    100% {
+      -webkit-transform: rotate3d(0, 1, 0, 359deg);
+      color: purple;
+    }
+  }
+  .gold {
+    color: gold;
+  }
+  .free {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    font-size: 40px;
+    color: #fff;
+  }
