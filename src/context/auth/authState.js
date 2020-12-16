@@ -75,7 +75,6 @@ const AuthState = ({ children }) => {
     })
   }
 
-
   const login = async data => {
     try {
       const response = await clientAxios.post('/auth', data);
@@ -112,5 +111,5 @@ const AuthState = ({ children }) => {
     </AuthContext.Provider>
   );
 }
- 
+
 export default AuthState;
