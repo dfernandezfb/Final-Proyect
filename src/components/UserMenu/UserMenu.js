@@ -31,7 +31,7 @@ const UserMenu = ({user, dayHour}) =>
     const secInitialPos=arrayName.length -1
     const secondInitial = arrayName[secInitialPos].substr(0,1).toUpperCase();
     return(
-        <div className="usermenu-container"> {/*ARMAR EL COMPONENTE DROPDOWN CON ESTO*/}
+        <div className="usermenu-container align-items-center">
             <div className="initials-container">
                 <div className={`usermenu-initials-${tema} ${color}`}>
                 {firstInitial}{secondInitial}
