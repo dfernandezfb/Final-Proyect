@@ -66,28 +66,6 @@
   .buttonSubmitLogin{
     background-color: #187795!important;
   }
-  .socialMediaLogIn{
-    margin-top: 15px;
-  }
-  .FbLogin{
-    margin-bottom: 20px;
-    width: 100%;
-    background-color: #4267B2;
-  }
-  .GoogleLogin{
-    color: white;
-    width: 100%;
-    background-color: #ea3445;
-    border-color: black;
-  }
-  .fbIcon{
-    vertical-align: unset;
-  }
-  .googleIcon{
-    font-size: 15px;
-    vertical-align: unset;
-  }
-
   .homeBody {
     width: 100%;
     margin: 0 auto;

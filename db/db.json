@@ -16,7 +16,7 @@
       "directedBy": "fgfgfg",
       "description": "Ruby on Rails es una tecnología que le permite a los desarrolladores crear aplicaciones web de forma rápida y efectiva.",
       "displayed": false,
-      "image": "",
+      "image": "https://blog.desdelinux.net/wp-content/uploads/2019/08/ruby-on-rails-6.jpg",
       "price": "1900",
       "name": "Desarrollo Web Backend con Ruby on Rails"
     },
@@ -26,7 +26,7 @@
       "directedBy": "",
       "description": "Esta herramienta de software provee un set de funcionalidades preestablecidas que permiten juntar los elementos que requiere un videojuego en su desarrollo.",
       "displayed": false,
-      "image":"",
+      "image":"https://dropinblog.com/uploaded/blogs/34235509/files/featured/unity_featured_image_2.png",
       "price": 1900,
       "name": "Desarrollo de Videojuegos con Unity"
     },

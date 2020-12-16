@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Form, Button} from 'react-bootstrap'
 import "./ModalLogin.css";
-import {FaFacebookF, FaGooglePlusG } from 'react-icons/fa'
 
 
 const ModalLogin = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
@@ -38,11 +37,6 @@ const ModalLogin = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
     Submit
   </Button>
 </Form>
-<div className="socialMediaLogIn">
-  <p>Or Login with your social media</p>
-  <Button className="FbLogin"><FaFacebookF className="fbIcon"/>Facebook Login</Button>
-  <Button className="GoogleLogin"><FaGooglePlusG className="googleIcon"/> Google Login</Button>
-  </div>
       </div>
     </div>
   </React.Fragment>, document.body
