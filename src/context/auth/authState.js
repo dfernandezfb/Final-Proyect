@@ -39,6 +39,7 @@ const AuthState = ({ children }) => {
         type: SUCCESS_REGISTER,
         payload: response.data
       })
+      history.push('/subscriptions');
     } catch (error) {
       dispatch({
         type: ERROR_REGISTER,
@@ -74,7 +75,6 @@ const AuthState = ({ children }) => {
       type:LOGOUT
     })
   }
- 
 
   const login = async data => {
     try {
@@ -83,7 +83,7 @@ const AuthState = ({ children }) => {
         type: LOGIN,
         payload: response.data
       })
-      history.push('/home');
+      history.push('/subscriptions');
     } catch (error) {
       dispatch({
         type: ERROR_LOGIN,
@@ -112,5 +112,5 @@ const AuthState = ({ children }) => {
     </AuthContext.Provider>
   );
 }
- 
+
 export default AuthState;

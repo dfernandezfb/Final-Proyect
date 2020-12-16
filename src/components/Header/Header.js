@@ -38,9 +38,9 @@ const Header = ({ dayHour }) => {
                 <LoginForm show={show} handleClose={setShow} />
                 <Container fluid className={dayClassContainer}>
                     <Row>
-                        <Col md={6}>
+                        <Col xs={6} md={9}>
                             <Navbar sticky="top" className="py-0">
-                                <Navbar.Brand href="/" className="py-0" >
+                                <Navbar.Brand href="/home" className="py-0" >
                                     <img
                                         alt="Logo"
                                         src={logo}
@@ -50,7 +50,7 @@ const Header = ({ dayHour }) => {
                                 </Navbar.Brand>
                             </Navbar>
                         </Col>
-                        <Col md={6} className="container-login-button">
+                        <Col xs={6} md={3} className="container-login-button">
                         <div className="modalLoginApp">
                             <button className={`login-button-${tema}`} onClick={() => setShow(true)}> Log In </button>
                         </div>
@@ -88,8 +88,8 @@ const Header = ({ dayHour }) => {
                         <Link className={dayClassLink} to="/home">Home</Link>
                         <Link className={dayClassLink} to="/">Featured</Link>
                         <Link className={dayClassLink} to="/">Categories</Link>
-                        <Link className={dayClassLink} to="/">Contact</Link>
-                        <Link className={dayClassLink} to="/">Help</Link>
+                        <Link className={dayClassLink} to="/aboutus">Contact</Link>
+                        <Link className={dayClassLink} to="/sdads">Help</Link>
                     </Row>
                 </Container>
             </>

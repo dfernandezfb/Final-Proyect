@@ -1,0 +1,26 @@
+.containerAboutUs{
+    color:white;
+    font-size: large;
+}
+.bgAboutUs{
+    background-image: url('../images/logo.jpeg') !important;
+    background-size: 100% 100%;
+    object-fit:contain;
+}
+.bgItemsAboutUs{
+    opacity: 85%;
+    color:white;
+}
+.linkAboutUs{
+    color: white;
+    text-decoration: underline;
+}
+.linkAboutUs:hover{
+    color: white;
+}
+.textAboutUs{
+    font-size: large;
+}
+.colSize{
+    height: 60vh;
+}

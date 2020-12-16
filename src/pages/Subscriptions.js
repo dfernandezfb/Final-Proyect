@@ -47,7 +47,7 @@ const Subscriptions = () => {
   return (
     <>
       <h5 style={{ padding: 25 }}>
-        Pon el mouse sobre la cada tarjeta para observar las distintas caracteristicas de cada suscripción, cuando te hayas decidido por una, presiona sobre el icono de la suscripción para adquirirla.
+        Put your mouse over each card to see the diferents characteristics of each suscription, once you choose one, just click on them to pay it
       </h5>
       <ContainerCards>
         <div className="card-sub">
@@ -66,18 +66,18 @@ const Subscriptions = () => {
                 <p>FREE</p>
               </h3>
               <p>
-                <b>Suscripción gratuita</b>
+                <b>Free suscription</b>
               </p>
               <hr />
               <ul>
                 <li>
-                  <s>Cursos ilimitados</s>
+                  <s>Ilimitated courses</s>
                 </li>
                 <li>
-                  <s>Capacidad de almacenar favoritos de manera ilimitada</s>
+                  <s>Ilimitated capacity for storage your faouvorites courses</s>
                 </li>
                 <li>
-                  <s>Clases de consulta</s>
+                  <s>Extra classes</s>
                 </li>
               </ul>
             </div>
@@ -102,14 +102,14 @@ const Subscriptions = () => {
                 <p>GOLD</p>
               </h3>
               <p>
-                <b>Suscripción de oro</b>
+                <b>Gold suscription</b>
               </p>
               <hr />
               <ul>
-                <li>Cursos ilimitados</li>
-                <li>Capacidad de almacenar favoritos de manera ilimitada</li>
+                <li>Ilimitated courses</li>
+                <li>Ilimitated capacity for storage your faouvorites courses</li>
                 <li>
-                  <s>Clases de consulta</s>
+                  <s>Extra classes</s>
                 </li>
               </ul>
             </div>
@@ -133,13 +133,13 @@ const Subscriptions = () => {
                 <p>DIAMOND</p>
               </h3>
               <p>
-                <b>Suscripción diamante</b>
+                <b>Diamond suscription</b>
               </p>
               <hr />
               <ul>
-                <li>Cursos ilimitados</li>
-                <li>Capacidad de almacenar favoritos de manera ilimitada</li>
-                <li>Clases de consulta</li>
+                <li>Ilimitated courses</li>
+                <li>Ilimitated capacity for storage your faouvorites courses</li>
+                <li>Extra classes</li>
               </ul>
             </div>
           </div>

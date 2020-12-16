@@ -1,12 +1,9 @@
-.cover-landing{
-    position: relative;
-    height: 100vh;
-    background: #0d0d0e;
-}
-
 .cover-background-landing{
     background-image: url(../images/heroimage.png);
     color: white;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50%;
 }
 .cover-content-landing{
     position: relative;
@@ -29,9 +26,6 @@
     border-radius: 20px;
     margin: 15px 15px 15px 15px;
     padding: 25px;
-}
-.icoFav{
-    width: 40px;
 }
 .logo-success{
     width: 100%;

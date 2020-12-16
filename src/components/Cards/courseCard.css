@@ -35,14 +35,15 @@
 }
 
 .courseCard:hover .courseImage {
-  max-width: 80%;
+  max-width: 75%;
  text-align: center;
 
 }
 .infoCard {
   position: relative;
-  letter-spacing: 1px;
+  letter-spacing: 0.4px;
 }
+
 .priceCourse {
   font-size: auto;
   color: #040F0F;
@@ -76,3 +77,15 @@ background: #002147;
   opacity: 1;
 }
 
+.opinionContainer {
+  width: 78%; 
+  border-radius: 1em;
+  border: 1px solid #040F0F;
+ margin-top: 10px; 
+ color:#040F0F;
+}
+
+
+.infoComments {
+  width: 100%;
+}
