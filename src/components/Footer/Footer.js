@@ -57,7 +57,7 @@ const Footer = () => {
                                 <a href="#!">React</a>
                             </p>
                             <p className="p-footer">
-                                <a href="#!">Read more...</a>
+                                <a href="/aboutus">Read more...</a>
                             </p>
                         </div>
 

@@ -37,16 +37,16 @@ const UserMenu = ({user, dayHour}) =>
                 {firstInitial}{secondInitial}
                 </div>
                 <div className={`initials-content-${tema}`}>
-                    <Link to="" className={`initials-link-${tema} ${color}`}>Perfil</Link>
-                    <Link to="" className={`initials-link-${tema} ${color}`}>Suscripción</Link>
-                    <p onClick={logout} className={`initials-link-${tema} ${color}`}>Cerrar sesión</p>
+                    <Link to="" className={`initials-link-${tema} ${color}`}>Profile</Link>
+                    <Link to="" className={`initials-link-${tema} ${color}`}>Suscription</Link>
+                    <p onClick={logout} className={`initials-link-${tema} ${color}`}>Log out</p>
                 </div>
             </div>
             <div className="initials-container">
                 <div>
                     <FaBell className={`usermenu-link-${tema} ${color}`} size={25}/>
                 </div>
-                <div className={`initials-content-${tema} big-container`}>
+                <div className={`initials-content-${tema} big-container text-light`}>
                     No hay notificaciones
                 </div>
             </div>
@@ -54,8 +54,8 @@ const UserMenu = ({user, dayHour}) =>
                 <div>
                     <FaHeart className={`usermenu-link-${tema} ${color}`} size={25}/>
                 </div>
-                <div className={`initials-content-${tema} big-container`}>
-                    No hay favoritos
+                <div className={`initials-content-${tema} big-container text-light`}>
+                    There isn't favourites courses
                 </div>
             </div>
         </div>
