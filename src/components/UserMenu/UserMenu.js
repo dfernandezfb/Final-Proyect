@@ -1,13 +1,16 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import {FaBell,FaHeart} from 'react-icons/fa'
 import './UserMenu.css'
 import {Link} from 'react-router-dom'
 import Dropdown from './../Dropdown/Dropdown'
 import authContext from '../../context/auth/authContext'
+import clientAxios from '../../config/Axios'
+
 
 const UserMenu = ({user, dayHour}) =>{
     const [favourites, setFavourites] = useState([])
-    const {logout} = useContext(authContext)
+    
+    const {logout } = useContext(authContext)
     let color="";
     let tema="";
     // const [color,setColor]=useState('');
@@ -30,6 +33,13 @@ const UserMenu = ({user, dayHour}) =>{
     const firstInitial= arrayName[0].substr(0,1).toUpperCase();
     const secInitialPos=arrayName.length -1
     const secondInitial = arrayName[secInitialPos].substr(0,1).toUpperCase();
+    useEffect ( () => {
+        const getFavs = async () => {
+            const response = await clientAxios.get(`/users/${user._id}/favs`);
+            setFavourites(response.data);
+        }
+        getFavs();
+    }, [user.favs] )
     return(
         <div className="usermenu-container align-items-center">
             <div className="initials-container">
@@ -59,11 +69,14 @@ const UserMenu = ({user, dayHour}) =>{
                     favourites.length === 0 
                     ? (<p>There aren´t favourites courses</p>)
                 : (favourites.map((favourite, index) => (
+                    <Link to={`/courses/detail/${favourite._id}`} >
                     <div key={index}>
-                        <img src={favourite.image} alt={favourite.name}/>
-                            <p>{favourite.name}</p>
+                        <img className="cardsFavs" src={favourite.image} alt={favourite.name}/>
+                            <p className="nameFavs">{favourite.name}</p>
                     </div>
+                    </Link>
                 )))
+
                 }
                 </div>
             </div>
