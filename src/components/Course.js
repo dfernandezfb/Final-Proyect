@@ -1,17 +1,19 @@
 //Dependencies
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext} from 'react';
 import clientAxios from '../config/Axios'
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
 //Context
 import { AdminpageContext } from '../context/AdminpageContext';
 //CSS and Icons
 import '../components/Modals/Courses.css';
 import { AiTwotoneEdit, AiFillDelete } from 'react-icons/ai';
+import Subscriptions from '../pages/Subscriptions';
 
 
 const Course = ({ course }) => {
-    const { _id, category, directedBy, name, description, displayed } = course
+    const { _id, category, directedBy, name, description, displayed, subscription } = course;
+    
     const { courses, setCourses } = useContext(AdminpageContext);
     
     //Get All Courses
@@ -55,9 +57,12 @@ const Course = ({ course }) => {
                 <td className="text-center dataC">{category}</td>
                 <td className="text-center dataC">{directedBy}</td>
                 <td className="text-center dataC">{displayed}</td>
-                <td className="text-center dataC"></td>
+                 <td className="text-center dataC">{subscription}</td>
                 <td>
-                    <Button type="button" className="actionBtn mr-2" onClick={() => redirectToEditCourse()}> <AiTwotoneEdit /> Edit </Button>
+                    <Link to = {`/courses/editar/${_id}`}>
+                    <Button type="button" className="actionBtn mr-2" > <AiTwotoneEdit /> Edit </Button>
+                    </Link>
+
                     <Button type="button" className="actionBtn" onClick={handleShow}>  <AiFillDelete /> Delete  </Button>
                 </td>
             </tr>
