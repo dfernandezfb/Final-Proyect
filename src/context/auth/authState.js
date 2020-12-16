@@ -45,6 +45,7 @@ const AuthState = ({ children }) => {
         type: ERROR_REGISTER,
         payload: error.response.data.msg
       })
+      console.log(error.response);
       setTimeout(() => {
         clearAlert();
       }, 2000)

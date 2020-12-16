@@ -5,9 +5,11 @@ import { useContext } from "react";
 import AuthContext from "../context/auth/authContext";
 import clientAxios from "../config/Axios";
 import '../styles/subscriptions.css'
+import {useHistory} from 'react-router-dom'
 
 const Subscriptions = () => {
   const { user } = useContext(AuthContext);
+  const history = useHistory();
   let userClone = user;
   const ContainerCards = styled.div`
     width: 80%;
@@ -43,6 +45,7 @@ const Subscriptions = () => {
       `/users/${userClone._id}`,
       sub
     );
+    history.push('/home');
   };
   return (
     <>

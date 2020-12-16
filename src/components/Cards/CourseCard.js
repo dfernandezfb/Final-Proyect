@@ -37,7 +37,7 @@ const CourseCard = ({ courseCard, dayHour}) => {
                     <Card.Title className="infoCard" >{name}</Card.Title>
                     <Card.Text className="infoCard">
                         <p> <b>Category:</b>{category}</p>
-                        <p> <b>Dictate by:</b> {directedBy}</p>
+                        <p> <b>Dictated by:</b> {directedBy}</p>
                         <p className="priceCourse"> <b>Subscription:</b>{subscription}</p>
                     </Card.Text>
                 </Card.Body>
