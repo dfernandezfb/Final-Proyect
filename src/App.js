@@ -20,6 +20,7 @@ import AdminpageProvider from "./context/AdminpageContext"
 import FunctionModalsProvider from "./context/FunctionModals";
 import AuthState from './context/auth/authState';
 import authToken from './config/token';
+import Subscriptions from './pages/Subscriptions.js';
 
 const token = localStorage.getItem('token');
 if(token) {
@@ -36,6 +37,7 @@ function App() {
           <FunctionModalsProvider>
             <Header dayHour={dayHour} />
             <Switch>
+              <PrivateRoute exact path="/subscriptions" component={Subscriptions} />
               <Route exact path="/" component={LandingPage} />
               <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
               <PrivateRoute exact path="/adminpage" component={AdminPage} />
