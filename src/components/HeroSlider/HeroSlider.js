@@ -4,7 +4,7 @@ import clientAxios from "../../config/Axios";
 import '../HeroSlider/HeroSlider.css';
 import Banner from '../Banner/Banner'
 
-const HeroSlider = ({ carousel }) => {
+const HeroSlider = () => {
   const [images, setImages] = useState([]);
   useEffect(() => {
     const getFavsImages = async () => {
@@ -16,7 +16,12 @@ const HeroSlider = ({ carousel }) => {
 
   return (
     <>
-      <Carousel interval={3000}>
+      <Carousel
+        className="carouselMinSize"
+        nextIcon={null}
+        prevIcon={null}
+        interval={3000}
+      >
         {images.map((image, index) => (
           <Carousel.Item key={index}>
             <span aria-hidden="true" className="carousel-control-next-icon" />	

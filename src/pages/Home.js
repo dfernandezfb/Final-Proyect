@@ -4,8 +4,10 @@ import { AdminpageContext } from "../context/AdminpageContext";
 //Components
 import CourseCard from '../components/Cards/CourseCard';
 import HeroSlider from '../components/HeroSlider/HeroSlider';
+import Banner from '../components/Banner/Banner';
 //CSS
 import "../components/Modals/ModalLogin.css";
+import "../components/Banner/Banner.css"
 
 const Home = () => {
   const { courses, setCourses } = useContext(AdminpageContext);
@@ -14,6 +16,7 @@ const Home = () => {
         <div className="homeBody">
           <HeroSlider />
         </div>
+        <Banner />
       </>
     );
 }

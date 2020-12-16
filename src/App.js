@@ -22,6 +22,8 @@ import FunctionModalsProvider from "./context/FunctionModals";
 import AuthState from './context/auth/authState';
 import authToken from './config/token';
 import Subscriptions from './pages/Subscriptions.js';
+//Styles
+import './styles/main.css';
 
 const token = localStorage.getItem('token');
 if(token) {
