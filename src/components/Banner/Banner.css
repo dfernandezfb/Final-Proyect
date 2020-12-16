@@ -1,12 +1,29 @@
 .bannerImg{
-    width: 100%;
-    height: 250px;
-    object-fit:contain;
+    height: 260px;
+    object-fit:cover;
 }
 .showBanner{
     display: block;
+    animation: banner 10s infinite;
+    animation-direction: alternate;
 }
-@media (max-width:425px){
+@keyframes banner {
+    0%, 30% {
+               background-image: url(https://lh3.googleusercontent.com/proxy/JTEV8pR9xlmK_eh8vCSLU-vNGzDLwdxsByRYgFUQK7paIyniUr9gFdIK-1aW4H8XVSaG1vS2rcejKGkCYrPyNeSBRMPDCJdszy4gG-mZwzETxwIZ9iYrvxw-N4myjkeH);
+               
+    }
+    
+    35%, 65% {
+        background-image: url(https://www.softzone.es/app/uploads-softzone.es/2019/08/Visual-Studio-Code-W10.jpg);
+    }
+   
+   
+    70%, 100% {
+        
+       background-image: url(https://lh3.googleusercontent.com/proxy/UXL0aIiCD_qDSEYNQ1DbGM4gy_jbZjB2J27PNs3n-zlFjrgqf0USr_f_Cx13jtxWZK87OdawH5d1zO7wsSefm5DPmv5ILqv5hCtv5Mc7SkSbNS5QYwqtfw_2WDpU5DzsNXf0ReIIG9EbW0i1KMkG37Og5O298cM7OcXODms-a9Nfs2ngFA);
+    }
+   }
+@media (max-width:430px){
     .showBanner{
         display: none;
     }
