@@ -14,7 +14,6 @@ const Favourite = ({match}) => {
                 const favourite = await clienteAxios.get(`/users/${user._id}/favs`);
                 console.log(favourite)
                 setFavourite(favourite.data);
-                console.log(favourite)
             } catch (error) {
                 console.log(error.response)
             }
