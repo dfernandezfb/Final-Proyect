@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import clientAxios from "../../config/Axios";
 import '../HeroSlider/HeroSlider.css';
 
-const HeroSlider = ({ carousel }) => {
+const HeroSlider = () => {
   const [images, setImages] = useState([]);
   useEffect(() => {
     const getFavsImages = async () => {
@@ -15,7 +15,12 @@ const HeroSlider = ({ carousel }) => {
 
   return (
     <>
-      <Carousel>
+      <Carousel
+        className="carouselMinSize"
+        nextIcon={null}
+        prevIcon={null}
+        interval={3000}
+      >
         {images.map((image, index) => (
           <Carousel.Item key={index}>
             <img 
