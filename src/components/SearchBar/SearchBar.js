@@ -1,12 +1,13 @@
 import './SearchBar.css'
-import {useState} from 'react'
+import {useState , useEffect} from 'react'
 import {FaSearch} from 'react-icons/fa'
 import clientAxios from '../../config/Axios'
 
 const SearchBar = ({dayHour}) =>
 {
   const [search,setSearch]=useState('');
-  const [courses,setCourses]=useState([])
+  const [courses,setCourses]=useState([]);
+  const [result,setResult]=useState([]);
   let tema=""
   if(dayHour>=7 && dayHour<19)
   {
@@ -15,8 +16,8 @@ const SearchBar = ({dayHour}) =>
   {
     tema='oscuro';
   }
-  async function getCourses()
-  {
+ 
+  useEffect(async ()=>{
     try
     {
       const response = await clientAxios.get("/courses")
@@ -25,14 +26,22 @@ const SearchBar = ({dayHour}) =>
     catch(error)
     {
       console.log(error.response);
-    } 
-  }
-  const handleOnChange=e =>{
+    }
+  },[])
+  useEffect(() => {
+
+  }, [search])
+  const handleOnChange= e =>{
     setSearch(e.target.value);
-    setCourses(getCourses())
-    const results=courses.filter(course => search.toLowerCase()===course.name.toLowerCase().substring(0,search.length));
-    console.log(results);
-    
+  }
+  const handleOnKeyUp =async e =>
+  {
+    if(search.length > 2)
+    {
+      const results= courses.filter(course => course.name.toLowerCase().includes(search.toLowerCase()));
+      setResult(results);
+      console.log(result);
+    }
   }
 
   return(
@@ -43,6 +52,7 @@ const SearchBar = ({dayHour}) =>
     </label>
     <input 
       onChange={handleOnChange}
+      onKeyUp={handleOnKeyUp}
       className={`searchbar-${tema}`}
       type="text"
       name="search" 
@@ -51,6 +61,24 @@ const SearchBar = ({dayHour}) =>
       id="searchbar" 
     />
   </form>
+  <div className='container-favs'>
+    {
+      result.length <= 0
+      ? null
+      : (
+        result.map((resul,index)=>
+          <li className='container-result' >
+            <div className='result-icon'>
+              <FaSearch/>
+            </div>
+            <div className='result-name'>
+              <b key={index}>{resul.name}</b>
+            </div>
+          </li>
+        )
+      )
+    }
+  </div>
   </div>)
 }
 

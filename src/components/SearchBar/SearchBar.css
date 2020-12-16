@@ -61,6 +61,26 @@
     padding-left: 1px;
     display:inline-block;
     margin-top:0.3em;
+    margin-bottom:0;
     left:0.1em;
     color:#fbf9ff;
+  }
+  .container-favs
+  {
+    width: 27em;
+    background-color: #002147;
+    color: #fbf9ff;
+    
+  }
+  .container-result
+  {
+    display:flex;
+  }
+  .result-icon
+  {
+    width:10%;
+  }
+  .result-name
+  {
+    width:90%;
   }
