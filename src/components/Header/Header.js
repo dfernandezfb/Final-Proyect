@@ -14,18 +14,15 @@ import LoginForm from '../LoginForm/LoginForm';
 const Header = ({ dayHour }) => {
     const {user}=useContext(authContext);
     const [show, setShow] = useState(false);
-    let dayClassContainer = '';
     let dayClassLink = '';
     let logo = '';
     let tema = '';
 
     if (dayHour >= 7 && dayHour < 19) {
-        dayClassContainer = 'bg-color1 navbar-container';
         dayClassLink = 'navbar-link-claro color4';
         tema='claro'
         logo = logooscuro;
     } else {
-        dayClassContainer = 'bg-color4 navbar-container';
         dayClassLink = 'navbar-link-oscuro color2';
         tema='oscuro'
         logo = logoclaro;
@@ -55,22 +52,22 @@ const Header = ({ dayHour }) => {
                                 ? (
                                 <>
                                     <Nav.Link>
-                                        <Link to="/home">
+                                        <Link to="/home" className={dayClassLink}>
                                             Home
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/favourites">
+                                        <Link to="/favourites" className={dayClassLink}>
                                             Favourites
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/aboutUs">
+                                        <Link to="/aboutUs" className={dayClassLink}>
                                             Contact
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/">
+                                        <Link to="/"className={dayClassLink}>
                                             Help
                                         </Link>
                                     </Nav.Link>

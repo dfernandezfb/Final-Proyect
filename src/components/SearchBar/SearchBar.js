@@ -2,6 +2,7 @@ import './SearchBar.css'
 import {useState , useEffect} from 'react'
 import {FaSearch} from 'react-icons/fa'
 import clientAxios from '../../config/Axios'
+import {Link} from 'react-router-dom'
 
 const SearchBar = ({dayHour}) =>
 {
@@ -28,9 +29,7 @@ const SearchBar = ({dayHour}) =>
       console.log(error.response);
     }
   },[])
-  useEffect(() => {
-
-  }, [search])
+  
   const handleOnChange= e =>{
     setSearch(e.target.value);
   }
@@ -41,13 +40,16 @@ const SearchBar = ({dayHour}) =>
       const results= courses.filter(course => course.name.toLowerCase().includes(search.toLowerCase()));
       setResult(results);
       console.log(result);
+    }else
+    {
+      setResult([])
     }
   }
 
   return(
   <div id="searchbar-container">
-  <form id="searchbar-form" className={`searchbar-form-${tema} p-2`}>
-    <label htmlFor="searchbar" className={`label-${tema} mr-2`}>
+  <form id="searchbar-form" className={`searchbar-form-${tema}`}>
+    <label htmlFor="searchbar" className={`label-${tema}`}>
       <FaSearch size={25}/>
     </label>
     <input 
@@ -59,20 +61,21 @@ const SearchBar = ({dayHour}) =>
       value={search} 
       placeholder="Buscar" 
       id="searchbar" 
+      autoComplete='off'
     />
   </form>
-  <div className='container-favs'>
+  <div className={`container-favs-${tema}`}>
     {
-      result.length <= 0
+      result.length === 0
       ? null
       : (
         result.map((resul,index)=>
-          <li className='container-result' >
+          <li key={index} className='container-result' >
             <div className='result-icon'>
               <FaSearch/>
             </div>
             <div className='result-name'>
-              <b key={index}>{resul.name}</b>
+              <Link to='/'> {resul.name}</Link>
             </div>
           </li>
         )

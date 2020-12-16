@@ -13,16 +13,6 @@
     transition: all .2s ease;
 }
 
-.navbar-link-oscuro:hover
-{
-    padding:0px;
-    text-decoration: none;
-    background-color:#8fe388;
-    color:#002147;
-    border-radius: 1rem;
-    font-size: x-large;
-    transform: scale3d(1.1);
-}
 
 .navbar-link-claro
 {
@@ -33,16 +23,7 @@
     transition: all .2s ease;
 }
 
-.navbar-link-claro:hover
-{
-    padding:0px;
-    text-decoration: none;
-    background-color:#002147;
-    color:#fbf9ff;
-    border-radius: 1rem;
-    font-size: x-large;
-    transform: scale3d(1.1);
-}
+
 .container-login-button
 {
     display:flex;
