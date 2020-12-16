@@ -7,8 +7,10 @@
       "description": "Ruby on Rails es una tecnología que le permite a los desarrolladores crear aplicaciones web de forma rápida y efectiva.",
       "displayed": false,
       "image": "https://www.udemy.com/staticx/udemy/images/v6/default-meta-image.png",
-      "price": "1900",
-      "name": "Desarrollo Web Backend con Ruby on Rails"
+      "name": "Desarrollo Web Backend con Ruby on Rails",
+      "featured": true,
+      "subscription":"",
+      "comments": ""
     },
     {
       "id": 2,

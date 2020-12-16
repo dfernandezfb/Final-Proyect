@@ -1,5 +1,7 @@
 .bodyDetail {
     box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
     margin: 0;
     display: block;
     padding: 0;
@@ -18,7 +20,7 @@
     position: fixed;
     background: transparent;
     width: 40%;
-    transform: translateX(195%) translateY(-42%); 
+    transform: translateX(192%) translateY(-42%); 
 }
 
 .card-twoDetail{
@@ -63,4 +65,23 @@
     border: 1px solid black;
     width: 74%;
     margin-left: 30px;
+}
+
+@media screen and (max-width: 425px) {
+    .containerDetail {
+        width: 100%;
+        overflow: hidden;
+        font-size: 0.8em;
+    }
+    .infoDetail, .card-twoDetail, .requiredDetail, .opinionCards, .commentsForm{
+        width: 80%;
+    }
+
+    .cardDetail {
+        position: relative;
+        background: transparent;
+        width: 100%; 
+        transform: translateX(15%) translateY(-15%);
+        
+    }
 }

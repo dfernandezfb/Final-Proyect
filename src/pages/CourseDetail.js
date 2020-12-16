@@ -1,8 +1,8 @@
 //Dependencies
 import { useState, useEffect } from 'react';
 import { Card, Button, Form } from 'react-bootstrap';
-import clientAxios from '../config/Axios';
 import axios from 'axios';
+import clientAxios from '../config/Axios';
 import Comments from '../components/Cards/Comments';
 //Icons
 import { AiOutlineYoutube, AiOutlineCloudDownload, AiFillStar, AiOutlineStar } from 'react-icons/ai'
@@ -12,27 +12,25 @@ import {GiStopwatch} from 'react-icons/gi'
 //Css
 import  '../styles/courseDetail.css';
 import  '../styles/colorspallete.css';
-//Logos
-/* import logoclaro from '../images/logorecortadoclaro.png' */
-import logooscuro from '../images/logorecortado.png' 
+
 
 const CourseDetail = ({ match }) => {
     const [course, setCourse] = useState([]);
     const [comment, setComment] = useState([]);
     const idCourse = match.params.id;
 
-    const { name, category, description, image, directedBy, price } = course;
+    const { name, category, description, image, directedBy, subscription } = course;
 
     useEffect(() => {
-        const getCoursesById = async () => {
+        const getCoursesById = async (id) => {
             try {
-                const course = await clientAxios.get(`/courses/${idCourse}`);
+                const course = await clientAxios.get(`/courses/id/${id}`);
                 setCourse(course.data);
             } catch (error) {
                 console.log(error.course)
             }
         }
-        getCoursesById();
+        getCoursesById(idCourse);
     });
 
     useEffect(()=> {
@@ -48,10 +46,8 @@ const CourseDetail = ({ match }) => {
     },[]);
     
     
-    var logo= logooscuro;
-    
     return (
-        <div className="bg-color1">
+        <div className="bg-color1 containerDetail">
             <div className="bodyDetail ">
                 <div className="infoDetail">
                     <h1>{name}</h1>
@@ -60,16 +56,16 @@ const CourseDetail = ({ match }) => {
                     <p> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> (3.773) calificaciones de 12.800 estudiantes</p>
                     <Button className="detailBtn">Compartir</Button> <Button className="detailBtn"> Ingresar suscrpicion </Button>
                 </div>
-                <div className="cardDetail">
+                <div className="cardDetail row">
                     <Card style={{ width: '18rem', height: 'auto' }}>
-                        <Card.Img className="" src = {logo} />
+                        <Card.Img className="" src = {image} />
                         <Card.Body>
-                            <h1>$ {price} <small> <s> $9500</s></small> </h1>
+                            <h1> {subscription} <small> <s> $9500</s></small> </h1>
                             <p>80% de descuento</p>
                             <p> <GiStopwatch /> ¡Esta oferta termina en <b> 12 horas!</b></p>
                             <Button className="btnBuy" > Comprar ahora</Button>
                         </Card.Body>
-                        <Card.Footer>
+                        <Card.Footer className="benefitsCourse ">
                             <p>Este curso Incluye:</p>
                             <ul style={{ listStyle: 'none' }}>
                                 <li> <AiOutlineYoutube /> 28 horas de vídeo bajo demanda</li>
@@ -109,8 +105,8 @@ const CourseDetail = ({ match }) => {
                 <h1>Opiniones sobre este curso</h1>
                 {
           comment.length === 0 ? 'No hay cursos disponibles' : (
-            comment.map(commentsForm => (
-              <Comments key={commentsForm.id} commentsForm={commentsForm} />
+            comment.map((commentsForm, index) => (
+              <Comments key={index} commentsForm={commentsForm} />
             ))
             )
           }

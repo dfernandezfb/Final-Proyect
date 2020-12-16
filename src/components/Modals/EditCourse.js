@@ -8,26 +8,33 @@ import '../Modals/Courses.css';
 
 const EditCourse = ({match}) => {
 const [course, setCourse]= useState({
-    name:'',
-    category:'',
-    directedBy:'',
-    displayed:true,
-    price:''
+  name: '',
+  category: '',
+  directedBy: '',
+  image: 'sss',
+  description: 'ss',
+  displayed: false,
+  subscription: '',
+  featured: false,
+  comments : [],
   })
-const {category, directedBy, name, displayed,price} = course;
-const idCourse= match.params.idCourse;
+  const {  name, directedBy, displayed, category, description, image,comments, subscription } = course;
+
 const history = useHistory();
 
+
+
 useEffect(()=> {
-  const getCoursesById = async()=> {
+  const getCoursesById = async(_id)=> {
     try {
-      const response = await clientAxios.get(`/courses/${idCourse}`);
+      const response = await clientAxios.get(`/courses/id/${_id}`);
+      console.log(response);
       setCourse(response.data);
     } catch (error){
       console.log(error.response)
     }
   }
-  getCoursesById();
+  getCoursesById(match.params.id);
 },[]);
 
 const handleOnChange = e => {
@@ -36,11 +43,13 @@ const handleOnChange = e => {
     [e.target.name]: e.target.value
   })
 }
+//Send Method PUT
 
-const handleOnSubmit = async e => {
-e.preventDefault();
-try{
-  await clientAxios.put(`/courses/${idCourse}`, course);
+
+const handleOnSubmit = async (e) => {
+  e.preventDefault();
+  try{
+  await clientAxios.put('/courses/:id', course);
   history.push('/adminpage');
 } catch (error) {
 console.log(error.response)
@@ -96,11 +105,11 @@ console.log(error.response)
               <div >
                 <label className="titlesform" >Costo del curso:</label>
                 <input
-                  type="number"
+                  type="text"
                   className="form-control"
-                  placeholder="Precio del curso USD"
-                  name="price"
-                  value={price}
+                  placeholder="Free, Gold or Diamond"
+                  name="subscription"
+                  value={subscription}
                   onChange={handleOnChange}
                 />
               </div> 

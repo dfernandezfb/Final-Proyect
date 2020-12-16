@@ -3,8 +3,7 @@ import { Card, Button } from 'react-bootstrap';
 import { AiFillBulb, AiOutlineHeart } from 'react-icons/ai';
 //CSS
 import courseCard from '../Cards/courseCard.css'
-import logoclaro from '../../images/logorecortadoclaro.png'
-import logooscuro from '../../images/logorecortado.png'
+
 
 const CourseCard = ({ courseCard, dayHour}) => {
     const { id, category, directedBy, name, description, image, price } = courseCard;
@@ -13,17 +12,11 @@ const CourseCard = ({ courseCard, dayHour}) => {
     const redirectToIndividualSuscriptions = () => {
         history.push(`/courses/detail/${id}`)
     }
-    if(dayHour>=7 && dayHour<19)
-    {
-        var logo= logooscuro;
-    } else
-    {
-        var logo= logoclaro;
-    }
+   
     return (
         <div >
             <Card className="courseCard" style={{ width: '18rem', height: '36rem' }}>
-                <Card.Img className="courseImage" src={logo} />
+                <Card.Img className="courseImage" src={image} />
                 <Card.Body >
                     <Card.Title className="infoCard" >{name}</Card.Title>
                     <Card.Text className="infoCard">

@@ -17,17 +17,22 @@ const AdminPage = () => {
   const handleShow = () => setShow(true);
   const { show, setShow } = useContext(FunctionModalsContext);
   const { courses, setCourses } = useContext(AdminpageContext);
-  const [newCourse, setnewCourse] = useState({
-        name:'',
-        category: '',
-        directedBy: '',
-        image: '',
-        description: '',
-        displayed: false
-  }) 
-  
 
-  //funcion  treaer todos
+//NewCourse
+  const [newCourse, setnewCourse] = useState({
+    name: '',
+    category: '',
+    directedBy: '',
+    image: '',
+    description: '',
+    displayed: false,
+    subscription: '',
+    featured: false,
+    comments : [],
+  })
+  const { name, directedBy, displayed, category, description, image,comments, subscription } = newCourse;
+  
+  //Get All Courses
   const getCourses = async () => {
     try {
       const response = await clientAxios.get('/courses');
@@ -36,41 +41,28 @@ const AdminPage = () => {
       console.log(error.response);
     }
   };
-  useEffect(()=> {
+  useEffect(() => {
     getCourses();
-  },[]);
-  //Agregar Curso
-  
-  const addCourse = async ()=> {
-  try {
-    const course = await clientAxios.post('/courses');
-    console.log(course);
-    setnewCourse(course.data)
-  } catch(error) {
-    console.log(error.course)
-  }
-  getCourses();
-   }
-  
-
+  }, []);
   const handleOnChange = (e) => {
     setnewCourse({
       ...newCourse,
       [e.target.name]: e.target.value
+      
     });
   }
-
-  const { name, directedBy, price, displayed } = courses;
-//Crear Curso
   
-  const handleOnSubmit = async (e) => {
+  //Create Course
+  const addCourse = async (course) => {
+    const result = await clientAxios.post('/courses', course);
+    console.log(result);
+    getCourses();
+  }
+  const handleOnSubmit = (e) => {
     e.preventDefault();
-    try {
-    
-    } catch (error) {
-      console.log(error)
-    }
-  } 
+    addCourse(newCourse);
+    handleClose();
+  }
 
   
   return (
@@ -88,72 +80,92 @@ const AdminPage = () => {
             <th className="text-center dataC">Categoria</th>
             <th className="text-center dataC">Dictado por</th>
             <th className="text-center dataC">Publicado</th>
-            <th className="text-center dataC">Precio</th>
+            <th className="text-center dataC">Destacado</th>
             <th className="text-center dataC">Acciones</th>
           </tr>
         </thead>
         <tbody className="bodyEdit">
           {
             courses.length === 0 ? 'No hay cursos disponibles' : (
-              courses.map(course => (
-                <Course key={course.id} course={course} />
+              courses.map((course, index) => (
+                <Course key={index} course={course} />
               ))
             )
           }
         </tbody>
       </Table>
       <Modal show={show} onHide={handleClose}>
+          <Form className=" createForm" onSubmit={handleOnSubmit}  >
         <Modal.Header closeButton>
-          <Modal.Title>Bienvenido. Puede crear un nuevo curso desde este modal</Modal.Title>
+          <Modal.Title>Bienvenido. Puede crear un nuevo curso desde este modal. Complete los campos a continuación:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={handleOnSubmit}  >
             <Form.Group>
               <label>Nombre:</label>
               <input type="Text"
+                name = "name"
                 value={name}
-                 onChange= {handleOnChange} 
+                onChange={handleOnChange}
                 className="form-control" required ></input>
             </Form.Group>
             <Form.Group>
-              <label>Categoria:</label>
-              <select className="form-control" required>
-                <option value=""> Seleccionar Categoria </option>
-                <option value="1">Desarollo e Ingeniería</option>
-                <option value="2">Marketing</option>
-                <option value="3">Negocios y Emprendiemientos</option>
-                <option value="4">Crecimiento Profesional</option>
-                <option value="5">Startups</option>
-              </select>
+            <label>Categoria</label>
+              <input className="form-control" type="text"
+               name="category" 
+               value={category}
+                onChange={handleOnChange}
+                required></input>
             </Form.Group>
             <Form.Group>
               <label>Dirigido por:</label>
-              <input className="form-control" type="text" value={directedBy}
-                onChange={handleOnChange} 
+              <input className="form-control"
+               type="text" 
+               name="directedBy" 
+               value={directedBy}
+                onChange={handleOnChange}
                 required></input>
             </Form.Group>
             <Form.Group>
-              <label>Precio:</label>
-              <input className="form-control" type="number" value={price}
-                onChange={handleOnChange} 
+              <label> Imagen del curso: </label>
+              <input className="form-control" 
+              name="image" value={image}
+                onChange={handleOnChange}
+                type="text"></input>
+            </Form.Group>
+            <Form.Group>
+              <label> Descprición del curso </label>
+              <input className="form-control" name="description" value={description}
+                onChange={handleOnChange}
+                type="textarea"></input>
+            </Form.Group>
+            <Form.Group>
+            <label>Tipo de Suscripción</label>
+              <input className="form-control" type="text" placeholder="Free, Gold o Diamond"name="subscription" value={subscription}
+                onChange={handleOnChange}
                 required></input>
+            </Form.Group>
+            <Form.Group>
+              <label> Opiniones recientes sobre el curso: </label>
+              <input className="form-control" name="comments" value={comments}
+                onChange={handleOnChange}
+                type="textarea"></input>
             </Form.Group>
             <Form.Group>
               <label> Destacada: </label>
-              <input className="form-control" value={displayed}
-                onChange={handleOnChange} 
+              <input className="form-control" name="displayed" value={displayed}
+                onChange={handleOnChange}
                 type="checkbox"></input>
             </Form.Group>
-          </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
           </Button>
-          <Button type="submit" variant="primary" onClick={() => addCourse()}  >
-            Save Changes
+            <Button type="submit" variant="primary">
+              Save Changes
           </Button>
-        </Modal.Footer>
+          </Modal.Footer>
+          </Form>
       </Modal>
     </div>
   );

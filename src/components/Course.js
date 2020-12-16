@@ -1,36 +1,51 @@
 //Dependencies
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import clientAxios from '../config/Axios'
 import { useHistory } from 'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
-//CSS
-import  '../components/Modals/Courses.css';
+//Context
+import { AdminpageContext } from '../context/AdminpageContext';
+//CSS and Icons
+import '../components/Modals/Courses.css';
 import { AiTwotoneEdit, AiFillDelete } from 'react-icons/ai';
 
 
 const Course = ({ course }) => {
+    const { _id, category, directedBy, name, description, displayed } = course
+    const { courses, setCourses } = useContext(AdminpageContext);
+    
+    //Get All Courses
+    const getCourses = async () => {
+        try {
+            const response = await clientAxios.get('/courses');
+            setCourses(response.data);
+        } catch (error) {
+            console.log(error.response);
+        }
+    };
+    useEffect(() => {
+        getCourses();
+    }, []);
 
-    const { id, category, directedBy, name, description, displayed, price } = course;
 
+    //Redirect to edit course
     const history = useHistory();
-    /* console.log(history); */
     const redirectToEditCourse = () => {
-        history.push(`/courses/editar/${id}`)
+        history.push(`/courses/editar/${_id}`)
     }
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    
-  //Eliminar Curso
-    const deleteCourse = async () => {
+
+    //Delete Course 
+    const deleteCourse = async (_id) => {
         if (setShow !== true) {
-            await clientAxios.delete(`/courses/${id}`);
-            history.push('/adminpage');
+            const response = await clientAxios.delete(`/courses/${_id}`);
             handleClose();
+            getCourses();
         } else {
             window.alert('No se pudo eliminar el curso')
         }
-        
     }
 
     return (
@@ -40,14 +55,12 @@ const Course = ({ course }) => {
                 <td className="text-center dataC">{category}</td>
                 <td className="text-center dataC">{directedBy}</td>
                 <td className="text-center dataC">{displayed}</td>
-                <td className="text-center dataC">{price}</td>
+                <td className="text-center dataC"></td>
                 <td>
                     <Button type="button" className="actionBtn mr-2" onClick={() => redirectToEditCourse()}> <AiTwotoneEdit /> Editar </Button>
                     <Button type="button" className="actionBtn" onClick={handleShow}>  <AiFillDelete /> Borrar  </Button>
                 </td>
             </tr>
-
-
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>¿Estas Seguro que deseas eliminar de forma permanente este curso? </Modal.Title>
@@ -57,11 +70,10 @@ const Course = ({ course }) => {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={handleClose}> Cancelar </Button>
-                    <Button className="btn-danger" onClick={() => deleteCourse()}> Borrar curso</Button>
+                    <Button className="btn-danger" onClick={() => deleteCourse(_id)}> Borrar curso</Button>
                 </Modal.Footer>
             </Modal>
         </>
     )
 }
-
 export default Course;

@@ -10,7 +10,6 @@ const PrivateRoute = ({component:Component, ...props}) => {
     authUser();
   }, [])
 
-  console.log(isAuth, loading);
   if(loading) return 'Cargando...';
 
   return(
