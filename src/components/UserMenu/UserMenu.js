@@ -48,7 +48,7 @@ const UserMenu = ({user, dayHour}) =>{
                 </div>
                 <div className={`initials-content-${tema}`}>
                     <Link to="" className={`initials-link-${tema} ${color}`}>Profile</Link>
-                    <Link to="" className={`initials-link-${tema} ${color}`}>Suscription</Link>
+                    <Link to="/Subscriptions" className={`initials-link-${tema} ${color}`}>Suscription</Link>
                     <p onClick={logout} className={`initials-link-${tema} ${color}`}>Log out</p>
                 </div>
             </div>
