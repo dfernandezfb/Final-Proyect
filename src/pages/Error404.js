@@ -1,4 +1,6 @@
 import Error404 from "../styles/Error404.css";
+import Home from "./Home";
+import { Link } from 'react-router-dom'
 
 const Error404Page = () => {
   return (
@@ -15,8 +17,8 @@ const Error404Page = () => {
       <div className="containerError">
         <span className="thanksALot">THANKS A LOT!</span>
       </div>
-      <div className="containerError">
-        <button className="containerError errorButton mb-4">Just go back, Dude.</button>
+      <div className="containerError ">
+      <Link className="errorButton" to="/home">Just go back, dude.</Link>
       </div>
       </div>
     </>

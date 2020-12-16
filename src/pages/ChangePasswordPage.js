@@ -2,11 +2,11 @@ import { Form } from 'react-bootstrap'
 import "../styles/colors-palette.css"
 import ModalRecoverPassword from '../components/Modals/ModalRecoverPassword'
 
-const RecoverPasswordPage = () => {
+const ChangePasswordPage = () => {
     return(
         <>
             <div className="bg-color1">
-                <div className="container vh-75">
+                <div className="container vh-100">
                     <div className="row d-flex justify-content-center">
                         <div className="p-0 text-center">
                             <h1 className="col-12 my-4 pb-4 border-bottom border-primary">I forgot my password</h1>
@@ -27,4 +27,4 @@ const RecoverPasswordPage = () => {
     );
 }
 
-export default RecoverPasswordPage
+export default ChangePasswordPage

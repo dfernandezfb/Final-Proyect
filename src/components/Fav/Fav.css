@@ -1,0 +1,23 @@
+.position-button{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1000;
+}
+.fav-button{
+    background: white;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    transition: all .3s ease;
+    opacity: .1;
+}
+.fav-button:hover{
+    background: rgba(231, 240, 51, 0.809);
+    opacity: 100;
+}
+.icoFav{
+    width: 30px;
+}

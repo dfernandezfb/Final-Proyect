@@ -14,12 +14,17 @@
     background-color: #002147;
     color: white;
     border: none;
+    margin-bottom: 20px;
+    width: 10vw;
+    text-decoration: none;
+    
 }
 .errorButton:hover{
     background-color:  #187795;
+    color: white;
+    text-decoration: none;
 }
 .containerError{
     display: flex;
     justify-content: center;
-
 }
