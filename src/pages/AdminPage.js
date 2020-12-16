@@ -74,27 +74,27 @@ The table below shows the courses present on our platform.
         You can modify or delete them. If you want, you can add more academic activities with the button <Button onClick={handleShow} className="createBtn"> <AiFillDiff /> Create </Button>
         </h3>
       </div>
-      <Table striped bordered hover size="sm" className="tableContent">
+      <Table striped bordered hover size="sm" className="tableContent" responsive>
         <thead>
           <tr>
             <th className="text-center dataC">Course name</th>
             <th className="text-center dataC">Category</th>
             <th className="text-center dataC">Dictate by</th>
             <th className="text-center dataC">Published</th>
-            <th className="text-center dataC">Price</th>
+            <th className="text-center dataC">Subscription</th>
             <th className="text-center dataC">Actions</th>
           </tr>
         </thead>
         <tbody className="bodyEdit">
           {
             courses.length === 0 ? 'No courses available' : (
-              courses.map(course => (
-                <Course key={course.id} course={course} />
+              courses.map((course, index) => (
+                <Course key={index} course={course} />
               ))
             )
           }
         </tbody>
-      </Table>
+      </Table >
       <Modal show={show} onHide={handleClose}>
           <Form className=" createForm" onSubmit={handleOnSubmit}  >
         <Modal.Header closeButton>

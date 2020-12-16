@@ -1,6 +1,7 @@
 import { Carousel } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import clientAxios from "../../config/Axios";
+import '../HeroSlider/HeroSlider.css';
 
 const HeroSlider = ({ carousel }) => {
   const [images, setImages] = useState([]);
@@ -17,8 +18,8 @@ const HeroSlider = ({ carousel }) => {
       <Carousel>
         {images.map((image, index) => (
           <Carousel.Item key={index}>
-            <img
-              className="d-block w-100"
+            <img 
+              className="d-block w-80 heroImage"
               src={image.image}
               alt={image.name}
             />

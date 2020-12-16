@@ -73,7 +73,6 @@
     margin-top: 20px;
     overflow: hidden;
   }
-  .cardsCourse {
-    display: flex;
-    justify-content: center;
-  }
+  .cardCourse { 
+    margin-left: 30px;
+   }
