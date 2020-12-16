@@ -4,48 +4,59 @@ import {Form} from 'react-bootstrap';
 import clientAxios from '../../config/Axios';
 import {useHistory} from 'react-router-dom';
 //css
-import Courses  from '../Modals/Courses.css';
+import '../Modals/Courses.css';
 
 const EditCourse = ({match}) => {
 const [course, setCourse]= useState({
-    name:'',
-    category:'',
-    directedBy:'',
-    displayed:true,
-    price:''
+  name: '',
+  category: '',
+  directedBy: '',
+  image: 'sss',
+  description: 'ss',
+  displayed: false,
+  subscription: '',
+  featured: false,
+  comments : [],
   })
-const {category, directedBy, name, displayed,price} = course;
-const idCourse= match.params.idCourse;
+  const {  name, directedBy, displayed, category, description, image,comments, subscription } = course;
+
 const history = useHistory();
 
+
+
 useEffect(()=> {
-  const getCoursesById = async()=> {
+  const getCoursesById = async(_id)=> {
     try {
-      const response = await clientAxios.get(`/courses/${idCourse}`);
+      const response = await clientAxios.get(`/courses/id/${_id}`);
+      console.log(response);
       setCourse(response.data);
     } catch (error){
       console.log(error.response)
     }
   }
-  getCoursesById();
+  getCoursesById(match.params.id);
 },[]);
 
-const handleOnChange =e => {
+const handleOnChange = e => {
   setCourse({
     ...course,
     [e.target.name]: e.target.value
   })
 }
+//Send Method PUT
 
-const handleOnSubmit = async e => {
-e.preventDefault();
-try{
-  await clientAxios.put(`/courses/${idCourse}`, course);
+
+const handleOnSubmit = async (e) => {
+  e.preventDefault();
+  try{
+  await clientAxios.put('/courses/:id', course);
   history.push('/adminpage');
 } catch (error) {
 console.log(error.response)
 }
 }
+
+
 
     return (
       <>
@@ -54,12 +65,12 @@ console.log(error.response)
         <div className="card-transparent">
           <div className="card-body bodyForm">
             <h2 className="text-center mb-4 titlesform">
-              Editar Curso
+              Edit course
             </h2>
             <Form
               onSubmit={handleOnSubmit}>
               <div >
-                <label className="titlesform">Nombre del curso:</label>
+                <label className="titlesform">Course name:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -70,7 +81,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label className="titlesform">Categoria:</label>
+                <label className="titlesform">Category:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -81,7 +92,7 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label className="titlesform" >Dirigido por:</label>
+                <label className="titlesform" >Dictate by:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -92,20 +103,20 @@ console.log(error.response)
                 />
               </div>
               <div >
-                <label className="titlesform" >Costo del curso:</label>
+                <label className="titlesform" >Cost:</label>
                 <input
-                  type="number"
+                  type="text"
                   className="form-control"
-                  placeholder="Precio del curso USD"
-                  name="price"
-                  value={price}
+                  placeholder="Free, Gold or Diamond"
+                  name="subscription"
+                  value={subscription}
                   onChange={handleOnChange}
                 />
               </div> 
               <button
                 type="submit"
                 className="btn btn-primary font-weight-bold text-uppercase d-block w-100 btnForm">
-              Guardar cambios</button>
+              Save changes</button>
             </Form>
           </div>
         </div>

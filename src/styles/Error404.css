@@ -1,0 +1,25 @@
+.dots{
+    font-size: 100px;
+    text-align: center;
+}
+.losingHope{
+    font-size: 40px;
+    text-align: center;
+}
+.thanksALot{
+    font-size: 80px;
+    text-align: center;
+}
+.errorButton{
+    background-color: #002147;
+    color: white;
+    border: none;
+}
+.errorButton:hover{
+    background-color:  #187795;
+}
+.containerError{
+    display: flex;
+    justify-content: center;
+
+}

@@ -20,7 +20,7 @@ const Favorite = () => {
 
                 <div className="container">
                     <div className="row border border-danger">
-                        <h1>LISTA DE FAVORITOS</h1>
+                        <h1>Favorite list</h1>
                     
                     </div>
                 </div>

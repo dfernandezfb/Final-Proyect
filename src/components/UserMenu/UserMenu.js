@@ -2,10 +2,12 @@ import {FaBell,FaHeart} from 'react-icons/fa'
 import './UserMenu.css'
 import {Link} from 'react-router-dom'
 import Dropdown from './../Dropdown/Dropdown'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import authContext from '../../context/auth/authContext'
 
-const UserMenu = ({userNameExample, admin, dayHour}) =>
+const UserMenu = ({user, dayHour}) =>
 {
+    const {logout} =useContext(authContext)
     let color="";
     let tema="";
     // const [color,setColor]=useState('');
@@ -23,7 +25,7 @@ const UserMenu = ({userNameExample, admin, dayHour}) =>
         // setColor('color4');
         // setTema('oscuro');
     }
-    const userName = "diego fernandez";
+    const userName =  user.name
     const arrayName=userName.split(" ");
     const firstInitial= arrayName[0].substr(0,1).toUpperCase();
     const secInitialPos=arrayName.length -1
@@ -37,7 +39,7 @@ const UserMenu = ({userNameExample, admin, dayHour}) =>
                 <div className={`initials-content-${tema}`}>
                     <Link to="" className={`initials-link-${tema} ${color}`}>Perfil</Link>
                     <Link to="" className={`initials-link-${tema} ${color}`}>Suscripción</Link>
-                    <Link to="" className={`initials-link-${tema} ${color}`}>Cerrar sesión</Link>
+                    <p onClick={logout} className={`initials-link-${tema} ${color}`}>Cerrar sesión</p>
                 </div>
             </div>
             <div className="initials-container">

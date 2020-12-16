@@ -1,0 +1,13 @@
+.bannerImg{
+    width: 100%;
+    height: 250px;
+    object-fit:contain;
+}
+.showBanner{
+    display: block;
+}
+@media (max-width:425px){
+    .showBanner{
+        display: none;
+    }
+}

@@ -40,7 +40,7 @@ const Footer = () => {
                         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-0">
                             <h6 className="text-uppercase font-weight-bold text-white">akademy</h6>
                             <hr className="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto"></hr>
-                            <p className="p-footer">Akademy is a learning institution and introduction to the world of programming
+                            <p className="p-footer">Akademy is not only a learning institution but an introduction to the world of programming
                             where we offer a wide variety of courses, both free and paid, validated by a certification.</p>
                         </div>  
 
@@ -65,7 +65,7 @@ const Footer = () => {
                             <h6 className="text-uppercase font-weight-bold text-white">Contact</h6>
                             <hr className="deep-purple mb-3 mt-0 d-inline-block mx-auto"></hr>
                             <p className="p-footer">
-                                <FaHome className="icoContact"/> Tucuman, Argentina
+                                <FaHome className="icoContact"/> Tucumán, Argentina
                             </p>
                             <p className="p-footer">
                                 <FaMailBulk className="icoContact"/> info.akademy@gmail.com
