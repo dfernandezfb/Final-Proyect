@@ -5,7 +5,7 @@ import { useContext } from "react";
 import AuthContext from "../context/auth/authContext";
 import clientAxios from "../config/Axios";
 import '../styles/subscriptions.css'
-import {useHistory} from 'react-dom'
+import {useHistory} from 'react-router-dom'
 
 const Subscriptions = () => {
   const { user } = useContext(AuthContext);

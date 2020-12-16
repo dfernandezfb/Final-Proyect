@@ -58,7 +58,7 @@ const Header = ({ dayHour }) => {
                                     </Nav.Link>
                                     <Nav.Link>
                                         <Link to="/favourites" className={dayClassLink}>
-                                            Favourites
+                                            Favorites
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link>
