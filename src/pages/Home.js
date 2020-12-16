@@ -9,7 +9,6 @@ import "../components/Modals/ModalLogin.css";
 
 const Home = () => {
   const { courses, setCourses } = useContext(AdminpageContext);
-
     return (
       <>
         <div className="homeBody">

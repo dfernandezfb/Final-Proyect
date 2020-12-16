@@ -10,8 +10,9 @@ import {
 } from '../../types'
 
 export default (state, action) => {
-  console.log(action)
-  switch(action.type) {
+  switch(action.type) 
+  {
+  
     case AUTH_TOKEN:
       return {
         ...state,

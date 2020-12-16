@@ -4,14 +4,15 @@ import { AiFillBulb, AiOutlineHeart } from 'react-icons/ai';
 //CSS
 import courseCard from '../Cards/courseCard.css'
 
-const CourseCard = ({ courseCard }) => {
+
+const CourseCard = ({ courseCard, dayHour}) => {
     const { id, category, directedBy, name, description, image, price } = courseCard;
 
     const history = useHistory();
     const redirectToIndividualSuscriptions = () => {
         history.push(`/courses/detail/${id}`)
     }
-
+   
     return (
         <div >
             <Card className="courseCard" style={{ width: '18rem', height: '36rem' }}>
