@@ -36,7 +36,7 @@ const CourseDetail = ({ match }) => {
     useEffect(()=> {
        const getComment = async () => { 
            try {
-               const comments = await axios.get('https://jsonplaceholder.typicode.com/comments?postId=1')
+               const comments = await axios.get('/comments')
                setComment(comments.data);
            } catch(error) {
                console.log(error)
@@ -102,31 +102,31 @@ const CourseDetail = ({ match }) => {
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quisquam, veniam, fuga perspiciatis quam a blanditiis, ratione ducimus nesciunt adipisci unde delectus quo recusandae. Iusto qui impedit est quisquam optio!</p>
             </div>
             <div className="opinionCards">
-                <h1>Opiniones sobre este curso</h1>
+                <h1>Course opinions</h1>
                 {
-          comment.length === 0 ? 'No hay cursos disponibles' : (
+          comment.length === 0 ? 'There are not available courses' : (
             comment.map((commentsForm, index) => (
               <Comments key={index} commentsForm={commentsForm} />
             ))
             )
           }
             </div>
-          <div className='commentsForm'>
-              <h2 style = {{textAlign: 'center'}}>Añadir un comentario</h2>
+          <div className='commentsForm pl-3 pr-3 pb-3 pt-3 mb-3'>
+              <h2 style = {{textAlign: 'center'}}>Add a comment</h2>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Dirección Email</Form.Label>
+                        <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" required />
                         <Form.Text className="text-muted" required>
-                          Introduzca Su nombre de usuario o email
-    </Form.Text>
+                          Enter your username or email
+                          </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Comentario</Form.Label>
-                        <Form.Control type="text-area" placeholder="Text" />
+                        <Form.Label>Commentary</Form.Label>
+                        <Form.Control as="textarea" placeholder="Text" />
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        Anadir Comentario
+                        Add comment
   </Button>
                 </Form>
             </div>
