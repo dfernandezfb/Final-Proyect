@@ -11,29 +11,28 @@ const [course, setCourse]= useState({
   name: '',
   category: '',
   directedBy: '',
-  image: 'sss',
-  description: 'ss',
+  image: '',
+  description: '',
   displayed: false,
   subscription: '',
-  featured: false,
+  featured: true,
   comments : [],
   })
   const {  name, directedBy, displayed, category, description, image,comments, subscription } = course;
 
 const history = useHistory();
-const idCourse = match.params.id;
-console.log(idCourse);
+const idCourse = match.params.idCourse;
 
 useEffect(()=> {
   const getCoursesById = async()=> {
     try {
       const response = await clientAxios.get(`/courses/id/${idCourse}`);
-      console.log(response);
+      setCourse(response.data);
     } catch (error){
       console.log(error.response)
     }
   }
-  getCoursesById(idCourse);
+  getCoursesById();
 },[]);
 
 const handleOnChange = e => {
@@ -48,7 +47,7 @@ const handleOnChange = e => {
 const handleOnSubmit = async (e) => {
   e.preventDefault();
   try{
-  await clientAxios.put('/courses/:id', course);
+  await clientAxios.put(`/courses/${idCourse}`, course);
   history.push('/adminpage');
 } catch (error) {
 console.log(error.response)
@@ -80,11 +79,33 @@ console.log(error.response)
                 />
               </div>
               <div >
+                <label className="titlesform">Description:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Description"
+                  name="description"
+                  value={description}
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div >
+                <label className="titlesform">image:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="add URL for Image Course"
+                  name="image"
+                  value={image}
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div >
                 <label className="titlesform">Category:</label>
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Categoria del curso"
+                  placeholder="Course Category"
                   name="category"
                   value={category}
                   onChange={handleOnChange}
@@ -95,7 +116,7 @@ console.log(error.response)
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Director del curso"
+                  placeholder="Dictate by"
                   name="directedBy"
                   value={directedBy}
                   onChange={handleOnChange}
@@ -112,6 +133,17 @@ console.log(error.response)
                   onChange={handleOnChange}
                 />
               </div> 
+              <div >
+                <label className="titlesform">displayed:</label>
+                <input
+                  type="checkbox"
+                  className="form-control"
+                  placeholder=" True or False"
+                  name="displayed"
+                  value={displayed}
+                  onChange={handleOnChange}
+                />
+              </div>
               <button
                 type="submit"
                 className="btn btn-primary font-weight-bold text-uppercase d-block w-100 btnForm">

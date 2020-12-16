@@ -1,7 +1,7 @@
 //Dependencies
 import { useState, useEffect, useContext} from 'react';
 import clientAxios from '../config/Axios'
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
 //Context
 import { AdminpageContext } from '../context/AdminpageContext';
@@ -49,20 +49,20 @@ const Course = ({ course }) => {
             window.alert('No se pudo eliminar el curso')
         }
     }
+     
 
     return (
-        <>
+        <> 
+
             <tr>
                 <td className="text-center dataC">{name}</td>
                 <td className="text-center dataC">{category}</td>
                 <td className="text-center dataC">{directedBy}</td>
-                <td className="text-center dataC">{displayed}</td>
+                <td className="text-center dataC">{displayed === true ? 'True': 'False'}</td>
                  <td className="text-center dataC">{subscription}</td>
                 <td>
-                    <Link to = {`/courses/editar/${_id}`}>
-                    <Button type="button" className="actionBtn mr-2" > <AiTwotoneEdit /> Edit </Button>
-                    </Link>
 
+                    <Button type="button" className="actionBtn mr-2" onClick= {()=>redirectToEditCourse()} > <AiTwotoneEdit /> Edit </Button>
                     <Button type="button" className="actionBtn" onClick={handleShow}>  <AiFillDelete /> Delete  </Button>
                 </td>
             </tr>
