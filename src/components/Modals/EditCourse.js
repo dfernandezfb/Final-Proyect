@@ -21,20 +21,19 @@ const [course, setCourse]= useState({
   const {  name, directedBy, displayed, category, description, image,comments, subscription } = course;
 
 const history = useHistory();
-
-
+const idCourse = match.params.id;
+console.log(idCourse);
 
 useEffect(()=> {
-  const getCoursesById = async(_id)=> {
+  const getCoursesById = async()=> {
     try {
-      const response = await clientAxios.get(`/courses/id/${_id}`);
+      const response = await clientAxios.get(`/courses/id/${idCourse}`);
       console.log(response);
-      setCourse(response.data);
     } catch (error){
       console.log(error.response)
     }
   }
-  getCoursesById(match.params.id);
+  getCoursesById(idCourse);
 },[]);
 
 const handleOnChange = e => {

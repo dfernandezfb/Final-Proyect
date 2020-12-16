@@ -2,11 +2,11 @@ import { useHistory } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 import { AiFillBulb, AiOutlineHeart } from 'react-icons/ai';
 //CSS
-import courseCard from '../Cards/courseCard.css'
+import  '../Cards/courseCard.css';
 
 
 const CourseCard = ({ courseCard, dayHour}) => {
-    const { id, category, directedBy, name, description, image, price } = courseCard;
+    const { id, category, directedBy, name, description, image, subscription } = courseCard;
 
     const history = useHistory();
     const redirectToIndividualSuscriptions = () => {
@@ -15,15 +15,14 @@ const CourseCard = ({ courseCard, dayHour}) => {
    
     return (
         <div >
-            <Card className="courseCard" style={{ width: '18rem', height: '36rem' }}>
+            <Card className="courseCard" style={{ width: '16rem', height: '34rem' }}>
                 <Card.Img className="courseImage" src={image} />
                 <Card.Body >
                     <Card.Title className="infoCard" >{name}</Card.Title>
                     <Card.Text className="infoCard">
-                        {description}
                         <p> <b>Category:</b>{category}</p>
                         <p> <b>Dictate by:</b> {directedBy}</p>
-                        <p className="priceCourse"> <b>Price:</b>${price}</p>
+                        <p className="priceCourse"> <b>Subscription:</b>{subscription}</p>
                     </Card.Text>
                 </Card.Body>
                 <div>

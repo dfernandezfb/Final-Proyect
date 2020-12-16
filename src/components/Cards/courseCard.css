@@ -35,14 +35,15 @@
 }
 
 .courseCard:hover .courseImage {
-  max-width: 80%;
+  max-width: 75%;
  text-align: center;
 
 }
 .infoCard {
   position: relative;
-  letter-spacing: 1px;
+  letter-spacing: 0.4px;
 }
+
 .priceCourse {
   font-size: auto;
   color: #040F0F;
