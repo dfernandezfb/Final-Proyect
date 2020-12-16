@@ -5,10 +5,10 @@ import FormRegister from '../components/FormRegister/FormRegister';
 const LandingPage = () => {
 
     return(
-        <Container fluid className="cover-background-landing">
-            <Row>
+        <Container className="cover-background-landing bg-fill-landing">
+            <Row >
                 <Col sm={12} md={6}>
-                    <Container>
+                    <Container className="p-3 mt-5">
                         <div>
                             <h3>COURSES A<span className="text-danger">K</span>ADEMY</h3>
                             <hr className="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto"></hr>
@@ -18,7 +18,7 @@ const LandingPage = () => {
                     </Container>
                 </Col>
                 <Col sm={12} md={6}>
-                    <Container>
+                    <Container className="p-3 mt-5">
                         <FormRegister />
                     </Container>
                 </Col>

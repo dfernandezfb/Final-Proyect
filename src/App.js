@@ -40,14 +40,6 @@ function App() {
               <PrivateRoute exact path="/subscriptions" component={Subscriptions} />
               <Route exact path="/" component={LandingPage} />
               <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
-<<<<<<< HEAD
-              <Route exact path="/changepassword" component={ChangePasswordPage} />
-              <Route exact path="/favorites" component={FavoritePage} />
-            </FunctionModalsProvider>
-          </AdminpageProvider>
-        </Switch>
-        <Footer/>
-=======
               <PrivateRoute exact path="/adminpage" component={AdminPage} />
               <PrivateRoute exact path="/courses/editar/:idCourse" component={EditCourse} />
               <PrivateRoute exact path="/courses/detail/:id" component={CourseDetail} />
@@ -58,7 +50,6 @@ function App() {
           </FunctionModalsProvider>
         </AdminpageProvider>
         </AuthState>
->>>>>>> 3dceacfcbaca627ea21923b2e93610752c13425f
       </Router>
   );
 }

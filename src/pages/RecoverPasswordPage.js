@@ -6,7 +6,7 @@ const RecoverPasswordPage = () => {
     return(
         <>
             <div className="bg-color1">
-                <div className="container vh-100">
+                <div className="container vh-75">
                     <div className="row d-flex justify-content-center">
                         <div className="p-0 text-center">
                             <h1 className="col-12 my-4 pb-4 border-bottom border-primary">I forgot my password</h1>

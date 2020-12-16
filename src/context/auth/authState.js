@@ -74,12 +74,12 @@ const AuthState = ({ children }) => {
       type:LOGOUT
     })
   }
-  const login = async () => {
+  /*const login = async () => {
     const response = await clientAxios.get('token');
     dispatch({
       
     })
-  }
+  }*/
 
   const login = async data => {
     try {
@@ -117,5 +117,5 @@ const AuthState = ({ children }) => {
     </AuthContext.Provider>
   );
 }
- 
+
 export default AuthState;
