@@ -8,7 +8,7 @@ import Footer from './components/Footer/Footer'
 import AdminPage from "./pages/AdminPage";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
-import FavoritePage from "./pages/FavoritePage";
+import Favourite from "./pages/Favourite";
 import RecoverPasswordPage from "./pages/RecoverPasswordPage";
 import CourseDetail from './pages/CourseDetail.js';
 import Error404 from './pages/Error404'
@@ -48,7 +48,7 @@ function App() {
               <PrivateRoute exact path="/courses/editar/:idCourse" component={EditCourse} />
               <PrivateRoute exact path="/courses/detail/:id" component={CourseDetail} />
               <PrivateRoute exact path="/home" component={Home} />
-              <PrivateRoute exact path="/favorites" component={FavoritePage} />
+              <PrivateRoute exact path="/favourite" component={Favourite} />
               <Route component={Error404} />
             </Switch>
             <Footer />
