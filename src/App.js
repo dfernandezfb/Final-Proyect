@@ -12,6 +12,7 @@ import FavoritePage from "./pages/FavoritePage";
 import RecoverPasswordPage from "./pages/RecoverPasswordPage";
 import CourseDetail from './pages/CourseDetail.js';
 import Error404 from './pages/Error404'
+import AboutUs from './pages/AboutUs'
 //Routes
 import PrivateRoute from "./routes/PrivateRoute";
 import AdminRoute from './routes/AdminRoute';
@@ -40,11 +41,13 @@ function App() {
               <PrivateRoute exact path="/subscriptions" component={Subscriptions} />
               <Route exact path="/" component={LandingPage} />
               <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
+              <Route exact path="/Aboutus" component ={AboutUs}/>
               <PrivateRoute exact path="/adminpage" component={AdminPage} />
               <PrivateRoute exact path="/courses/editar/:idCourse" component={EditCourse} />
               <PrivateRoute exact path="/courses/detail/:id" component={CourseDetail} />
               <PrivateRoute exact path="/home" component={Home} />
               <PrivateRoute exact path="/favorites" component={FavoritePage} />
+              <Route component={Error404} />
             </Switch>
             <Footer />
           </FunctionModalsProvider>

@@ -13,13 +13,6 @@ const Home = () => {
       <>
         <div className="homeBody">
           <HeroSlider />
-          <div className="row cardCourse">
-            {courses.length === 0
-              ? "No hay cursos disponibles"
-              : courses.map((courseCard, index) => (
-                  <CourseCard key={index} courseCard={courseCard} />
-                ))}
-          </div>
         </div>
       </>
     );

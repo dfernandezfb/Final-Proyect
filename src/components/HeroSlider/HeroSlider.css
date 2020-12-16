@@ -1,3 +1,10 @@
-.carouselColor{
+.carousel-control-prev{
     color: black!important;
+    background-color: red!important;
+    opacity: 3%;
+}
+.carousel-control-next{
+    color: black!important;
+    background-color: black!important;
+    opacity: 10%;
 }
