@@ -46,8 +46,8 @@ const SearchBar = ({dayHour}) =>
 
   return(
   <div id="searchbar-container">
-  <form id="searchbar-form" className={`searchbar-form-${tema}`}>
-    <label htmlFor="searchbar" className={`label-${tema}`}>
+  <form id="searchbar-form" className={`searchbar-form-${tema} p-2`}>
+    <label htmlFor="searchbar" className={`label-${tema} mr-2`}>
       <FaSearch size={25}/>
     </label>
     <input 

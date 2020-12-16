@@ -18,8 +18,8 @@ const HeroSlider = () => {
     <>
       <Carousel
         className="carouselMinSize"
-        nextIcon={null}
-        prevIcon={null}
+        controls={false}
+        pause={false}
         interval={3000}
       >
         {images.map((image, index) => (

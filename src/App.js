@@ -31,29 +31,30 @@ if(token) {
 }
 
 function App() {
+  
   const dayHour = new Date().getHours();
 
   return (
       <Router>
         <AuthState>
-        <AdminpageProvider>
-          <FunctionModalsProvider>
-            <Header dayHour={dayHour} />
-            <Switch>
-              <PrivateRoute exact path="/subscriptions" component={Subscriptions} />
-              <Route exact path="/" component={LandingPage} />
-              <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
-              <Route exact path="/Aboutus" component ={AboutUs}/>
-              <PrivateRoute exact path="/adminpage" component={AdminPage} />
-              <PrivateRoute exact path="/courses/editar/:idCourse" component={EditCourse} />
-              <PrivateRoute exact path="/courses/detail/:id" component={CourseDetail} />
-              <PrivateRoute exact path="/home" component={Home} />
-              <PrivateRoute exact path="/favorites" component={FavoritePage} />
-              <Route component={Error404} />
-            </Switch>
-            <Footer />
-          </FunctionModalsProvider>
-        </AdminpageProvider>
+          <AdminpageProvider>
+            <FunctionModalsProvider>
+              <Header dayHour={dayHour} />
+                <Switch>
+                  <Route exact path="/" component={LandingPage} />
+                  <PrivateRoute exact path="/subscriptions" component={Subscriptions} />
+                  <Route exact path="/recoverpassword" component={RecoverPasswordPage} />
+                  <Route exact path="/Aboutus" component ={AboutUs}/>
+                  <AdminRoute exact path="/adminpage" component={AdminPage} />
+                  <AdminRoute exact path="/courses/editar/:idCourse" component={EditCourse} />
+                  <AdminRoute exact path="/courses/detail/:id" component={CourseDetail} />
+                  <PrivateRoute exact path="/home" component={Home} />
+                  <PrivateRoute exact path="/favorites" component={FavoritePage} />
+                  <Route component={Error404} />
+                </Switch>
+              <Footer />
+            </FunctionModalsProvider>
+          </AdminpageProvider>
         </AuthState>
       </Router>
   );

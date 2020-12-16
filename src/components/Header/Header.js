@@ -1,10 +1,9 @@
 import { useState, useEffect, useContext } from 'react'
 import authContext from '../../context/auth/authContext'
 import { Link } from 'react-router-dom'
-import Navbar from 'react-bootstrap/Navbar'
 import './Header.css'
 import '../../styles/colors-palette.css'
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container, Col, Row, Navbar, Nav, NavDropdown, Image } from 'react-bootstrap'
 import logoclaro from "./../../images/logorecortadoclaro.png"
 import logooscuro from "./../../images/logorecortado.png"
 import SearchBar from '../SearchBar/SearchBar'
@@ -32,68 +31,72 @@ const Header = ({ dayHour }) => {
         logo = logoclaro;
     }
 
-    if (!user) {
-        return (
-            <>
-                <LoginForm show={show} handleClose={setShow} />
-                <Container fluid className={dayClassContainer}>
-                    <Row>
-                        <Col xs={6} md={9}>
-                            <Navbar sticky="top" className="py-0">
-                                <Navbar.Brand href="/home" className="py-0" >
-                                    <img
-                                        alt="Logo"
-                                        src={logo}
-                                        height="60"
-                                        className="d-inline-block align-top"
-                                    />
-                                </Navbar.Brand>
-                            </Navbar>
-                        </Col>
-                        <Col xs={6} md={3} className="container-login-button">
-                        <div className="modalLoginApp">
-                            <button className={`login-button-${tema}`} onClick={() => setShow(true)}> Log In </button>
-                        </div>
-                        </Col>
+    return(
+        <>
+            <LoginForm show={show} setShow={setShow} />
+            <Navbar className="flex-column" collapseOnSelect expand='sm' bg='light' variant='light'>
+                <Container>
+                    <Row className="w-100 justify-content-between">
+                        <Navbar.Brand className='text-black align-text'>
+                            <Link to={user ? '/home' : '/'}>
+                                <img
+                                    src={logo}
+                                    height="60"
+                                    alt="Logo"
+                                    className="d-inline-block align-top"
+                                />
+                            </Link>
+                        </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse className="justify-content-end flex-wrap" id="basic-navbar-nav">
+                            <Nav>
+                            {
+                            user
+                                ? (
+                                <>
+                                    <Nav.Link>
+                                        <Link to="/home">
+                                            Home
+                                        </Link>
+                                    </Nav.Link>
+                                    <Nav.Link>
+                                        <Link to="/favourites">
+                                            Favourites
+                                        </Link>
+                                    </Nav.Link>
+                                    <Nav.Link>
+                                        <Link to="/aboutUs">
+                                            Contact
+                                        </Link>
+                                    </Nav.Link>
+                                    <Nav.Link>
+                                        <Link to="/">
+                                            Help
+                                        </Link>
+                                    </Nav.Link>
+                                    <UserMenu dayHour={dayHour} user={user} />
+                                </>
+                                )
+                                : (
+                                <button className={`login-button-${tema}`} onClick={() => setShow(true)}> Log In </button>
+                                )
+                            }
+                            </Nav>
+                        </Navbar.Collapse>
                     </Row>
                 </Container>
-            </>
-        )
-    }
-    else {
-        return (
-            <>
-                <Container fluid className={dayClassContainer}>
-                    <Row>
-                        <Col md={4}>
-                            <Navbar sticky="top" className="py-0">
-                                <Navbar.Brand href="/" className="py-0" >
-                                    <img
-                                        alt="Logo"
-                                        src={logo}
-                                        height="60"
-                                        className="d-inline-block align-top"
-                                    />
-                                </Navbar.Brand>
-                            </Navbar>
-                        </Col>
-                        <Col md={4} className="py-0">
-                            <SearchBar dayHour={dayHour} />
-                        </Col>
-                        <Col md={4}>
-                            <UserMenu dayHour={dayHour} user={user} />
-                        </Col>
-                    </Row>
-                    <Row className="justify-content-center"> {/*usar new Date().getHours() para tema oscuro*/}
-                        <Link className={dayClassLink} to="/home">Home</Link>
-                        <Link className={dayClassLink} to="/">Featured</Link>
-                        <Link className={dayClassLink} to="/">Categories</Link>
-                        <Link className={dayClassLink} to="/aboutus">Contact</Link>
-                        <Link className={dayClassLink} to="/sdads">Help</Link>
-                    </Row>
-                </Container>
-            </>
-        );
-    }
+                {
+                    user &&
+                    (
+                        <Row >
+                            <Col className="d-flex justify-content-between">
+                                <SearchBar dayHour={dayHour} />
+                            </Col>
+                        </Row>
+                    )
+                }
+            </Navbar>
+        </>
+    )
 }
-export default Header
+export default Header;
