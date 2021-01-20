@@ -4,58 +4,37 @@ import {FaSearch} from 'react-icons/fa'
 import clientAxios from '../../config/Axios'
 import {Link} from 'react-router-dom'
 
-const SearchBar = ({dayHour}) =>
+const SearchBar = () =>
 {
   const [search,setSearch]=useState('');
-  const [courses,setCourses]=useState([]);
   const [result,setResult]=useState([]);
-  let tema=""
-  if(dayHour>=7 && dayHour<19)
-  {
-    tema='claro';
-  }else
-  {
-    tema='oscuro';
-  }
- 
-  useEffect(async ()=>{
-    try
-    {
-      const response = await clientAxios.get("/courses")
-      setCourses(response.data)
-    }
-    catch(error)
-    {
-      console.log(error.response);
-    }
-  },[])
-  
+
   const handleOnChange= e =>{
     setSearch(e.target.value);
   }
-  const handleOnKeyUp =async e =>
-  {
-    if(search.length > 2)
+  useEffect(()=>{
+    const getResults = async ()=>{
+      const results = await clientAxios(`/courses/search/${search.replace(/ /g,'_')}`)
+      setResult(results.data)
+    }
+    if(search.length>2)
     {
-      const results= courses.filter(course => course.name.toLowerCase().includes(search.toLowerCase()));
-      setResult(results);
-      console.log(result);
-    }else
-    {
+      getResults()
+    }else{
       setResult([])
     }
-  }
+  },[search])
+  
 
   return(
   <div id="searchbar-container">
-  <form id="searchbar-form" className={`searchbar-form-${tema}`}>
-    <label htmlFor="searchbar" className={`label-${tema}`}>
+  <form id="searchbar-form" className={`searchbar-form-claro`}>
+    <label htmlFor="searchbar" className={`label-claro`}>
       <FaSearch size={25}/>
     </label>
     <input 
       onChange={handleOnChange}
-      onKeyUp={handleOnKeyUp}
-      className={`searchbar-${tema}`}
+      className={`searchbar-claro`}
       type="text"
       name="search" 
       value={search} 
@@ -64,18 +43,18 @@ const SearchBar = ({dayHour}) =>
       autoComplete='off'
     />
   </form>
-  <div className={`container-favs-${tema}`}>
+  <div className={`container-results-claro`}>
     {
       result.length === 0
       ? null
       : (
         result.map((resul,index)=>
           <li key={index} className='container-result' >
-            <div className='result-icon'>
-              <FaSearch/>
+            <div className='result-icon text-center'>
+              <img src={resul.image} alt='imagen' className='img-result'/>
             </div>
             <div className='result-name'>
-              <Link to={`/courses/detail/${resul._id}`}> {resul.name}</Link>
+              <Link to={`/courses/detail/${resul._id}`} className='result-link'> {resul.name}</Link>
             </div>
           </li>
         )
