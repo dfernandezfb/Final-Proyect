@@ -11,22 +11,13 @@ import UserMenu from '../UserMenu/UserMenu'
 import LoginForm from '../LoginForm/LoginForm';
 
 
-const Header = ({ dayHour }) => {
+const Header = () => {
     const {user}=useContext(authContext);
     const [show, setShow] = useState(false);
-    let dayClassLink = '';
-    let logo = '';
-    let tema = '';
 
-    if (dayHour >= 7 && dayHour < 19) {
-        dayClassLink = 'navbar-link-claro color4';
-        tema='claro'
-        logo = logooscuro;
-    } else {
-        dayClassLink = 'navbar-link-oscuro color2';
-        tema='oscuro'
-        logo = logoclaro;
-    }
+        // dayClassLink = 'navbar-link-claro color4';
+        // tema='claro'
+        // logo = logooscuro;
 
     return(
         <>
@@ -37,7 +28,7 @@ const Header = ({ dayHour }) => {
                         <Navbar.Brand className='text-black align-text'>
                             <Link to={user ? '/home' : '/'}>
                                 <img
-                                    src={logo}
+                                    src={logooscuro}
                                     height="60"
                                     alt="Logo"
                                     className="d-inline-block align-top"
@@ -52,30 +43,30 @@ const Header = ({ dayHour }) => {
                                 ? (
                                 <>
                                     <Nav.Link>
-                                        <Link to="/home" className={dayClassLink}>
+                                        <Link to="/home" className='navbar-link-oscuro color4'>
                                             Home
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/favourites" className={dayClassLink}>
+                                        <Link to="/favourites" className='navbar-link-claro color4'>
                                             Favorites
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/aboutUs" className={dayClassLink}>
+                                        <Link to="/aboutUs" className='navbar-link-claro color4'>
                                             Contact
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/"className={dayClassLink}>
+                                        <Link to="/"className='navbar-link-claro color4'>
                                             Help
                                         </Link>
                                     </Nav.Link>
-                                    <UserMenu dayHour={dayHour} user={user} />
+                                    <UserMenu/>
                                 </>
                                 )
                                 : (
-                                <button className={`login-button-${tema}`} onClick={() => setShow(true)}> Log In </button>
+                                <button className={'login-button-claro'} onClick={() => setShow(true)}> Log In </button>
                                 )
                             }
                             </Nav>
@@ -87,7 +78,7 @@ const Header = ({ dayHour }) => {
                     (
                         <Row >
                             <Col className="d-flex justify-content-between">
-                                <SearchBar dayHour={dayHour} />
+                                <SearchBar/>
                             </Col>
                         </Row>
                     )

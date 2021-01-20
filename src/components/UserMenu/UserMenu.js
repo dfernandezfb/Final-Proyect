@@ -7,27 +7,10 @@ import authContext from '../../context/auth/authContext'
 import clientAxios from '../../config/Axios'
 
 
-const UserMenu = ({user, dayHour}) =>{
-    const [favourites, setFavourites] = useState([])
+const UserMenu = () =>{
+    const [favorites, setFavorites] = useState([])
     
-    const {logout } = useContext(authContext)
-    let color="";
-    let tema="";
-    // const [color,setColor]=useState('');
-    // const [tema,setTema]=useState('');
-    if(dayHour>=7 && dayHour<19)
-    {  
-        color='color1';
-        tema='claro';
-        // setColor('color1');
-        // setTema('claro');
-    }else
-    {
-        color='color4';
-        tema='oscuro';
-        // setColor('color4');
-        // setTema('oscuro');
-    }
+    const { logout, user } = useContext(authContext)
     const userName =  user.name
     const arrayName=userName.split(" ");
     const firstInitial= arrayName[0].substr(0,1).toUpperCase();
@@ -36,43 +19,43 @@ const UserMenu = ({user, dayHour}) =>{
     useEffect ( () => {
         const getFavs = async () => {
             const response = await clientAxios.get(`/users/${user._id}/favs`);
-            setFavourites(response.data);
+            setFavorites(response.data);
         }
         getFavs();
     }, [user.favs] )
     return(
         <div className="usermenu-container align-items-center">
             <div className="initials-container">
-                <div className={`usermenu-initials-${tema} ${color}`}>
+                <div className={`usermenu-initials-claro color1`}>
                 {firstInitial}{secondInitial}
                 </div>
-                <div className={`initials-content-${tema}`}>
-                    <Link to="" className={`initials-link-${tema} ${color}`}>Profile</Link>
-                    <Link to="/Subscriptions" className={`initials-link-${tema} ${color}`}>Suscription</Link>
-                    <p onClick={logout} className={`initials-link-${tema} ${color}`}>Log out</p>
+                <div className={`initials-content-claro`}>
+                    <Link to="" className={`initials-link-claro color1`}>Profile</Link>
+                    <Link to="/Subscriptions" className={`initials-link-claro color1`}>Suscription</Link>
+                    <p onClick={logout} className={`initials-link-claro color1`}>Log out</p>
                 </div>
             </div>
             <div className="initials-container">
                 <div>
-                    <FaBell className={`usermenu-link-${tema} ${color}`} size={25}/>
+                    <FaBell className={`usermenu-link-claro color1`} size={25}/>
                 </div>
-                <div className={`initials-content-${tema} big-container text-light`}>
+                <div className={`initials-content-claro big-container text-light`}>
                     No hay notificaciones
                 </div>
             </div>
             <div className="initials-container">
                 <div>
-                    <FaHeart className={`usermenu-link-${tema} ${color}`} size={25}/>
+                    <FaHeart className={`usermenu-link-claro color1`} size={25}/>
                 </div>
-                <div className={`initials-content-${tema} big-container text-light`}>
+                <div className={`initials-content-claro big-container text-light`}>
                     {
-                    favourites.length === 0 
+                    favorites.length === 0 
                     ? (<p>There aren´t favourites courses</p>)
-                : (favourites.map((favourite, index) => (
-                    <Link to={`/courses/detail/${favourite._id}`} >
+                : (favorites.map((favorite, index) => (
+                    <Link to={`/courses/detail/${favorite._id}`} >
                     <div key={index}>
-                        <img className="cardsFavs" src={favourite.image} alt={favourite.name}/>
-                            <p className="nameFavs">{favourite.name}</p>
+                        <img className="cardsFavs" src={favorite.image} alt={favorite.name}/>
+                            <p className="nameFavs">{favorite.name}</p>
                     </div>
                     </Link>
                 )))
