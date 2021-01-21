@@ -43,7 +43,7 @@ const Header = () => {
                                 ? (
                                 <>
                                     <Nav.Link>
-                                        <Link to="/home" className='navbar-link-oscuro color4'>
+                                        <Link to="/home" className='navbar-link-claro color4'>
                                             Home
                                         </Link>
                                     </Nav.Link>

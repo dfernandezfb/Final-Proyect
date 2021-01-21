@@ -5,7 +5,7 @@ import { useContext } from "react";
 import AuthContext from "../context/auth/authContext";
 import clientAxios from "../config/Axios";
 import '../styles/subscriptions.css'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const Subscriptions = () => {
   const { user } = useContext(AuthContext);
@@ -24,22 +24,16 @@ const Subscriptions = () => {
         border: solid 2px green;
     }
   `;
-//   if(userClone.subscription==='Free')
-//   {
-//     const activeSub = document.querySelector('.free');
-//     console.log(activeSub);
-//     activeSub.closest('.card-sub').classList.add('active-sub');
-//   }
   const handleOnSubmit = async (e) => {
     let sub;
     if (e.target.closest(".gratis") !== null) {
-      sub={subscription : "Free"};
+      sub = { subscription: "Free" };
     }
     if (e.target.closest(".oro") !== null) {
-      sub={subscription : "Gold"};
+      sub = { subscription: "Gold" };
     }
     if (e.target.closest(".diamante") !== null) {
-      sub={subscription : "Diamond"};
+      sub = { subscription: "Diamond" };
     }
     const response = await clientAxios.put(
       `/users/${userClone._id}`,
@@ -50,8 +44,10 @@ const Subscriptions = () => {
   return (
     <>
       <h5 style={{ padding: 25 }}>
-        Put your mouse over each card to see the diferents characteristics of each suscription, once you choose one, just click on them to pay it
+        Put your mouse over each card to see the diferents characteristics of each suscription, once you choose one, just click on them to pay it.
+        Your type of subscription now is : {user.subscription}
       </h5>
+
       <ContainerCards>
         <div className="card-sub">
           <div className="face-sub face1-sub">

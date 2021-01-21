@@ -84,7 +84,6 @@ const AuthState = ({ children }) => {
         type: LOGIN,
         payload: response.data
       })
-      history.push('/subscriptions');
     } catch (error) {
       dispatch({
         type: ERROR_LOGIN,
