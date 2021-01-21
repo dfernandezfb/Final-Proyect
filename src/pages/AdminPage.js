@@ -99,13 +99,15 @@ const AdminPage = () => {
       <Modal show={show} onHide={handleClose}>
         <Form className=" createForm" onSubmit={handleOnSubmit}  >
           <Modal.Header closeButton>
-            <Modal.Title>Bienvenido. Puede crear un nuevo curso desde este modal. Complete los campos a continuación:</Modal.Title>
+            <Modal.Title>Welcome. You can create a new course from this modal. Complete the following fields:</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form.Group>
               <label>Name:</label>
               <input type="Text"
+              maxLength="50"
                 name="name"
+                placeholder="1 to 50 characters, may include symbols"
                 value={name}
                 onChange={handleOnChange}
                 className="form-control" required ></input>
@@ -113,7 +115,9 @@ const AdminPage = () => {
             <Form.Group>
               <label>Category: </label>
               <input className="form-control" type="text"
+              maxLength="30"
                 name="category"
+                placeholder="1 to 30 characters"
                 value={category}
                 onChange={handleOnChange}
                 required></input>
@@ -121,8 +125,10 @@ const AdminPage = () => {
             <Form.Group>
               <label> DirectedBy :</label>
               <input className="form-control"
+              maxLength="30"
                 type="text"
                 name="directedBy"
+                placeholder="1 to 30 characters"
                 value={directedBy}
                 onChange={handleOnChange}
                 required></input>
@@ -138,6 +144,8 @@ const AdminPage = () => {
               <label> Description: </label>
               <input className="form-control" name="description" value={description}
                 onChange={handleOnChange}
+                maxLength="60"
+                placeholder="1 to 60 characters, may include symbols"
                 type="textarea"></input>
             </Form.Group>
             <Form.Group>
@@ -149,6 +157,8 @@ const AdminPage = () => {
             <Form.Group>
               <label> Recent opinions about the course: </label>
               <input className="form-control" name="comments" value={comments}
+              maxLength="60"
+              placeholder="1 to 60 characters"
                 onChange={handleOnChange}
                 type="textarea"></input>
             </Form.Group>
