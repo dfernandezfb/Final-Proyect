@@ -23,6 +23,7 @@ const LoginForm = ({ show, setShow }) => {
     await login(values);
     setShow(false);
   }
+  console.log(errors);
   return (
     <Modal show={show} onHide={() => setShow(false)}>
       <Modal.Header closeButton>
@@ -40,6 +41,9 @@ const LoginForm = ({ show, setShow }) => {
               onChange={handleChange}
             />
           </Form.Group>
+          {
+            errors && <h6 className="mt-1 text-danger">{errors.email}</h6>
+          }
           <Form.Group>
             <Form.Label>Password:</Form.Label>
             <Form.Control 
@@ -50,6 +54,9 @@ const LoginForm = ({ show, setShow }) => {
               onChange={handleChange}
             />
           </Form.Group>
+          {
+            errors && <h6 className="mt-1 text-danger">{errors.password}</h6>
+          }
           {
             alert && <Alert variant="danger">{alert}</Alert>
           }
