@@ -31,7 +31,7 @@ const UserMenu = () =>{
                 </div>
                 <div className={`initials-content-claro`}>
                     <Link to="" className={`initials-link-claro color1`}>Profile</Link>
-                    <Link to="/Subscriptions" className={`initials-link-claro color1`}>Suscription</Link>
+                    <Link to="/Subscriptions" className={`initials-link-claro color1`}>Subscription</Link>
                     <p onClick={logout} className={`initials-link-claro color1`}>Log out</p>
                 </div>
             </div>
@@ -39,7 +39,7 @@ const UserMenu = () =>{
                 <div>
                     <FaBell className={`usermenu-link-claro color1`} size={25}/>
                 </div>
-                <div className={`initials-content-claro big-container text-light`}>
+                <div className={`initials-content-claro big-container text-light text-center`}>
                     No hay notificaciones
                 </div>
             </div>
@@ -47,7 +47,7 @@ const UserMenu = () =>{
                 <div>
                     <FaHeart className={`usermenu-link-claro color1`} size={25}/>
                 </div>
-                <div className={`initials-content-claro big-container text-light`}>
+                <div className={`initials-content-claro big-container text-light text-center`}>
                     {
                     favorites.length === 0 
                     ? (<p>There aren´t favourites courses</p>)

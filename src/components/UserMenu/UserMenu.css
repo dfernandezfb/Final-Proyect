@@ -3,8 +3,8 @@
     width:100%;
     display: flex;
     flex-direction: row-reverse;
-    padding-top: 15px;
-    padding-right: 30px;
+    padding-top: 5px;
+    padding-right: 0px;
 }
 .usermenu-link-oscuro, .usermenu-initials-oscuro
 {
@@ -72,8 +72,8 @@
     text-align: center;
 }
 .initials-link-claro:hover{
-    background-color: #187795;
-    color: #fbf9ff;
+    background-color: #7abe73;
+    color: #002147;
     text-decoration:none;
     cursor: pointer;
 }

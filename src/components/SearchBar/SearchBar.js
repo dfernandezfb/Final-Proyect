@@ -24,7 +24,9 @@ const SearchBar = () =>
       setResult([])
     }
   },[search])
-  
+  const handleClick = () =>{
+    setSearch('')
+  }
 
   return(
   <div id="searchbar-container">
@@ -54,7 +56,7 @@ const SearchBar = () =>
               <img src={resul.image} alt='imagen' className='img-result'/>
             </div>
             <div className='result-name'>
-              <Link to={`/courses/detail/${resul._id}`} className='result-link'> {resul.name}</Link>
+              <Link to={`/courses/detail/${resul._id}`} onClick={handleClick} className='result-link'> {resul.name}</Link>
             </div>
           </li>
         )
