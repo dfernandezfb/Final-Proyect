@@ -1,7 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
 import clienteAxios from '../config/Axios';
-import courseCard from '../components/Cards/CourseCard'
 import AuthContext from '../context/auth/authContext'
 const Favourite = ({match}) => {
     const [favourite, setFavourite] = useState([]);

@@ -9,6 +9,7 @@ import logooscuro from "./../../images/logorecortado.png"
 import SearchBar from '../SearchBar/SearchBar'
 import UserMenu from '../UserMenu/UserMenu'
 import LoginForm from '../LoginForm/LoginForm';
+import "../../styles/main.css";
 
 
 const Header = () => {
@@ -22,7 +23,7 @@ const Header = () => {
     return(
         <>
             <LoginForm show={show} setShow={setShow} />
-            <Navbar className="flex-column" collapseOnSelect expand='sm' bg='light' variant='light'>
+            <Navbar className="flex-column main-navbar" collapseOnSelect expand='sm' bg='light' variant='light'>
                 <Container>
                     <Row className="w-100 justify-content-between">
                         <Navbar.Brand className='text-black align-text'>
