@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import "../styles/colors-palette.css";
+import "../styles/colorspallete.css";
 import "../styles/AboutUs.css";
 import "../styles/main.css";
 

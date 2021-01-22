@@ -3,7 +3,7 @@ export function validationRegister(values) {
     
     if (!values.name) {
         errors.name = 'First Name required';
-    } else if (values.name.length < 3) {
+    } else if (values.name.length < 3 ) {
         errors.name = 'First Name needs to be 3 characters or more';
     }
     if (!values.email) {

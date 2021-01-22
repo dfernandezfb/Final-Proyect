@@ -1,3 +1,9 @@
 .main-content {
   min-height: calc(100vh - 92px);
+  overflow: hidden;
+  width: 100%;
+}
+.main-navbar {
+  width: 100%;
+  overflow: hidden;
 }

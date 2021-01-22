@@ -1,14 +1,14 @@
-import "./Banner.css"
-import bannerImg from "../../images/imgbanner.jpeg"
+import "../Banner/Banner.css"
+
 
 const Banner = () => {
 return (
 <>
+<a href="https://rollingcodeschool.com/">
 <div className="showBanner">
-<a href="https://revistaconciencia.com/ver-articulo/eventos/2016-07-observacion-de-aves-en-pance/">
     <img className="bannerImg" />
-</a>
 </div>
+</a>
 </>
 );
 }

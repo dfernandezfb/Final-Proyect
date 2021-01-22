@@ -54,9 +54,6 @@ const AuthState = ({ children }) => {
 
   const authUser = async () => {
     const token = localStorage.getItem('token');
-    if(token) {
-      authToken(token);
-    }
     try {
       const response = await clientAxios.get('/auth');
       dispatch({
@@ -84,6 +81,7 @@ const AuthState = ({ children }) => {
         type: LOGIN,
         payload: response.data
       })
+      history.push("/home");
     } catch (error) {
       dispatch({
         type: ERROR_LOGIN,
