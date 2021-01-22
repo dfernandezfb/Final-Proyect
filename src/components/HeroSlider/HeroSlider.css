@@ -5,3 +5,32 @@
 .carouselMinSize {
     min-height: 400px;
 }
+
+.text-carousel {
+  width: 85%;
+  padding-left: 45px;
+}
+.imageCarousel {
+    padding-top: 60px;
+    padding-left: 30px ;
+}
+
+@media (max-width:430px){
+    .spanCarousel, .text-carousel {
+        display: none;
+    }
+    .imageCarousel {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width:770px) {
+    .spanCarousel, .text-carousel {
+        width: 70%;
+        transform: translateX(20%);
+    }
+    .imageCarousel{
+        padding: 15px;
+    }
+}

@@ -2,7 +2,8 @@ import { Carousel } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import clientAxios from "../../config/Axios";
 import '../HeroSlider/HeroSlider.css';
-import Banner from '../Banner/Banner'
+import '../../styles/colors-palette.css'
+
 
 const HeroSlider = () => {
   const [images, setImages] = useState([]);
@@ -17,24 +18,22 @@ const HeroSlider = () => {
   return (
     <>
       <Carousel
-        className="carouselMinSize"
+        className="carouselMinSize bg-color4"
         controls={false}
         pause={false}
         interval={3000}
       >
         {images.map((image, index) => (
           <Carousel.Item key={index}>
-            <span aria-hidden="true" className="carousel-control-next-icon" />	
             <img 
-              className="d-block w-80"
+              className="d-block w-80 imageCarousel"
               src={image.image}
               alt={image.name}
             />
-            <Carousel.Caption className="text-dark">
-              <h3>{image.name}</h3>
-              <span>{image.description}</span>
+            <Carousel.Caption className="text-withe text-carousel">
+              <h2>{image.name}</h2>
+              <span className="spanCarousel">{image.description}</span>
             </Carousel.Caption>
-            <span aria-hidden="true" className="carousel-control-prev-icon" />
           </Carousel.Item>
         ))}
       </Carousel>

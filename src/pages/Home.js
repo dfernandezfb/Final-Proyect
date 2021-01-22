@@ -7,12 +7,13 @@ import HeroSlider from '../components/HeroSlider/HeroSlider';
 import Banner from '../components/Banner/Banner';
 //CSS
 import "../components/Banner/Banner.css"
+import "../styles/main.css"
 
 const Home = () => {
   const { courses, setCourses } = useContext(AdminpageContext);
   return (
     <>
-      <div className="homeBody">
+      <div className="homeBody main-content">
         <HeroSlider />
         <div className="row cardCourse m-0 justify-content-center">
           {courses.length === 0
