@@ -1,5 +1,5 @@
 import { Form } from 'react-bootstrap'
-import "../styles/colors-palette.css"
+import "../styles/colorspallete.css"
 import ModalRecoverPassword from '../components/Modals/ModalRecoverPassword'
 
 const ChangePasswordPage = () => {
