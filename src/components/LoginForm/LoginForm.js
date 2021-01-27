@@ -23,7 +23,6 @@ const LoginForm = ({ show, setShow }) => {
     await login(values);
     setShow(false);
   }
-  console.log(errors);
   return (
     <Modal show={show} onHide={() => setShow(false)}>
       <Modal.Header closeButton>
